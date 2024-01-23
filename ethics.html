@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ethics of Belief</title>
+    <style>
+        /* Add your CSS styling here */
+        body {
+            font-family: 'Verdana', sans-serif;
+            color: #010006;
+            background-color: #DFEAE4; 
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, footer {
+            background-color: #3f5744; 
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+    
+        .hidden-text {
+        display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ethics of Belief</h1>
+    </header>
+    <br><br>
+   
+    <div style="text-align: center;">
+    <img src="cliffords-ship.png" width="500" height="400" alt="Capsized 19th-century emigrant ship" />
+    </div> 
+    
+    <div class="container">
+        <br><br>
+        1.	In your own words, define objectivism and relativism. <br> <br> 
+        <button onclick="toggleText('answer1')">Show/Hide Answer</button>
+        <div id="answer1" class="hidden-text">
+        <p style="color: blue;">
+            Objectivism: There is an evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified. <br><br>
+            Relativism: There is no evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified. 
+        </p>
+        </div> <br> <br> <br>
+
+        2.	“Corporations act immorally when they contribute to climate change through deforestation.” 
+        <p style="margin-left: 40px;">
+            If moral relativism is correct, what does this claim express? <br> <br>
+            
+            <button onclick="toggleText('answer2a')">Show/Hide Answer</button>
+            <div id="answer2a" class="hidden-text">
+            <p style="color: blue; margin-left: 40px;">
+                There is no objective fact of the matter about this, but it is my subjective belief that corporations act immorally when they contribute to climate change through deforestation. Although there is no objective fact of the matter about whether or not corporations should be doing this, it is my preference that they do not do this. 
+            </p>
+            </div>   
+            If moral objectivism is correct, what does this claim express? <br> <br>
+        </p>
+        3.	One argument against relativism is the following: 
+        <p style="margin-left: 40px;">
+            1. When one person says X is morally acceptable, and someone else says X, the same thing, is morally unacceptable, they are disagreeing.<br>
+            2. However, if relativism is correct, there is no disagreement about X.<br>
+            ∴ Therefore, relativism cannot be correct.
+        </p>   
+        Explain premise 2. Why is it the case, according to relativism, that there can be no genuine disagreement? <br> <br> <br>
+        4.	Another argument against relativism is the following: <br>
+        <p style="margin-left: 40px;">
+            1.	We are sometimes wrong in our moral evaluations.</br>
+            2.	But if relativism were true, as long as one is speaking sincerely, they could never be wrong in their moral evaluations.</br>
+            ∴    Therefore, relativism cannot be correct. </br>
+        </p>
+        Why should we believe premise 1 is true? <br><br>
+        Premise 2 follows from the definition of relativism. Explain how. <br><br><br>
+        5.	In the last paragraph of his essay, Frankfurt gives an argument against the turn toward sincerity at the cost of objectivity. First, paraphrase this argument in your own words.  Second, explain in detail what you think of the argument. Does it convince you? Why or why not? <br><br>
+
+
+    </div>
+
+    <script>
+        function toggleText(definitionId) {
+          var textElement = document.getElementById(definitionId);
+          textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+        }
+        </script>
+
+</body>
+</html>
