@@ -3,6 +3,7 @@
 <head>
     <title>Ethics of Belief</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.min.js"></script>
     <style>
         /* Add your CSS styling here */
         body {
@@ -93,6 +94,39 @@
         }
     </script>
     
+    <script>
+    function downloadDOCX() {
+        const doc = new docx.Document();
+    
+        const question1Text = document.getElementById('question1').textContent;
+        const question1Response = document.getElementById('response1').value;
+        const question1Answer = document.getElementById('answer1').textContent;
+    
+        // Add the question text to the document
+        doc.addSection({
+            children: [
+                new docx.Paragraph(question1Text),
+                new docx.Paragraph("Your Response: " + question1Response),
+                new docx.Paragraph("Sample Answer: " + question1Answer),
+            ],
+        });
+    
+        // Used to export the document
+        docx.Packer.toBlob(doc).then(blob => {
+            // Triggers the download
+            const url = window.URL.createObjectURL(blob);
+            const anchor = document.createElement("a");
+            anchor.href = url;
+            anchor.download = "answers.docx";
+            anchor.click();
+    
+            // Release the object URL
+            setTimeout(() => window.URL.revokeObjectURL(url), 100);
+        }).catch(error => {
+            console.error("Error creating document: ", error);
+        });
+    }
+    </script>
     
     
     <div class="container">
@@ -302,9 +336,12 @@
     </div>
 
     <div class="container">
-        <input type="button" value="Download Answers" onclick="downloadPDF()">
+        <input type="button" value="Download Answers PDF" onclick="downloadPDF()">
     </div>
 
+    <div class="container">
+        <input type="button" value="Download Answers Doc" onclick="downloadDOCX()">
+    </div>
     <br><br>
 
     <script>
