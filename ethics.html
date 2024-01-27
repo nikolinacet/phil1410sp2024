@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Ethics of Belief</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <style>
         /* Add your CSS styling here */
         body {
@@ -44,23 +45,55 @@
     <div style="text-align: center;">
     <img src="cliffords-ship.png" width="500" height="400" alt="Capsized 19th-century emigrant ship" />
     <br><br>
+    
     </div> 
 
     <header>
         <h3>Objectivism and Relativism</h2>
     </header>
 
+    <div id="question1" class="container">
+        <br>1. In your own words, define objectivism and relativism.
+    </div>
+    
     <div class="container">
-        <br><br>
-        1.	In your own words, define objectivism and relativism. <br> <br> 
-        <button onclick="toggleText('answer1')">Show/Hide Answer</button>
+        <form id="ethicsForm">
+            Your Response 1: <input type="text" name="response1" id="response1"><br>
+        </form>
+    </div>
+
+    <div class="container">
+    <button onclick="toggleText('answer1')">Show/Hide Answer</button>
         <div id="answer1" class="hidden-text">
             <p style="color: blue;">
-                Objectivism: There is an evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified. <br><br>
-                Relativism: There is no evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified.  
+                Objectivism: There is an evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified.
+                <br><br>
+                Relativism: There is no evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified.
             </p>
         </div>
-    </div> 
+    </div>
+
+    <script>
+        function downloadPDF() {
+            var { jsPDF } = window.jspdf;
+            var doc = new jsPDF();
+    
+            var Question1Text = document.getElementById('question1').textContent;
+            var Question1Response = document.getElementById('response1').value;
+            var Question1Answer = document.getElementById('answer1').textContent
+    
+            // Combine question and response
+            var content = Question1Text + "\n\nYour Response: " + Question1Response + "\n\nExample Response: " + Question1Answer;
+    
+            // Add the content to the PDF
+            doc.text(content, 10, 10);
+    
+            // Save the PDF
+            doc.save('answers.pdf');
+        }
+    </script>
+    
+    
     
     <div class="container">
         2.	“Corporations act immorally when they contribute to climate change through deforestation.” <br><br>
@@ -267,6 +300,12 @@
         </p>
         </div>
     </div>
+
+    <div class="container">
+        <input type="button" value="Download Answers" onclick="downloadPDF()">
+    </div>
+
+    <br><br>
 
     <script>
         function toggleText(definitionId) {
