@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practice Questions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<div>
+    <form id="questionsForm">
+        Question 1: <input type="text" name="question1" id="question1"><br>
+        Question 2: <input type="text" name="question2" id="question2"><br>
+        <input type="button" value="Download Answers" onclick="downloadPDF()">
+    </form>
+</div>
+
+<script>
+    function downloadPDF() {
+        var { jsPDF } = window.jspdf;
+        var doc = new jsPDF();
+
+        var question1Answer = document.getElementById('question1').value;
+        var question2Answer = document.getElementById('question2').value;
+
+        doc.text('Question 1: ' + question1Answer, 10, 10);
+        doc.text('Question 2: ' + question2Answer, 10, 20);
+
+        doc.save('answers.pdf');
+    }
+</script>
+
+</body>
+</html>

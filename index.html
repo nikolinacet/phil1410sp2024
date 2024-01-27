@@ -5,14 +5,14 @@
     <style>
         /* Add your CSS styling here */
         body {
-            font-family: 'Verdana', sans-serif;
+            font-family: 'Georgia', serif;
             color: #010006;
             background-color: #DFEAE4; 
             margin: 0;
             padding: 0;
         }
         header, nav, footer {
-            background-color: #3f5744; 
+            background-color: #705d9c; 
             color: white;
             text-align: center;
             padding: 10px 0;
@@ -27,8 +27,25 @@
             margin: auto;
             padding: 20px;
         }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 640px; /* This is the maximum width the video will stretch to. Adjust as needed. */
+            max-height: 300px;
+            padding-top: 30%; 
+            margin:  5% auto;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Forms of Reasoning</h1>
@@ -41,8 +58,9 @@
         <a href="fallacies.html">Fallacies</a>
         <a href="fun.html">For Fun</a>
     </nav>
-    <div class="container">
-        <!-- Page specific content goes here -->
+    
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/nFTRwD85AQ4?si=5kIsamhypouqmkjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 </body>
 </html>

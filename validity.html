@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validity</title>
+    <style>
+        /* Add your CSS styling here */
+        body {
+            font-family: 'Georgia', serif;
+            color: #010006;
+            background-color: #DFEAE4; 
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, footer {
+            background-color: #3f5744; 
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .hidden-text {
+        display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Validity</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="deductive.html">Deductive Arguments</a>
+    </nav>
+    
+    <div class="container">
+        <br><br>
+        <strong>Are the following arguments valid?</strong> 
+    </div>
+
+    <div class="container">
+        Argument 1:
+        <br><br>
+        1. If I garden, I will be dirty. 
+        <br>2. I am not dirty. 
+       <br> ∴ I did not garden. 
+       <br><br>
+       <button onclick="toggleText('answer1')">Show/Hide Answer</button>
+       <div id="answer1" class="hidden-text">
+       <p style="color: green;">
+            <br>Valid
+        </p>
+       </div>
+    </div>
+
+    <div class="container">
+        Argument 2:
+        <br><br>
+        1. If you’re nice to me, I will be nice to you.  
+        <br>2. You’re not nice to me.  
+       <br> ∴ I will not be nice to you.  
+       <br><br>
+       <button onclick="toggleText('answer2')">Show/Hide Answer</button>
+       <div id="answer2" class="hidden-text">
+       <p style="color: red;">
+            <br>Invalid. The first premise says that I’ll be nice to you if you’re nice to me, but it doesn’t rule out that I’ll be nice to you even if you’re not nice to me.   
+        </p>
+       </div>
+    </div>
+
+    <div class="container">
+        Argument 3:
+        <br><br>
+        1. All physical matter is located at a specific spatiotemporal location.   
+        <br>2. Electrons are not located at a specific spatiotemporal location.   
+       <br> ∴ Electrons are not physical matter.   
+       <br><br>
+       <button onclick="toggleText('answer3')">Show/Hide Answer</button>
+       <div id="answer3" class="hidden-text">
+       <p style="color: green;">
+            <br>Valid
+        </p>
+       </div>
+    </div>
+
+    <div class="container">
+        Argument 4:
+        <br><br>
+        1. Some patients are pressured into physician-assisted suicide.       
+       <br> ∴ Physician assisted suicide is wrong.   
+       <br><br>
+       <button onclick="toggleText('answer4')">Show/Hide Answer</button>
+       <div id="answer4" class="hidden-text">
+       <p style="color: red;">
+            <br>Invalid. Could be made valid with a suppressed premise: If a medical treatment pressures some patients into physician assisted suicide, it is wrong. 
+        </p>
+       </div>
+    </div>
+
+    <div class="container">
+        Argument 5:
+        <br><br>
+        1. All Australians are surfers. 
+        <br>2. Keanu Reeves is a surfer.       
+       <br> ∴ Keanu Reeves is Australian.    
+       <br><br>
+       <button onclick="toggleText('answer5')">Show/Hide Answer</button>
+       <div id="answer5" class="hidden-text">
+       <p style="color: red;">
+            <br>Invalid. All Australians are surfers, but that doesn’t mean all surfers are Australian. KR could be one of those surfers who is not Australian.      
+        </p>
+       </div>
+    </div>
+
+    <div class="container">
+        Argument 6:
+        <br><br>
+        1. If Keanu Reeves likes to surf, then I like to surf.  
+        <br>2. If I like to surf, then Keanu Reeves will like me. 
+        <br>3. Keanu Reeves likes me.       
+       <br> ∴ I like to surf.    
+       <br><br>
+       <button onclick="toggleText('answer6')">Show/Hide Answer</button>
+       <div id="answer6" class="hidden-text">
+       <p style="color: red;">
+            <br>Invalid. Let’s say I don’t like to surf (pretend the conclusion is false). This does not rule out the possibility that the conditional in P1 is true: If KR likes to surf, I like to surf. It could also still be the case that if I liked to surf, then KR would like me (P2). And it could still be the case that KR likes me. My not liking to surf does not rule out any of these premises, so the conclusion can be false while all the premises are true—the conclusion does not follow from the premises.   
+        </p>
+       </div>
+    </div>
+
+    <div class="container">
+        Argument 7:
+        <br><br>
+        1. All logicians are surfers.   
+        <br>2. No actors are logicians.        
+       <br> ∴ No actors are surfers.     
+       <br><br>
+       <button onclick="toggleText('answer7')">Show/Hide Answer</button>
+       <div id="answer7" class="hidden-text">
+       <p style="color: red;">
+            <br>Invalid. All logicians are surfers, but that doesn’t mean that all surfers are logicians. Some surfers may not be logicians. Even if no actors are logicians, some actors could still fall in the group of surfers who are not logicians.          
+        </p>
+       </div>
+    </div>
+
+    <div class="container">
+        Argument 8:
+        <br><br>
+        1. If you read sci-fi before bed, you will have cool dreams.   
+        <br>2. If you have cool dreams, you will wake up happy.        
+       <br> ∴ If you read sci-fi before bed, you will wake up happy.      
+       <br><br>
+       <button onclick="toggleText('answer8')">Show/Hide Answer</button>
+       <div id="answer8" class="hidden-text">
+       <p style="color: green;">
+            <br>Valid
+       </div>
+    </div>
+
+    <div class="container">
+        Argument 9:
+        <br><br>
+        1. Bobo is either a surfer or a logician.  
+        <br>2. Bobo is not a surfer.         
+       <br> ∴  Bobo is a logician.     
+       <br><br>
+       <button onclick="toggleText('answer9')">Show/Hide Answer</button>
+       <div id="answer9" class="hidden-text">
+       <p style="color: green;">
+            <br>Valid
+       </div>
+    </div>
+
+    <div class="container">
+        Argument 10:
+        <br><br>
+        1. All cuddle-bugs are cutie-pies.   
+        <br>2. All cutie-pies are honey-buns. 
+        <br>3. Keanu Reeves is a honey-bun.          
+       <br> ∴  Keanu Reeves is a cuddle-bug.      
+       <br><br>
+       <button onclick="toggleText('answer10')">Show/Hide Answer</button>
+       <div id="answer10" class="hidden-text">
+       <p style="color: red;">
+            <br>Invalid. Honey-buns are the largest set. Honey-buns include all the cutie-pies plus some. Cutie-pies are the second largest set. Cutie-pies include all the cuddle-bugs plus some. We know KR is in the largest set, honey-buns (P2). He could be a honey-bun who is also a cutie-pie, or not. One of the requirements for being a cuddle-bug is being a cutie-pie (P1), but we don’t know for sure that KR is a cutie-pie. So we can’t know for sure that KR is cuddle-bug, alas.  
+       </div>
+    </div>
+
+    <script>
+        function toggleText(definitionId) {
+          var textElement = document.getElementById(definitionId);
+          if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                 textElement.style.display = "none";
+            }
+          textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+        }
+        </script>
+    
+    </div>
+</body>
+</html>
+
