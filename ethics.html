@@ -2,8 +2,13 @@
 <html>
 <head>
     <title>Ethics of Belief</title>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.min.js"></script>
+
+    <script src="https://unpkg.com/docx@7.1.0/build/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+    
+
     <style>
         /* Add your CSS styling here */
         body {
@@ -11,7 +16,7 @@
             color: #010006;
             background-color: #DFEAE4; 
             margin: 0;
-            padding: 0;
+            padding: 20;
         }
         header, nav, footer {
             background-color: #3f5744; 
@@ -21,20 +26,42 @@
         }
         nav a {
             color: white;
-            margin: 0 20px;
+            margin: 0px;
             text-decoration: none;
         }
-        .container {
-            width: 80%;
+        .question {
+            width: 70%;
             margin: auto;
-            padding: 20px;
+            padding: 25px;
         }
-    
-        .hidden-text {
-        display: none;
+        .answer {
+            display: none;
+            width: 70%;
+            margin: auto;
+            padding: 35px;
+            color: indigo;
+        }
+        .button {
+            width: 70%;
+            margin: auto;
+            padding: 10px;
+        }
+        .doc-button {
+        text-align: center; 
+        margin: auto; 
+        padding: 50px;
+        }
+        .response-area {
+        width: 60%; 
+        height: 150px; 
+        padding: 10px; 
+        box-sizing: border-box; 
+        margin-top: 10px;
         }
     </style>
+
 </head>
+
 <body>
     <header>
         <h1>Ethics of Belief</h1>
@@ -53,166 +80,82 @@
         <h3>Objectivism and Relativism</h2>
     </header>
 
-    <div id="question1" class="container">
-        <br>1. In your own words, define objectivism and relativism.
-    </div>
-    
-    <div class="container">
-        <form id="ethicsForm">
-            Your Response 1: <input type="text" name="response1" id="response1"><br>
-        </form>
-    </div>
+    <div id="question1" class="question">1. In your own words, define objectivism and relativism.</div>
 
-    <div class="container">
+    <div class="button">
     <button onclick="toggleText('answer1')">Show/Hide Answer</button>
-        <div id="answer1" class="hidden-text">
-            <p style="color: blue;">
-                Objectivism: There is an evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified.
-                <br><br>
-                Relativism: There is no evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified.
-            </p>
-        </div>
+    </div>    
+
+    <div id="answer1" class="answer">
+        Objectivism: There is an evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified.
+        Relativism: There is no evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified.
     </div>
 
-    <script>
-        function downloadPDF() {
-            var { jsPDF } = window.jspdf;
-            var doc = new jsPDF();
-    
-            var Question1Text = document.getElementById('question1').textContent;
-            var Question1Response = document.getElementById('response1').value;
-            var Question1Answer = document.getElementById('answer1').textContent
-    
-            // Combine question and response
-            var content = Question1Text + "\n\nYour Response: " + Question1Response + "\n\nExample Response: " + Question1Answer;
-    
-            // Add the content to the PDF
-            doc.text(content, 10, 10);
-    
-            // Save the PDF
-            doc.save('answers.pdf');
-        }
-    </script>
-    
-    <script>
-    function downloadDOCX() {
-        const doc = new docx.Document();
-    
-        const question1Text = document.getElementById('question1').textContent;
-        const question1Response = document.getElementById('response1').value;
-        const question1Answer = document.getElementById('answer1').textContent;
-    
-        // Add the question text to the document
-        doc.addSection({
-            children: [
-                new docx.Paragraph(question1Text),
-                new docx.Paragraph("Your Response: " + question1Response),
-                new docx.Paragraph("Sample Answer: " + question1Answer),
-            ],
-        });
-    
-        // Used to export the document
-        docx.Packer.toBlob(doc).then(blob => {
-            // Triggers the download
-            const url = window.URL.createObjectURL(blob);
-            const anchor = document.createElement("a");
-            anchor.href = url;
-            anchor.download = "answers.docx";
-            anchor.click();
-    
-            // Release the object URL
-            setTimeout(() => window.URL.revokeObjectURL(url), 100);
-        }).catch(error => {
-            console.error("Error creating document: ", error);
-        });
-    }
-    </script>
-    
-    
-    <div class="container">
-        2.	“Corporations act immorally when they contribute to climate change through deforestation.” <br><br>
-        <p style="margin-left: 40px;">
-        If moral relativism is correct, what does this claim express? <br><br>
-        </p>
-            <button onclick="toggleText('answer2a')">Show/Hide Answer</button>
-            <div id="answer2a" class="hidden-text">
-                <p style="color: blue;">
-                    There is no objective fact of the matter about this, but it is my subjective belief that corporations act immorally when they contribute to climate change through deforestation. Although there is no objective fact of the matter about whether or not corporations should be doing this, it is my preference that they do not do this. 
-                </p>
-            </div>
-    </div>
-    
-    <div class="container">    
-        <p style="margin-left: 40px;">   
-        If moral objectivism is correct, what does this claim express? <br><br>
-        </p>
-            <button onclick="toggleText('answer2b')">Show/Hide Answer</button>
-            <div id="answer2b" class="hidden-text">
-                <p style="color: blue;">
-                    There is an objective fact of the matter about this issue. That means this claim is true not just because I say so but because it can be confirmed on grounds independent of the fact that I believe this claim is true—like some morally relevant reasons that others can appreciate. It’s like the claim that the earth is round or that 2+2=4. The truth of these claims does not depend on my accepting that they are true. 
-                </p>
-            </div>
+    <div id='question2' class="question">
+        <p>2. “Corporations act immorally when they contribute to climate change through deforestation.”</p>
+        <p>If moral relativism is true, what does this claim express? If moral objectivism is true, what does this claim express?</p>
     </div>
 
-    <div class="container">
+    <div class="button">
+        <button onclick="toggleText('answer2')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer2" class="answer">
+        <p>If moral relativism is true, the claim expresses that there is no objective fact of the matter about this, but it is my subjective belief that corporations act immorally when they contribute to climate change through deforestation. Although there is no objective fact of the matter about whether or not corporations should be doing this, it is my preference that they do not do this.</p>
+        <p>If moral objectivism is true, the claim expresses that there is an objective fact of the matter about this issue. That means this claim is true not just because I say so but because it can be confirmed on grounds independent of the fact that I believe this claim is true—like some morally relevant reasons that others can appreciate. It’s like the claim that the earth is round or that 2+2=4. The truth of these claims does not depend on my accepting that they are true.</p>
+    </div>
+    
+    <div id="question3" class="question">
         3.	One argument against relativism is the following:
         <p style="margin-left: 40px;">
-            1. When one person says X is morally acceptable, and someone else says X, the same thing, is morally unacceptable, they are disagreeing.<br>
-            2. However, if relativism is correct, there is no disagreement about X.<br>
-            ∴ Therefore, relativism cannot be correct.
+            1. When one person says X is morally acceptable, and someone else says X, the same thing, is morally unacceptable, they are disagreeing.
+            <br>2. However, if relativism is correct, there is no disagreement about X.
+            <br>∴ Therefore, relativism cannot be correct.
         </p>   
-        Explain premise 2. Why is it the case, according to relativism, that there can be no genuine disagreement? <br><br>
+        Explain premise 2. Why is it the case, according to relativism, that there can be no genuine disagreement? 
+    </div>
+    
+    <div class="button">
         <button onclick="toggleText('answer3')">Show/Hide Answer</button>
-        <div id="answer3" class="hidden-text">
-        <p style="color: blue;">
-            If relativism is true, when two people, A and B, make different claims about X, there is no real disagreement because A and B are really talking about two different things. A is expressing her preference and B is expressing his preference. That A and B are expressing mere preferences, as opposed to objective truths, follows from the meaning of relativism. Given that a genuine disagreement can only exist when two people are discussing the same topic, A and B are not really disagreeing. 
-        </p>
-        </div>
     </div>
-       
-       
-    <div class="container">
-        4.	Another argument against relativism is the following: <br>
+
+    <div id="answer3" class="answer">
+        If relativism is true, when two people, A and B, make different claims about X, there is no real disagreement because A and B are really talking about two different things. A is expressing her preference and B is expressing his preference. That A and B are expressing mere preferences, as opposed to objective truths, follows from the meaning of relativism. Given that a genuine disagreement can only exist when two people are discussing the same topic, A and B are not really disagreeing. 
+    </div>
+
+    <div id="question4" class="question">
+        4.	Another argument against relativism is the following:
         <p style="margin-left: 40px;">
-            1.	We are sometimes wrong in our moral evaluations.</br>
-            2.	But if relativism were true, as long as one is speaking sincerely, they could never be wrong in their moral evaluations.</br>
-            ∴    Therefore, relativism cannot be correct. </br>
-        </p>
-        Why should we believe premise 1 is true? <br><br>
-        <button onclick="toggleText('answer4a')">Show/Hide Answer</button>
-        <div id="answer4a" class="hidden-text">
-        <p style="color: blue;">
-            One reason: When looking back through history, we sometimes want to say people in the past were wrong in their moral judgments (different from the question of whether they are blameworthy). For example, we want to say people in power were wrong in openly accepting slavery as a part of their society. 
-        </p>
-        </div>
+            1.	We are sometimes wrong in our moral evaluations.
+            </br>2.	But if relativism were true, as long as one is speaking sincerely, they could never be wrong in their moral evaluations.
+            </br>∴    Therefore, relativism cannot be correct.
+        </p>            
+        <p>Why should we believe premise 1 is true?</p>
+        <p>Premise 2 follows from the definition of relativism. Explain how.</p>
+    </div>
+       
+    <div class="button">
+       <button onclick="toggleText('answer4')">Show/Hide Answer</button>
     </div>
 
-    <div class="container">
-        Premise 2 follows from the definition of relativism. Explain how. <br><br>
-        <button onclick="toggleText('answer4b')">Show/Hide Answer</button>
-        <div id="answer4b" class="hidden-text">
-        <p style="color: blue;">
-            According to relativism, when people express moral claims, they are reporting on mere preferences. As long as they are reporting their sincere preferences, they are not saying anything false. For example, if it is my genuine belief that slavery is morally permissible, according to relativism, I am not saying anything false if I express this belief.
-        </p>
-        </div>    
-    </div> 
-       
-        
-    <div class="container">
-        5.	In the last paragraph of his essay, Frankfurt gives an argument against the turn toward sincerity at the cost of objectivity. First, paraphrase this argument in your own words.  Second, explain in detail what you think of the argument. Does it convince you? Why or why not? <br><br>
+    <div id="answer4" class="answer">
+        One reason: When looking back through history, we sometimes want to say people in the past were wrong in their moral judgments (different from the question of whether they are blameworthy). For example, we want to say people in power were wrong in openly accepting slavery as a part of their society. 
+        <br><br>According to relativism, when people express moral claims, they are reporting on mere preferences. As long as they are reporting their sincere preferences, they are not saying anything false. For example, if it is my genuine belief that slavery is morally permissible, according to relativism, I am not saying anything false if I express this belief.
+    </div>
+
+    <div id="question5" class="question">
+        5.	In the last paragraph of his essay, Frankfurt gives an argument against the turn toward sincerity at the cost of objectivity. First, paraphrase this argument in your own words.  Second, explain in detail what you think of the argument. Does it convince you? Why or why not? 
+    </div>
+    
+    <div class="button">
         <button onclick="toggleText('answer5')">Show/Hide Answer</button>
-        <div id="answer5" class="hidden-text">
-        <p style="color: blue;">
-        
-            Frankfurt’s argument: <br><br>
+    </div>
 
-            Turning towards sincerity and away from objectivity is self-defeating. The proponent of sincerity (in the context in which Frankfurt is using the word sincerity) rejects the intelligibility of objective truth and instead aims to express only themselves honestly. <br><br>
-
-            But if there is no such thing as objective, determinate truth, it follows that there is no objective, determinate truth about the self. So the proponent of sincerity has set themselves up to fail. <br><br>
-
-            Furthermore, (a separate point) it’s far from obvious that the truth about ourselves is easier to discern than the truth about the external world. We are complex creatures, after all. <br><br>
-        </p>
-        </div>
+    <div id="answer5" class="answer">
+        Frankfurt’s argument:
+        <p>Turning towards sincerity and away from objectivity is self-defeating. The proponent of sincerity (in the context in which Frankfurt is using the word sincerity) rejects the intelligibility of objective truth and instead aims to express only themselves honestly.</p>
+        <p>But if there is no such thing as objective, determinate truth, it follows that there is no objective, determinate truth about the self. So the proponent of sincerity has set themselves up to fail.</p>
+        <p>Furthermore, (a separate point) it’s far from obvious that the truth about ourselves is easier to discern than the truth about the external world. We are complex creatures, after all.</p>
     </div>
 
 <header>
@@ -220,77 +163,82 @@
 </header>
 <br><br>
 
-    <div class="container">
+    <div id=question6 class="question">
         6.	How do epistemic vices get in the way of knowledge? 
-        <br><br>
+    </div>
+       
+    <div class="button">
         <button onclick="toggleText('answer6')">Show/Hide Answer</button>
-        <div id="answer6" class="hidden-text">
-        <p style="color: blue;">
-            According to a standard definition of knowledge, one knows that P if P is true, one is reasonably confident that P, and one has the right to be confident that P. 
-            <br><br>Epistemic vices systematically obstruct the gaining, keeping or sharing of knowledge, on the part of the believer with the vice and/or those around her. They do so by targeting one or more of the three pillars of knowledge: 
-            <br><br>(1)	They target the truth of beliefs by making it less likely that our beliefs are based on evidence. For example, prejudice, a type of epistemic vice, makes one disregard relevant evidence because it comes from a source towards which one is biased. 
-            <br><br>(2)	They undermine one’s epistemic confidence by making it difficult to hold one to extant beliefs. This is accomplished, for example, by intentionally instilling doubt about a matter which is actually already settled by an authoritative body (e.g. the medical community), as is the case in some examples of epistemic malevolence.
-            <br><br>(3)	They undermine one’s right to be confident in a belief, that is, one’s justification, by, for example, brushing off the consideration of relevant evidence when it arises, as in some cases of epistemic insouciance.     
-            <br><br>As can be seen from the examples above, how an epistemic vice gets in the way of knowledge depends on which vice it is, e.g. prejudice, epistemic malevolence, epistemic insouciance. 
-        </p>
-        </div>
     </div>
 
-    <div class="container">
+    <div id="answer6" class="answer">
+        <p>According to a standard definition of knowledge, one knows that P if P is true, one is reasonably confident that P, and one has the right to be confident that P.</p>
+        <p>Epistemic vices systematically obstruct the gaining, keeping or sharing of knowledge, on the part of the believer with the vice and/or those around her. They do so by targeting one or more of the three pillars of knowledge:</p>
+        <p>(1)	They target the truth of beliefs by making it less likely that our beliefs are based on evidence. For example, prejudice, a type of epistemic vice, makes one disregard relevant evidence because it comes from a source towards which one is biased.</p>
+        <p>(2)	They undermine one’s epistemic confidence by making it difficult to hold one to extant beliefs. This is accomplished, for example, by intentionally instilling doubt about a matter which is actually already settled by an authoritative body (e.g. the medical community), as is the case in some examples of epistemic malevolence.</p>
+        <p>(3)	They undermine one’s right to be confident in a belief, that is, one’s justification, by, for example, brushing off the consideration of relevant evidence when it arises, as in some cases of epistemic insouciance.</p>    
+        <p>As can be seen from the examples above, how an epistemic vice gets in the way of knowledge depends on which vice it is, e.g. prejudice, epistemic malevolence, epistemic insouciance.</p>
+    </div>
+
+    <div id=question7 class="question">
         7.	Why does Cassam think epistemic insouciance is not entirely voluntary?
-        <br><br> 
+    </div>
+
+    <div class="button">
         <button onclick="toggleText('answer7')">Show/Hide Answer</button>
-        <div id="answer7" class="hidden-text">
-        <p style="color: blue;">
-            Some attitudes are affective, and some are not. In general, the attitude of epistemic insouciance is affective. That means there is something it feels like to be epistemically insouciant. 
-            <br><br>To understand what it means for something to be affective, consider an example in another context, belief. Consider three beliefs I have: (A) The grocery store is open until midnight. (B) When Bobo was talking to me yesterday, he was really rude and snarky. And (C), my dog will always be there for me. There is something if feels like for me to have beliefs (B) and (C), namely angry and loved, respectively. There is nothing similar it feels like for me to have belief (A). So we say beliefs (B) and (C) are affective, whereas (A) is not. 
-            <br><br>One affective dimension of epistemic insouciance is contempt, for example, a contempt for the facts or the evidence. But although contempt may be present in some cases of insouciance, one may note that insouciance seems more accurately to be marked by the absence of certain feelings rather than their presence. Consider, for example, the intellectual slacker. The intellectual slacker doesn’t feel strongly enough about inquiry to even feel contempt for it. Instead of having contempt, she is indifferent.  
-            <br><br>Cassam responds to this by making a distinction between affects which are primarily defined by a mental presence, like contempt, anger, or affection, and affects which are primarily defined by mental absence, like indifference. Then he notes that there is something it feels like to have affects which are primarily defined by a mental absence, just as there is something it feels like to have affects which are primarily defined by a mental presence, despite what we may initially think. In order to support this, Cassam gives an example of a physical sensation, numbness, and claims that even though numbness is defined primarily as an absence of something, pain, there is still something it feels like to be numb. Using analogical reasoning, Cassam claims that indifference is the same—even though it is primarily defined as an absence of something, there is still something it feels like to be indifferent.  
-            <br><br>After arguing that insouciance is affective, Cassam claims that it is not voluntary on the grounds that affects, in general, are not voluntary. After all, we can’t help how we feel. 
-        </p>
-        </div>
     </div>
 
-    <div class="container">
+    <div id="answer7" class="answer">
+        <p>Some attitudes are affective, and some are not. In general, the attitude of epistemic insouciance is affective. That means there is something it feels like to be epistemically insouciant.</p> 
+        <p>To understand what it means for something to be affective, consider an example in another context, belief. Consider three beliefs I have: (A) The grocery store is open until midnight. (B) When Bobo was talking to me yesterday, he was really rude and snarky. And (C), my dog will always be there for me. There is something if feels like for me to have beliefs (B) and (C), namely angry and loved, respectively. There is nothing similar it feels like for me to have belief (A). So we say beliefs (B) and (C) are affective, whereas (A) is not.</p>
+        <p>One affective dimension of epistemic insouciance is contempt, for example, a contempt for the facts or the evidence. But although contempt may be present in some cases of insouciance, one may note that insouciance seems more accurately to be marked by the absence of certain feelings rather than their presence. Consider, for example, the intellectual slacker. The intellectual slacker doesn’t feel strongly enough about inquiry to even feel contempt for it. Instead of having contempt, she is indifferent.</p> 
+        <p>Cassam responds to this by making a distinction between affects which are primarily defined by a mental presence, like contempt, anger, or affection, and affects which are primarily defined by mental absence, like indifference. Then he notes that there is something it feels like to have affects which are primarily defined by a mental absence, just as there is something it feels like to have affects which are primarily defined by a mental presence, despite what we may initially think. In order to support this, Cassam gives an example of a physical sensation, numbness, and claims that even though numbness is defined primarily as an absence of something, pain, there is still something it feels like to be numb. Using analogical reasoning, Cassam claims that indifference is the same—even though it is primarily defined as an absence of something, there is still something it feels like to be indifferent.</p> 
+        <p>After arguing that insouciance is affective, Cassam claims that it is not voluntary on the grounds that affects, in general, are not voluntary. After all, we can’t help how we feel.</p>
+    </div>
+
+    <div id=question8 class="question">
         8. Cassam considers two categories of epistemic vice—epistemic insouciance and epistemic malevolence. What are the essential characteristics of each? Give one specific example of each which is not brought up in the reading. In your example, explain how the relevant actors obstruct the gaining, sharing, or retaining of knowledge.  
-        <br><br>
+    </div>
+
+    <div class="button">
         <button onclick="toggleText('answer8')">Show/Hide Answer</button>
-        <div id="answer8" class="hidden-text">
-        <p style="color: blue;">
-            Applying abstract concepts to the real world is difficult, but do your best. You may consider political platforms or strategies, commercial strategies by corporations or individuals (like influencers), biased scientific research, or personal experiences. Be as specific as you can. 
-            <br><br>Epistemic insouciance and malevolence are both epistemic attitudes. As such, they are both longstanding perspectives on epistemic objects, like knowledge, evidence or inquiry. We can contrast epistemic attitudes to singular actions, like lying. 
-            <br><br>Additionally, they are both epistemic vices, which means they systematically get in the way of the gaining, keeping, and sharing of knowledge. 
-            <br><br>One central difference, according to Cassam, is that insouciance is an epistemic posture, whereas malevolence is an epistemic stance. This means that insouciance is generally affective, and so, involuntary, whereas malevolence is generally non-affective, and so, voluntary. 
-            <br><br>Another central difference is that insouciance is constituted by an indifference to the truth, whereas malevolence is constituted by an active and reflective opposition to the truth. 
-            <br><br>Any examples goes, so long as you provide a reasonable explanation about how you think it fits these characteristics. 
-        </p> 
-        </div>  
     </div>
 
-    <div class="container">
+    <div id="answer8" class="answer">
+        <p>Applying abstract concepts to the real world is difficult, but do your best. You may consider political platforms or strategies, commercial strategies by corporations or individuals (like influencers), biased scientific research, or personal experiences. Be as specific as you can.</p>
+        <p>Epistemic insouciance and malevolence are both epistemic attitudes. As such, they are both longstanding perspectives on epistemic objects, like knowledge, evidence or inquiry. We can contrast epistemic attitudes to singular actions, like lying.</p>
+        <p>Additionally, they are both epistemic vices, which means they systematically get in the way of the gaining, keeping, and sharing of knowledge.</p>
+        <p>>One central difference, according to Cassam, is that insouciance is an epistemic posture, whereas malevolence is an epistemic stance. This means that insouciance is generally affective, and so, involuntary, whereas malevolence is generally non-affective, and so, voluntary.</p> 
+        <p>Another central difference is that insouciance is constituted by an indifference to the truth, whereas malevolence is constituted by an active and reflective opposition to the truth. </p>
+        <p>Any examples goes, so long as you provide a reasonable explanation about how you think it fits these characteristics.  
+    </div>
+
+    <div id=question9 class="question">
         9. Cassam argues that we ought to be held responsible, and so, possibly blameworthy, for epistemic vices even if they are not entirely voluntary, like epistemic insouciance. What is his reasoning in support of this? Do you agree with his conclusion? If so, do you agree on the basis of the argument he gives or for some other reason? Explain why or why not in detail. 
-        <br><br>
-        <button onclick="toggleText('answer9')">Show/Hide Answer</button>
-        <div id="answer9" class="hidden-text">
-        <p style="color: blue;">
-            In your explanation, refer back to the example of epistemic insouciance you gave in response to question 3. Is the group or individual in this example blameworthy? 
-            <br><br>Cassam’s argument: We can only be held morally responsible for actions and attitudes over which we have control. We don’t have voluntary control over epistemic insouciance, in general (see response to question 2). But we do have two other possible kinds of control over insouciance—evaluative and manipulative control. We can exert evaluative control by being willing to investigate whether or not our attitudes are properly justified. And we can exert manipulative control by implementing self-improvement strategies, like changing our environment. 
-        </p>
-        </div>
     </div>
 
-    <div class="container">
+    <div class="button">
+        <button onclick="toggleText('answer9')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer9" class="answer">
+        <p>In your explanation, refer back to the example of epistemic insouciance you gave in response to question 3. Is the group or individual in this example blameworthy?</p>
+        <p>Cassam’s argument: We can only be held morally responsible for actions and attitudes over which we have control. We don’t have voluntary control over epistemic insouciance, in general (see response to question 2). But we do have two other possible kinds of control over insouciance—evaluative and manipulative control. We can exert evaluative control by being willing to investigate whether or not our attitudes are properly justified. And we can exert manipulative control by implementing self-improvement strategies, like changing our environment. </p>
+    </div>
+
+    <div id=question10 class="question">
         10. In the past two classes, we’ve danced around the idea that there is a moral imperative to developing certain patterns of thinking. In other words, how you think matters morally. This is different than the claim that what you think matters morally. How are the two claims different? How do beliefs and patterns of thinking—how we develop our beliefs—matter  morally in different ways? If you think they do not matter morally, explain this instead. Use as much detail as you can. 
-        <br><br>
+    </div>
+
+    <div class="button">
         <button onclick="toggleText('answer10')">Show/Hide Answer</button>
-        <div id="answer10" class="hidden-text">
-        <p style="color: blue;">
-            Possible answer to the first question: 
-            <br><br>“What you think matters morally” means that there is moral significance to the content of your beliefs. For example, there is moral significance to you beliefs about democracy, capitalism, or scientific authority. 
-            <br><br>“How you think matters morally” means that how you came to have your beliefs, e.g. about democracy, capitalism, or scientific authority, is also morally significant. For example, consider your beliefs about religion. How did come to have those? Personal observation, personal revelation, overt or subtle family influence, community influence, formal philosophical argumentation, informal conversations, unreflective bias? According to the claim, “how you think matters,” your answer to this question matters. 
-            <br><br>Anything goes for the rest, so long as a reasonable explanation is provided. 
-        </p>
-        </div>
+    </div>
+
+    <div id="answer10" class="answer">
+        <p>Possible answer to the first question:</p> 
+        <p>“What you think matters morally” means that there is moral significance to the content of your beliefs. For example, there is moral significance to you beliefs about democracy, capitalism, or scientific authority.</p>
+        <p>“How you think matters morally” means that how you came to have your beliefs, e.g. about democracy, capitalism, or scientific authority, is also morally significant. For example, consider your beliefs about religion. How did come to have those? Personal observation, personal revelation, overt or subtle family influence, community influence, formal philosophical argumentation, informal conversations, unreflective bias? According to the claim, “how you think matters,” your answer to this question matters.</p>
+        <p>Anything goes for the rest, so long as a reasonable explanation is provided.</p>
     </div>
 
     <header>
@@ -298,51 +246,104 @@
     </header>
     <br><br>
 
-    <div class="container">
+    <div id=question11 class="question">
         11. In your own words, what is Evidentialism? W. K. Clifford’s story about the shipowner is meant to support Evidentialism. How? 
-        <br><br>
+    </div>
+
+    <div class="button">
         <button onclick="toggleText('answer11')">Show/Hide Answer</button>
-        <div id="answer11" class="hidden-text">
-        <p style="color: blue;">
-            Evidentialism requires that beliefs are only justified when they are based on relevant and adequate evidence.
-            <br><br>In the first version of the story of the ship owner, the shipowner’s belief that his ship is seaworthy is meant to be obviously unjustified, according to Clifford, because it is entirely based in faith. All the relevant available evidence suggests that the ship is not seaworthy. That this is the case is suggested by the reaction that Clifford intends for us to have when the ship sinks and everyone on board drowns: the ship owner has done something wrong. 
-            <br><br>In the second version of the story, the ship does not sink, but all the other circumstances of the story remain the same. Clifford asserts nevertheless that the shipowner’s belief that his ship is seaworthy remains unjustified. This is because everything about the way the shipowner comes to have his belief is the same in the second version of the story—the only thing that changes (the ship does not sink) is a matter of accident and happens afterward the shipowner develops his belief. So, Clifford argues, if we think that this shipowner’s belief was unjustified in the first version of the story, we ought to think it is unjustified in the second version. 
-        </p>
-        </div>
     </div>
 
-    <div class="container">
+    <div id="answer11" class="answer">
+        <p>Evidentialism requires that beliefs are only justified when they are based on relevant and adequate evidence.</p>
+        <p>In the first version of the story of the ship owner, the shipowner’s belief that his ship is seaworthy is meant to be obviously unjustified, according to Clifford, because it is entirely based in faith. All the relevant available evidence suggests that the ship is not seaworthy. That this is the case is suggested by the reaction that Clifford intends for us to have when the ship sinks and everyone on board drowns: the ship owner has done something wrong.</p>
+        <p>In the second version of the story, the ship does not sink, but all the other circumstances of the story remain the same. Clifford asserts nevertheless that the shipowner’s belief that his ship is seaworthy remains unjustified. This is because everything about the way the shipowner comes to have his belief is the same in the second version of the story—the only thing that changes (the ship does not sink) is a matter of accident and happens afterward the shipowner develops his belief. So, Clifford argues, if we think that this shipowner’s belief was unjustified in the first version of the story, we ought to think it is unjustified in the second version. </p>
+    </div>
+
+    <div id=question12 class="question">
         12. In your own words, what is Pragmatism? Pascal’s Wager and the story of Pam and Bobo are meant to support Pragmatism. How? 
-        <br><br>
+    </div>
+
+    <div class="button">
         <button onclick="toggleText('answer12')">Show/Hide Answer</button>
-        <div id="answer12" class="hidden-text">
-        <p style="color: blue;">
-            Pragmatism claims that in addition to relevant and available evidence, some beliefs may be justified on the basis of practical considerations. 
-            <br><br>Pascal’s Wager is meant to convince us that we ought to try to get ourselves to believe in God, not because of some available evidence, but because the benefits of this belief, if God really exists, are infinitely good (eternal happiness, heaven) and the costs of not believing, if God really exists, are infinitely bad (eternal suffering, hell). The practical considerations in this case are the possibility of going to heaven or hell. 
-            <br><br>In the story of Bobo and Pam, both Bobo and Pam have the same available evidence for which train will come next. But the practical consequences of their being right or wrong about which train will come are very different. If Pam is wrong, nothing very bad will happen to her—she misses out on a scenic afternoon train ride planned just for fun. If Bobo is wrong, something very bad will happen—he or someone he loves will die (from the setup of the story). Given these differences, the pragmatist would say while Pam is justified in getting on the next train without double checking that it is the correct one, Bobo better suspend belief until he double checks. That is, even though Bobo and Pam have the same evidence, they are not equally justified in the same belief because of different background pragmatic considerations.
-        </p>
-        </div>
     </div>
 
-    <div class="container">
+    <div id="answer12" class="answer">
+        <p>Pragmatism claims that in addition to relevant and available evidence, some beliefs may be justified on the basis of practical considerations.</p>
+        <p>Pascal’s Wager is meant to convince us that we ought to try to get ourselves to believe in God, not because of some available evidence, but because the benefits of this belief, if God really exists, are infinitely good (eternal happiness, heaven) and the costs of not believing, if God really exists, are infinitely bad (eternal suffering, hell). The practical considerations in this case are the possibility of going to heaven or hell.</p>
+        <p>In the story of Bobo and Pam, both Bobo and Pam have the same available evidence for which train will come next. But the practical consequences of their being right or wrong about which train will come are very different. If Pam is wrong, nothing very bad will happen to her—she misses out on a scenic afternoon train ride planned just for fun. If Bobo is wrong, something very bad will happen—he or someone he loves will die (from the setup of the story). Given these differences, the pragmatist would say while Pam is justified in getting on the next train without double checking that it is the correct one, Bobo better suspend belief until he double checks. That is, even though Bobo and Pam have the same evidence, they are not equally justified in the same belief because of different background pragmatic considerations.</p>
+    </div>
+
+    <div class="question">
         13. Do you believe that Pragmatism is an appropriate epistemic position in any context? If so, why and for what kind of beliefs? If not, why? 
-        <br><br>
+    </div>
+
+    <div class="button">
         <button onclick="toggleText('answer13')">Show/Hide Answer</button>
-        <div id="answer13" class="hidden-text">
-        <p style="color: blue;">
-
-        </p>
-        </div>
     </div>
 
-    <div class="container">
-        <input type="button" value="Download Answers PDF" onclick="downloadPDF()">
+    <div id="answer13" class="answer">
     </div>
 
-    <div class="container">
-        <input type="button" value="Download Answers Doc" onclick="downloadDOCX()">
+<script>
+    function generate() {
+        const doc = new docx.Document({
+            sections: [{
+                properties: {},
+                children: generateDocumentChildren()
+            }]
+        });
+
+        docx.Packer.toBlob(doc).then(blob => {
+            saveAs(blob, "ethics_of_belief.docx");
+        });
+    }
+
+    function generateDocumentChildren() {
+    let children = [];
+    for (let i = 1; i <= 13; i++) {
+        const questionElement = document.getElementById('question' + i);
+        const answerElement = document.getElementById('answer' + i);
+
+        if (questionElement) {
+            children.push(new docx.Paragraph({
+                children: [new docx.TextRun({
+                    text: questionElement.textContent,
+                    size: 24,
+                    break: 1
+                })],
+            }));
+        }
+
+        if (answerElement) {
+            children.push(new docx.Paragraph({
+                children: [new docx.TextRun({
+                    text: "Sample Answer: ",
+                    size: 24,
+                    bold: true,
+                    break: 1
+                })],
+            }));
+
+            children.push(new docx.Paragraph({
+                children: [new docx.TextRun({
+                    text: answerElement.textContent,
+                    size: 24,
+                    break: 1
+                })],
+            }));
+        }
+    }
+    return children;
+}
+
+
+</script>
+
+
+    <div class="button-container">
+        <button type="button" onclick="generate()">Download Responses .doc</button>
     </div>
-    <br><br>
 
     <script>
         function toggleText(definitionId) {
