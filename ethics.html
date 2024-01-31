@@ -10,13 +10,12 @@
     
 
     <style>
-        /* Add your CSS styling here */
         body {
             font-family: 'Georgia', serif;
             color: #010006;
             background-color: #DFEAE4; 
             margin: 0;
-            padding: 20;
+            padding-bottom: 30px;
         }
         header, nav, footer {
             background-color: #3f5744; 
@@ -32,31 +31,30 @@
         .question {
             width: 70%;
             margin: auto;
-            padding: 25px;
+            padding-top: 30px;
         }
         .answer {
             display: none;
             width: 70%;
             margin: auto;
-            padding: 35px;
+            padding: 10px;
             color: indigo;
+        }
+        .argument {
+            width: 70%;
+            margin: auto;
+            padding: 0px;
+            margin-left: 5%;
         }
         .button {
             width: 70%;
             margin: auto;
-            padding: 10px;
+            padding: 0px
         }
         .doc-button {
         text-align: center; 
         margin: auto; 
-        padding: 50px;
-        }
-        .response-area {
-        width: 60%; 
-        height: 150px; 
-        padding: 10px; 
-        box-sizing: border-box; 
-        margin-top: 10px;
+        padding-bottom: 50px;
         }
     </style>
 
@@ -80,15 +78,17 @@
         <h3>Objectivism and Relativism</h2>
     </header>
 
-    <div id="question1" class="question">1. In your own words, define objectivism and relativism.</div>
+    <div id="question1" class="question">
+        <p>1. In your own words, define objectivism and relativism.</p>
+    </div>
 
     <div class="button">
     <button onclick="toggleText('answer1')">Show/Hide Answer</button>
     </div>    
 
     <div id="answer1" class="answer">
-        Objectivism: There is an evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified.
-        Relativism: There is no evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified.
+        <p>Objectivism: There is an evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified.</p>
+        <p>Relativism: There is no evaluator-independent vantage point from which the truth or falsity of a (scientific, mathematical, moral, religious, metaphysical) claim can be verified.</p>
     </div>
 
     <div id='question2' class="question">
@@ -106,13 +106,13 @@
     </div>
     
     <div id="question3" class="question">
-        3.	One argument against relativism is the following:
-        <p style="margin-left: 40px;">
-            1. When one person says X is morally acceptable, and someone else says X, the same thing, is morally unacceptable, they are disagreeing.
-            <br>2. However, if relativism is correct, there is no disagreement about X.
-            <br>∴ Therefore, relativism cannot be correct.
-        </p>   
-        Explain premise 2. Why is it the case, according to relativism, that there can be no genuine disagreement? 
+        <p>3. One argument against relativism is the following:</p>
+        <div id="question3" class="argument">
+            <p>1. When one person says X is morally acceptable, and someone else says X, the same thing, is morally unacceptable, they are disagreeing.</p>
+            <p>2. However, if relativism is correct, there is no disagreement about X.</p>
+            <p>∴ Therefore, relativism cannot be correct.</p>
+        </div>  
+        <p>Explain premise 2. Why is it the case, according to relativism, that there can be no genuine disagreement?</p>
     </div>
     
     <div class="button">
@@ -120,16 +120,16 @@
     </div>
 
     <div id="answer3" class="answer">
-        If relativism is true, when two people, A and B, make different claims about X, there is no real disagreement because A and B are really talking about two different things. A is expressing her preference and B is expressing his preference. That A and B are expressing mere preferences, as opposed to objective truths, follows from the meaning of relativism. Given that a genuine disagreement can only exist when two people are discussing the same topic, A and B are not really disagreeing. 
+        <p>If relativism is true, when two people, A and B, make different claims about X, there is no real disagreement because A and B are really talking about two different things. A is expressing her preference and B is expressing his preference. That A and B are expressing mere preferences, as opposed to objective truths, follows from the meaning of relativism. Given that a genuine disagreement can only exist when two people are discussing the same topic, A and B are not really disagreeing.</p>
     </div>
 
     <div id="question4" class="question">
-        4.	Another argument against relativism is the following:
-        <p style="margin-left: 40px;">
-            1.	We are sometimes wrong in our moral evaluations.
-            </br>2.	But if relativism were true, as long as one is speaking sincerely, they could never be wrong in their moral evaluations.
-            </br>∴    Therefore, relativism cannot be correct.
-        </p>            
+        <p>4. Another argument against relativism is the following:</p>
+        <div id="question4" class="argument">
+            <p>1.	We are sometimes wrong in our moral evaluations.</p>
+            <p>2.	But if relativism were true, as long as one is speaking sincerely, they could never be wrong in their moral evaluations.</p>
+            <p>∴    Therefore, relativism cannot be correct.</p>
+        </div>           
         <p>Why should we believe premise 1 is true?</p>
         <p>Premise 2 follows from the definition of relativism. Explain how.</p>
     </div>
@@ -139,12 +139,12 @@
     </div>
 
     <div id="answer4" class="answer">
-        One reason: When looking back through history, we sometimes want to say people in the past were wrong in their moral judgments (different from the question of whether they are blameworthy). For example, we want to say people in power were wrong in openly accepting slavery as a part of their society. 
-        <br><br>According to relativism, when people express moral claims, they are reporting on mere preferences. As long as they are reporting their sincere preferences, they are not saying anything false. For example, if it is my genuine belief that slavery is morally permissible, according to relativism, I am not saying anything false if I express this belief.
+        <p>One reason: When looking back through history, we sometimes want to say people in the past were wrong in their moral judgments (different from the question of whether they are blameworthy). For example, we want to say people in power were wrong in openly accepting slavery as a part of their society.</p>
+        <p>According to relativism, when people express moral claims, they are reporting on mere preferences. As long as they are reporting their sincere preferences, they are not saying anything false. For example, if it is my genuine belief that slavery is morally permissible, according to relativism, I am not saying anything false if I express this belief.</p>
     </div>
 
     <div id="question5" class="question">
-        5.	In the last paragraph of his essay, Frankfurt gives an argument against the turn toward sincerity at the cost of objectivity. First, paraphrase this argument in your own words.  Second, explain in detail what you think of the argument. Does it convince you? Why or why not? 
+        <p>5.	In the last paragraph of his essay, Frankfurt gives an argument against the turn toward sincerity at the cost of objectivity. First, paraphrase this argument in your own words.  Second, explain in detail what you think of the argument. Does it convince you? Why or why not?</p>
     </div>
     
     <div class="button">
@@ -152,19 +152,20 @@
     </div>
 
     <div id="answer5" class="answer">
-        Frankfurt’s argument:
+        <p>Frankfurt’s argument:</p>
         <p>Turning towards sincerity and away from objectivity is self-defeating. The proponent of sincerity (in the context in which Frankfurt is using the word sincerity) rejects the intelligibility of objective truth and instead aims to express only themselves honestly.</p>
         <p>But if there is no such thing as objective, determinate truth, it follows that there is no objective, determinate truth about the self. So the proponent of sincerity has set themselves up to fail.</p>
         <p>Furthermore, (a separate point) it’s far from obvious that the truth about ourselves is easier to discern than the truth about the external world. We are complex creatures, after all.</p>
     </div>
 
+    <br><br>
+
 <header>
     <h3>Epistemic Insouciance</h3>
 </header>
-<br><br>
 
     <div id=question6 class="question">
-        6.	How do epistemic vices get in the way of knowledge? 
+        <p>6. How do epistemic vices get in the way of knowledge?</p>
     </div>
        
     <div class="button">
@@ -181,7 +182,7 @@
     </div>
 
     <div id=question7 class="question">
-        7.	Why does Cassam think epistemic insouciance is not entirely voluntary?
+        <p>7. Why does Cassam think epistemic insouciance is not entirely voluntary?</p>
     </div>
 
     <div class="button">
@@ -197,7 +198,7 @@
     </div>
 
     <div id=question8 class="question">
-        8. Cassam considers two categories of epistemic vice—epistemic insouciance and epistemic malevolence. What are the essential characteristics of each? Give one specific example of each which is not brought up in the reading. In your example, explain how the relevant actors obstruct the gaining, sharing, or retaining of knowledge.  
+        <p>8. Cassam considers two categories of epistemic vice—epistemic insouciance and epistemic malevolence. What are the essential characteristics of each? Give one specific example of each which is not brought up in the reading. In your example, explain how the relevant actors obstruct the gaining, sharing, or retaining of knowledge.</p>
     </div>
 
     <div class="button">
@@ -214,7 +215,7 @@
     </div>
 
     <div id=question9 class="question">
-        9. Cassam argues that we ought to be held responsible, and so, possibly blameworthy, for epistemic vices even if they are not entirely voluntary, like epistemic insouciance. What is his reasoning in support of this? Do you agree with his conclusion? If so, do you agree on the basis of the argument he gives or for some other reason? Explain why or why not in detail. 
+        <p>9. Cassam argues that we ought to be held responsible, and so, possibly blameworthy, for epistemic vices even if they are not entirely voluntary, like epistemic insouciance. What is his reasoning in support of this? Do you agree with his conclusion? If so, do you agree on the basis of the argument he gives or for some other reason? Explain why or why not in detail.</p>
     </div>
 
     <div class="button">
@@ -227,7 +228,7 @@
     </div>
 
     <div id=question10 class="question">
-        10. In the past two classes, we’ve danced around the idea that there is a moral imperative to developing certain patterns of thinking. In other words, how you think matters morally. This is different than the claim that what you think matters morally. How are the two claims different? How do beliefs and patterns of thinking—how we develop our beliefs—matter  morally in different ways? If you think they do not matter morally, explain this instead. Use as much detail as you can. 
+        <p>10. In the past two classes, we’ve danced around the idea that there is a moral imperative to developing certain patterns of thinking. In other words, how you think matters morally. This is different than the claim that what you think matters morally. How are the two claims different? How do beliefs and patterns of thinking—how we develop our beliefs—matter  morally in different ways? If you think they do not matter morally, explain this instead. Use as much detail as you can.</p>
     </div>
 
     <div class="button">
@@ -241,13 +242,14 @@
         <p>Anything goes for the rest, so long as a reasonable explanation is provided.</p>
     </div>
 
+    <br><br>
+
     <header>
         <h3>Evidentialism and Pragmatism</h3>
     </header>
-    <br><br>
 
     <div id=question11 class="question">
-        11. In your own words, what is Evidentialism? W. K. Clifford’s story about the shipowner is meant to support Evidentialism. How? 
+        <p>11. In your own words, what is Evidentialism? W. K. Clifford’s story about the shipowner is meant to support Evidentialism. How?</p>
     </div>
 
     <div class="button">
@@ -261,7 +263,7 @@
     </div>
 
     <div id=question12 class="question">
-        12. In your own words, what is Pragmatism? Pascal’s Wager and the story of Pam and Bobo are meant to support Pragmatism. How? 
+        <p>12. In your own words, what is Pragmatism? Pascal’s Wager and the story of Pam and Bobo are meant to support Pragmatism. How?</p> 
     </div>
 
     <div class="button">
@@ -275,85 +277,24 @@
     </div>
 
     <div class="question">
-        13. Do you believe that Pragmatism is an appropriate epistemic position in any context? If so, why and for what kind of beliefs? If not, why? 
+        <p>13. Do you believe that Pragmatism is an appropriate epistemic position in any context? If so, why and for what kind of beliefs? If not, why?</p>
     </div>
 
     <div class="button">
         <button onclick="toggleText('answer13')">Show/Hide Answer</button>
     </div>
 
-    <div id="answer13" class="answer">
-    </div>
+    <div id="answer13" class="answer"></div>
 
-<script>
-    function generate() {
-        const doc = new docx.Document({
-            sections: [{
-                properties: {},
-                children: generateDocumentChildren()
-            }]
-        });
-
-        docx.Packer.toBlob(doc).then(blob => {
-            saveAs(blob, "ethics_of_belief.docx");
-        });
-    }
-
-    function generateDocumentChildren() {
-    let children = [];
-    for (let i = 1; i <= 13; i++) {
-        const questionElement = document.getElementById('question' + i);
-        const answerElement = document.getElementById('answer' + i);
-
-        if (questionElement) {
-            children.push(new docx.Paragraph({
-                children: [new docx.TextRun({
-                    text: questionElement.textContent,
-                    size: 24,
-                    break: 1
-                })],
-            }));
+ <script>
+    function toggleText(definitionId) {
+        var textElement = document.getElementById(definitionId);
+        if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                textElement.style.display = "none";
         }
-
-        if (answerElement) {
-            children.push(new docx.Paragraph({
-                children: [new docx.TextRun({
-                    text: "Sample Answer: ",
-                    size: 24,
-                    bold: true,
-                    break: 1
-                })],
-            }));
-
-            children.push(new docx.Paragraph({
-                children: [new docx.TextRun({
-                    text: answerElement.textContent,
-                    size: 24,
-                    break: 1
-                })],
-            }));
-        }
+        textElement.style.display = textElement.style.display === "none" ? "block" : "none";
     }
-    return children;
-}
-
-
 </script>
-
-
-    <div class="button-container">
-        <button type="button" onclick="generate()">Download Responses .doc</button>
-    </div>
-
-    <script>
-        function toggleText(definitionId) {
-          var textElement = document.getElementById(definitionId);
-          if (textElement.style.display !== "none" && textElement.style.display !== "block") {
-                 textElement.style.display = "none";
-            }
-          textElement.style.display = textElement.style.display === "none" ? "block" : "none";
-        }
-        </script>
 
 </body>
 </html>
