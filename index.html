@@ -4,16 +4,15 @@
     <title>Page Title - Phil 1410</title>
     
     <style>
-        /* Add your CSS styling here */
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Palatino', serif;
             color: #010006;
             background-color: #DFEAE4; 
-            margin: 0;
-            padding: 0;
+            margin: 0px;
+            padding-bottom: 30px;
         }
         header, nav, footer {
-            background-color: #705d9c; 
+            background-color: #3f5744; 
             color: white;
             text-align: center;
             padding: 10px 0;
@@ -22,21 +21,21 @@
             color: white;
             margin: 0 20px;
             text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease; 
+            display: inline-block;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
+        nav a:hover {
+            transform: scale(1.2); 
         }
         .video-container {
             position: relative;
-            width: 100%;
-            max-width: 640px; /* This is the maximum width the video will stretch to. Adjust as needed. */
+            max-width: 640px; 
             max-height: 300px;
             padding-top: 30%; 
-            margin:  5% auto;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 3%;
         }
-
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -44,6 +43,13 @@
             width: 100%;
             height: 100%;
         }
+
+        .text {
+            margin: auto;
+            
+            line-height: 1.5;
+        }
+
     </style>
 </head>
 
@@ -51,6 +57,7 @@
     <header>
         <h1>Forms of Reasoning</h1>
     </header>
+    
     <nav>
         <a href="index.html">Home</a>
         <a href="ethics.html">Ethics of Belief</a>
@@ -63,6 +70,7 @@
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/nFTRwD85AQ4?si=5kIsamhypouqmkjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
+
 </body>
 </html>
 

@@ -8,13 +8,12 @@
     <script src="https://unpkg.com/docx@7.1.0/build/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
     
-
     <style>
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Palatino', serif;
             color: #010006;
             background-color: #DFEAE4; 
-            margin: 0;
+            margin: 0px;
             padding-bottom: 30px;
         }
         header, nav, footer {
@@ -25,36 +24,44 @@
         }
         nav a {
             color: white;
-            margin: 0px;
+            margin: 0 20px;
             text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease; 
+            display: inline-block;
+        }
+        nav a:hover {
+            transform: scale(1.2); 
         }
         .question {
-            width: 70%;
             margin: auto;
-            padding-top: 30px;
+            padding-top: 5%;
+            padding-left: 20%;
+            padding-right: 20%;
+            line-height: 1.5;
         }
         .answer {
             display: none;
-            width: 70%;
             margin: auto;
-            padding: 10px;
-            color: indigo;
+            padding-top: 1%;
+            padding-left: 23%;
+            padding-right: 25%;
+            color: rgb(26, 7, 149);
+            line-height: 1.5;
         }
         .argument {
-            width: 70%;
             margin: auto;
-            padding: 0px;
-            margin-left: 5%;
+            padding-left: 5%;
+            line-height: 1.5;
         }
         .button {
-            width: 70%;
             margin: auto;
-            padding: 0px
+            padding-left: 23%;
         }
-        .doc-button {
-        text-align: center; 
-        margin: auto; 
-        padding-bottom: 50px;
+        img.center {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 3%;
         }
     </style>
 
@@ -66,10 +73,9 @@
         <nav>
             <a href="index.html">Home</a>
     </header>
-    <br><br>
-   
-    <div style="text-align: center;">
-    <img src="cliffords-ship.png" width="500" height="400" alt="Capsized 19th-century emigrant ship" />
+
+    <img src="https://wist.info/wp/wp-content/uploads/2019/12/Calvin-Hobbes-1987-12-23-santa-pascals-wager.png" class="center">
+
     <br><br>
     
     </div> 
@@ -286,7 +292,7 @@
 
     <div id="answer13" class="answer"></div>
 
- <script>
+<script>
     function toggleText(definitionId) {
         var textElement = document.getElementById(definitionId);
         if (textElement.style.display !== "none" && textElement.style.display !== "block") {

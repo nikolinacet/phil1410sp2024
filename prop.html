@@ -1,52 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Addition Diagram</title>
+<html>
+<head>Propositional Logic</title>
+
 <style>
-  .circle {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid black;
-    background-color: #ADD8E6;
-    position: relative; /* For line placement */
+  body {
+      font-family: 'Palatino', serif;
+      color: #010006;
+      background-color: #DFEAE4; 
+      margin: 0px;
+      padding-bottom: 30px;
   }
-
-  .circle:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -25px;
-    width: 20px; /* Length of the line */
-    height: 2px;
-    background: black;
+  header, nav, footer {
+      background-color: #3f5744; 
+      color: white;
+      text-align: center;
+      padding: 10px 0;
   }
-
-  .arrow {
-    margin: 20px 0;
-    text-align: center;
+  nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      transition: transform 0.3s ease, background-color 0.3s ease; 
+      display: inline-block;
   }
-
-  .arrow::before {
-    content: '↓';
-    font-size: 24px; /* Adjust size as needed */
+  nav a:hover {
+      transform: scale(1.2); 
+  }
+  .question {
+      margin: auto;
+      padding-top: 5%;
+      padding-left: 20%;
+      padding-right: 20%;
+      line-height: 1.5;
+  }
+  .answer {
+      display: none;
+      margin: auto;
+      padding-top: 1%;
+      padding-left: 23%;
+      padding-right: 25%;
+      color: rgb(26, 7, 149);
+      line-height: 1.5;
+  }
+  .argument {
+      margin: auto;
+      padding-left: 5%;
+      line-height: 1.5;
+  }
+  .button {
+      margin: auto;
+      padding-left: 23%;
   }
 </style>
-</head>
+
 <body>
-<div style="text-align: center;">
-  <span class="circle">1</span>
-  <span>+</span>
-  <span class="circle">2</span>
-</div>
-<div class="arrow"></div>
-<div style="text-align: center;">
-  <span class="circle">3</span>
-</div>
+  <header>
+      <h1>Propositional Logic</h1>
+  </header>
+  
+  <nav>
+      <a href="index.html">Home</a>
+      <a href="deductive.html">Deductive Arguments</a>
+  </nav>
+  
+
 </body>
 </html>

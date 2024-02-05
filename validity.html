@@ -3,32 +3,61 @@
 <head>
     <title>Validity</title>
     <style>
-        /* Add your CSS styling here */
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Palatino', serif;
             color: #010006;
             background-color: #DFEAE4; 
-            margin: 0;
-            padding: 0;
+            margin: 0px;
         }
-        header, nav, footer {
+        header, nav {
             background-color: #3f5744; 
             color: white;
             text-align: center;
             padding: 10px 0;
         }
+        footer {
+            background-color: #657a69; 
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: smaller;
+            margin-top: 15%;
+        }
         nav a {
             color: white;
             margin: 0 20px;
             text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease; 
+            display: inline-block;
         }
-        .container {
-            width: 80%;
+        nav a:hover {
+            transform: scale(1.2); 
+        }
+        .question {
             margin: auto;
-            padding: 20px;
+            padding-top: 5%;
+            padding-left: 20%;
+            padding-right: 20%;
+            line-height: 1.5;
         }
-        .hidden-text {
-        display: none;
+        .answer {
+            display: none;
+            margin: auto;
+            padding-top: 1%;
+            padding-left: 23%;
+            padding-right: 25%;
+            color: rgb(26, 7, 149);
+            line-height: 1.5;
+        }
+        .argument {
+            margin: auto;
+            padding-left: 5%;
+            line-height: 1.5;
+        }
+        .button {
+            margin: auto;
+            padding-left: 23%;
+            padding-top: 2%;
         }
     </style>
 </head>
@@ -42,158 +71,670 @@
         <a href="deductive.html">Deductive Arguments</a>
     </nav>
     
-    <div class="container">
+    <div class="question">
         <br><br>
         <strong>Are the following arguments valid?</strong> 
     </div>
 
-    <div class="container">
-        Argument 1:
-        <br><br>
-        1. If I garden, I will be dirty. 
-        <br>2. I am not dirty. 
-       <br> ∴ I did not garden. 
-       <br><br>
-       <button onclick="toggleText('answer1')">Show/Hide Answer</button>
-       <div id="answer1" class="hidden-text">
-       <p style="color: green;">
-            <br>Valid
-        </p>
-       </div>
+   <div id="question1" class="question">
+        <p>Argument 1: </p>
+        1. All men are mortal.<br>2. Socrates is a man.<br>∴ Socrates is mortal.
     </div>
 
-    <div class="container">
-        Argument 2:
-        <br><br>
-        1. If you’re nice to me, I will be nice to you.  
-        <br>2. You’re not nice to me.  
-       <br> ∴ I will not be nice to you.  
-       <br><br>
-       <button onclick="toggleText('answer2')">Show/Hide Answer</button>
-       <div id="answer2" class="hidden-text">
-       <p style="color: red;">
-            <br>Invalid. The first premise says that I’ll be nice to you if you’re nice to me, but it doesn’t rule out that I’ll be nice to you even if you’re not nice to me.   
-        </p>
-       </div>
+    <div class="button">
+        <button onclick="toggleText('answer1')">Show/Hide Answer</button>
     </div>
 
-    <div class="container">
-        Argument 3:
-        <br><br>
-        1. All physical matter is located at a specific spatiotemporal location.   
-        <br>2. Electrons are not located at a specific spatiotemporal location.   
-       <br> ∴ Electrons are not physical matter.   
-       <br><br>
-       <button onclick="toggleText('answer3')">Show/Hide Answer</button>
-       <div id="answer3" class="hidden-text">
-       <p style="color: green;">
-            <br>Valid
-        </p>
-       </div>
+    <div id="answer1" class="answer">
+        <p>Valid</p>
+    </div>
+    
+    <div id="question2" class="question">
+        <p>Argument 2:</p>
+        1. All men are mortal.<br>2. Socrates is mortal.<br>∴ Socrates is a man.
     </div>
 
-    <div class="container">
-        Argument 4:
-        <br><br>
-        1. Some patients are pressured into physician-assisted suicide.       
-       <br> ∴ Physician assisted suicide is wrong.   
-       <br><br>
-       <button onclick="toggleText('answer4')">Show/Hide Answer</button>
-       <div id="answer4" class="hidden-text">
-       <p style="color: red;">
-            <br>Invalid. Could be made valid with a suppressed premise: If a medical treatment pressures some patients into physician assisted suicide, it is wrong. 
-        </p>
-       </div>
+    <div class="button">
+        <button onclick="toggleText('answer2')">Show/Hide Answer</button>
     </div>
 
-    <div class="container">
-        Argument 5:
-        <br><br>
-        1. All Australians are surfers. 
-        <br>2. Keanu Reeves is a surfer.       
-       <br> ∴ Keanu Reeves is Australian.    
-       <br><br>
-       <button onclick="toggleText('answer5')">Show/Hide Answer</button>
-       <div id="answer5" class="hidden-text">
-       <p style="color: red;">
-            <br>Invalid. All Australians are surfers, but that doesn’t mean all surfers are Australian. KR could be one of those surfers who is not Australian.      
-        </p>
-       </div>
+    <div id="answer2" class="answer">
+        <p>Invalid</p>
+    </div>
+    
+    <div id="question3" class="question">
+        <p>Argument 3:</p>
+        1. If geckos are mammals, then geckos are vertebrates.<br>2. Geckos are not mammals.<br>∴  Geckos are not vertebrates.
     </div>
 
-    <div class="container">
-        Argument 6:
-        <br><br>
-        1. If Keanu Reeves likes to surf, then I like to surf.  
-        <br>2. If I like to surf, then Keanu Reeves will like me. 
-        <br>3. Keanu Reeves likes me.       
-       <br> ∴ I like to surf.    
-       <br><br>
-       <button onclick="toggleText('answer6')">Show/Hide Answer</button>
-       <div id="answer6" class="hidden-text">
-       <p style="color: red;">
-            <br>Invalid. Let’s say I don’t like to surf (pretend the conclusion is false). This does not rule out the possibility that the conditional in P1 is true: If KR likes to surf, I like to surf. It could also still be the case that if I liked to surf, then KR would like me (P2). And it could still be the case that KR likes me. My not liking to surf does not rule out any of these premises, so the conclusion can be false while all the premises are true—the conclusion does not follow from the premises.   
-        </p>
-       </div>
+    <div class="button">
+        <button onclick="toggleText('answer3')">Show/Hide Answer</button>
     </div>
 
-    <div class="container">
-        Argument 7:
-        <br><br>
-        1. All logicians are surfers.   
-        <br>2. No actors are logicians.        
-       <br> ∴ No actors are surfers.     
-       <br><br>
-       <button onclick="toggleText('answer7')">Show/Hide Answer</button>
-       <div id="answer7" class="hidden-text">
-       <p style="color: red;">
-            <br>Invalid. All logicians are surfers, but that doesn’t mean that all surfers are logicians. Some surfers may not be logicians. Even if no actors are logicians, some actors could still fall in the group of surfers who are not logicians.          
-        </p>
-       </div>
+    <div id="answer3" class="answer">
+        <p>Invalid</p>
+    </div>
+    
+    <div id="question" class="question">
+        <p>Argument 4:</p>
+        1. It’s going to be rainy and cold tomorrow.<br>∴ It’s going to be rainy tomorrow.
     </div>
 
-    <div class="container">
-        Argument 8:
-        <br><br>
-        1. If you read sci-fi before bed, you will have cool dreams.   
-        <br>2. If you have cool dreams, you will wake up happy.        
-       <br> ∴ If you read sci-fi before bed, you will wake up happy.      
-       <br><br>
-       <button onclick="toggleText('answer8')">Show/Hide Answer</button>
-       <div id="answer8" class="hidden-text">
-       <p style="color: green;">
-            <br>Valid
-       </div>
+    <div class="button">
+        <button onclick="toggleText('answer4')">Show/Hide Answer</button>
     </div>
 
-    <div class="container">
-        Argument 9:
-        <br><br>
-        1. Bobo is either a surfer or a logician.  
-        <br>2. Bobo is not a surfer.         
-       <br> ∴  Bobo is a logician.     
-       <br><br>
-       <button onclick="toggleText('answer9')">Show/Hide Answer</button>
-       <div id="answer9" class="hidden-text">
-       <p style="color: green;">
-            <br>Valid
-       </div>
+    <div id="answer4" class="answer">
+        <p>Valid</p>
     </div>
 
-    <div class="container">
-        Argument 10:
-        <br><br>
-        1. All cuddle-bugs are cutie-pies.   
-        <br>2. All cutie-pies are honey-buns. 
-        <br>3. Keanu Reeves is a honey-bun.          
-       <br> ∴  Keanu Reeves is a cuddle-bug.      
-       <br><br>
-       <button onclick="toggleText('answer10')">Show/Hide Answer</button>
-       <div id="answer10" class="hidden-text">
-       <p style="color: red;">
-            <br>Invalid. Honey-buns are the largest set. Honey-buns include all the cutie-pies plus some. Cutie-pies are the second largest set. Cutie-pies include all the cuddle-bugs plus some. We know KR is in the largest set, honey-buns (P2). He could be a honey-bun who is also a cutie-pie, or not. One of the requirements for being a cuddle-bug is being a cutie-pie (P1), but we don’t know for sure that KR is a cutie-pie. So we can’t know for sure that KR is cuddle-bug, alas.  
-       </div>
+    <div id="question5" class="question">
+        <p>Argument 5:</p>
+        1. Exercise is good for you.<br>∴ Exercise is not not good for you.
     </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer5')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer5" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question6" class="question">
+        <p>Argument 6:</p>
+        1. It is not the case that there is no God.<br>∴  So, surely, God does exist.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer6')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer6" class="answer">
+        <p>Valid</p>
+    </div>
+    
+    <div id="question7" class="question">
+        <p>Argument 7:</p>
+        1. My team has the best players.<br>∴  My team is the best team. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer7')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer7" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question8" class="question">
+        <p>Argument 8:</p>
+        1. My book uses the longest words. <br>∴ My book is the longest book. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer8')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer8" class="answer">
+        <p>Invalid</p>
+    </div>
+   
+    <div id="question9" class="question">
+        <p>Argument 9:</p>
+        1. My university is reputable. <br>∴ Professor Bobo of my university is reputable. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer9')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer9" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question10" class="question">
+        <p>Argument 10:</p>
+        1. Katie is a human being. <br>∴ Therefore, Katie is smarter than a chimpanzee.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer10')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer10" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question11" class="question">
+        <p>Argument 11:</p>
+        1. Bob is taller than Susan. <br>2. Susan is taller than Frankie. <br>∴ Therefore, Bob is taller than Frankie.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer11')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer11" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question12" class="question">
+        <p>Argument 12:</p>
+        1. Craig loves Linda. <br>2. Linda loves Monique. <br>∴ Therefore, Craig loves Monique.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer12')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer12" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question13" class="question">
+        <p>Argument 13:</p>
+        1. Orel Hershizer is a Christian. <br>∴ Therefore, Orel Hershizer communicates with God.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer13')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer13" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="questio14n" class="question">
+        <p>Argument 14:</p>
+        1. All Muslims pray to Allah. <br>2. Muhammad is a Muslim. <br>∴ Therefore, Muhammad prays to Allah.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer14')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer14" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question15" class="question">
+        <p>Argument 15:</p>
+        1. Some protozoa are predators. <br>2. No protozoa are animals. <br>∴ Therefore, some predators are not animals.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer15')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer15" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question16" class="question">
+        <p>Argument 16:</p>
+        1. Charlie only barks when he hears a burglar outside. <br>2. Charlie is barking. <br>∴ Therefore, there must be a burglar outside.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer16')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer16" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question17" class="question">
+        <p>Argument 17:</p>
+        1. If there’s cheese, then God exists.<br>2. There’s cheese.<br>∴ God exists. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer17')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer17" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question18" class="question">
+        <p>Argument 18:</p>
+        1. The world had to have a designer.<br>∴ 2. God exists
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer18')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer18" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question19" class="question">
+        <p>Argument 19:</p>
+        1. The sole evidence it is possible to indicate that anything is desirable is that people desire it. <br>2. People desire happiness. <br>∴ Happiness is desirable. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer19')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer19" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question20" class="question">
+        <p>Argument 20:</p>
+        1. If guns are outlawed, only outlaws will have guns. <br>2. Guns are outlawed. <br>∴ Only outlaws have guns.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer20')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer20" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question21" class="question">
+        <p>Argument 21:</p>
+        1. If I get elected, I'll reduce taxes. <br>2. If I reduce taxes, the economy will prosper. <br>∴ Thus, if I get elected, the economy will prosper.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer21')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer21" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question22" class="question">
+        <p>Argument 22:</p>
+        1. Nikolina is a cyborg. <br>∴ Nikolina is either a human or a cyborg.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer22')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer22" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question23" class="question">
+        <p>Argument 23:</p>
+        1. If you are financially successful, you have a lot of money. <br>2. Bobo has a lot of money. <br>∴ Bobo is financially successful. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer23')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer23" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question24" class="question">
+        <p>Argument 24:</p>
+        1. If Keanu Reeves got a chance to meet Nikolina in person, then he would love her. <br>2. Keanu Reeves did not get a chance to meet Nikolina in person. <br>∴ Keanu Reeves does not love Nikolina.  
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer24')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer24" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question25" class="question">
+        <p>Argument 25:</p>
+        1. If Keanu Reeves got a chance to meet Nikolina in person, then he would love her.<br>2. Keanu Reeves does not love Nikolina. <br>∴ Keanu Reeves did not get a chance to meet Nikolina in person. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer25')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer25" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question26" class="question">
+        <p>Argument 26:</p>
+        1. If Bobo can dream it, Bobo can do it.<br>2. Bobo cannot surf. <br>∴ Bobo cannot dream about surfing. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer26')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer26" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question27" class="question">
+        <p>Argument 27:</p>
+        1. Bobo is either a goober or a goof. <br>2. Bobo is not a goof. <br>3. All goobers are unlucky. <br>4. All goofs are rich. <br>∴ Bobo is not rich. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer27')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer27" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question28" class="question">
+        <p>Argument 28:</p>
+        1. All surfers are slackers.<br>2. Bobo is not a surfer. <br>∴ Bobo is not a slacker. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer28')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer28" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question29" class="question">
+        <p>Argument 29:</p>
+        1. All physical matter is located at a spatiotemporal location. <br>2. Electrons are not located at a spatiotemporal location. <br>∴ Electrons are not physical matter. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer29')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer29" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question30" class="question">
+        <p>Argument 30:</p>
+        1. Some patients are pressured into physician-assisted suicide. <br>∴ Physician-assisted suicide is wrong. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer30')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer30" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question31" class="question">
+        <p>Argument 31:</p>
+        1. If I get elected, I'll take lots of bribes. <br>2. If I get elected, I'll reduce taxes. <br>∴ Thus, if I take lots of bribes, then I'll reduce taxes.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer31')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer31" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question32" class="question">
+        <p>Argument 32:</p>
+        1. All logicians are surfers. <br>2. No actors are logicians. <br>∴ No actors are surfers. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer32')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer32" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question33" class="question">
+        <p>Argument 33:</p>
+        1. If you read sci-fi before bed, you will have cool dreams. <br>2. If you have cool dreams, you will wake up happy. <br>∴ If you read sci-fi before bed, you will wake up happy. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer33')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer33" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question34" class="question">
+        <p>Argument 34:</p>
+        1. All cuddle-bugs are cutie-pies. <br>2. All cutie-pies are honey-buns. <br>3. Keanu Reeves is a honey-bun. <br>∴ Keanu Reeves is a cuddle-bug. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer34')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer34" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question35" class="question">
+        <p>Argument 35:</p>
+        1. All presidents of the United States have been women. <br>2. Martin Luther King has been president of the United States.<br>∴ Martin Luther King is a woman.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer35')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer35" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question36" class="question">
+        <p>Argument 36:</p>
+        1. All presidents of the United States have been women.<br>2. Coretta Scott King has been president of the United States.<br>∴ Coretta Scott King is a woman.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer36')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer36" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question37" class="question">
+        <p>Argument 37:</p>
+        1. If it rains, then I won't go out. <br>2. I went out. <br>∴  Therefore, it didn't rain.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer37')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer37" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question38" class="question">
+        <p>Argument 38:</p>
+        1. All cats have rodent breath. <br>2. Whiskers doesn't have rodent breath. <br>∴ Thus, Whiskers isn't a cat.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer38')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer38" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question39" class="question">
+        <p>Argument 39:</p>
+        1. If you drink Pepsi, then you are happy. <br>2. You don't drink Pepsi. <br>∴  Therefore, you aren't happy.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer39')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer39" class="answer">
+        <p>Invalid</p>
+    </div>
+    
+    <div id="question40" class="question">
+        <p>Argument 40:</p>
+        1. All firefighters are courageous. <br>2. Bobo isn't a firefighter. <br>∴ Thus, Bobo isn't courageous. 
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer40')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer40" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question41" class="question">
+        <p>Argument 41:</p>
+        1. If one grows vegetables, then one is a gardener. <br>2. Bobo is a gardener. <br>∴ Therefore, Bobo grows vegetables.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer41')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer41" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question42" class="question">
+        <p>Argument 42:</p>
+        1. All great writers are philosophical. <br>2. Thoreau was philosophical. <br>∴ Thus, Thoreau was a great writer.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer42')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer42" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question43" class="question">
+        <p>Argument 43:</p>
+        1. No beggars are choosers. <br>2. Diogenes is a beggar. <br>∴ Hence, Diogenes is not a chooser.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer43')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer43" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question44" class="question">
+        <p>Argument 44:</p>
+        1. All women are normal. <br>2. Socrates isn’t a woman. <br>∴  Therefore, Socrates isn’t normal.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer44')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer44" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question45" class="question">
+        <p>Argument 45:</p>
+        1. Socrates is in Athens or Socrates is in Sparta. <br>2. Socrates isn't in Sparta. <br>∴ Thus, Socrates is in Athens.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer45')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer45" class="answer">
+        <p>Valid</p>
+    </div>
+
+    <div id="question46" class="question">
+        <p>Argument 46:</p>
+        1. If today is a state holiday, then school is closed. <br>2. If today is Sunday, then school is closed. <br>∴ Therefore, if today is a state holiday, then today is Sunday.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer46')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer46" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question47" class="question">
+        <p>Argument 47:</p>
+        1. Most professors agree that they are paid too little. <br>∴ Most professors are paid too little.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer47')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer47" class="answer">
+        <p>Invalid</p>
+    </div>
+    
+    <div id="question48" class="question">
+        <p>Argument 48:</p>
+        1. Gerald Ford was president. <br>∴ Ford must have won an election.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer48')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer48" class="answer">
+        <p>Invalid</p>
+    </div>
+    
+    <div id="question49" class="question">
+        <p>Argument 49:</p>
+        1. George Bush was president. <br>∴ Bush must have won an election.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer49')">Show/Hide Answer</button>
+    </div>
+
+    <div id="answer49" class="answer">
+        <p>Invalid</p>
+    </div>
+
+    <div id="question50" class="question">
+        <p>Argument 50:</p>
+        1. If all of Illinois were in Canada, then Chicago would be in Canada. <br>2. But Chicago is not in Canada. <br>∴ Therefore, not all of Illinois is in Canada.
+    </div>
+
+    <div class="button">
+        <button onclick="toggleText('answer50')">Show/Hide Answer</button>
+        <br><br>
+    </div>
+
+    <div id="answer50" class="answer">
+        <p>Valid</p>
+    </div>
+   
+    <footer>
+        <p>All content from this site that is not my own is offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> </p>
+        <P>On this page:</P>
+            <a href="https://philosophy.lander.edu/logic/index.html">Introduction to Logic at Lander University</a>
+            <br><a href="https://www.math.fsu.edu/~wooland/hm2ed/hm2ed.html">Hacking Mathematics (Jim Woodland)</a>
+            <br><a href="https://human.libretexts.org/Bookshelves/Philosophy/Introduction_to_Logic_and_Critical_Thinking_2e_(van_Cleave)">Introduction to Logic and Critical Thinking (Matthew Van Cleave)</a>
+            <br><a href="https://open.lib.umn.edu/goodreasoning/">A Guide to Good Reasoning (David Carl Wilson)</a>
+    </footer>
 
     <script>
         function toggleText(definitionId) {
