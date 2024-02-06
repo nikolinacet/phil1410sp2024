@@ -11,23 +11,41 @@ header {
     text-align: center;
     padding: 10px 0;
 }
-/* nav {
+.normalnav {
     background-color: #3f5744; 
     color: white; 
     text-align: center;
     padding: 10px 0;
 }
-
-nav.deductive {
+.normalnav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+    display: inline-block;
+}
+.sidenav {
     background-color: #3f5744;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    padding: 10px 0;
-    font-size: 16px;
-} */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100vh;
+            padding: 10px 0;
+            font-size: 16px;
+}
+.sidenav a {
+    color: white;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: block; 
+            margin: 20px 0; 
+            padding: 10px; 
+}
+nav a:hover {
+    transform: scale(1.2); 
+}
 footer {
     position: fixed;
     padding: 10px 10px 10px 10px;
@@ -38,16 +56,6 @@ footer {
     text-align: center;
     font-size: smaller;
     margin-top: 15%;
-}
-/* nav a {
-    color: white;
-    margin: 0 20px;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease; 
-    display: inline-block;
-} */
-nav a:hover {
-    transform: scale(1.2); 
 }
 .question {
     margin: auto;
@@ -75,35 +83,17 @@ nav a:hover {
     padding-left: 23%;
     padding-top: 2%;
 }
-
-/* body.deductive {
+.deductive {
     font-family: 'Palatino', serif;
     color: #010006;
     background-color: #DFEAE4;
     margin: 0;
     padding-left: 200px; 
 }
-nav a {
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    display: block; 
-    margin: 20px 0; 
-    padding: 10px; 
-} */
+img.center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3%;
+}
  
-.normal {
-    background-color: #3f5744; 
-    color: white; 
-    text-align: center;
-    padding: 10px 0;
-}
-
-.normal a {
-    color: white;
-    margin: 0 20px;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease; 
-    display: inline-block;
-}
