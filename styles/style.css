@@ -83,7 +83,7 @@ footer {
     padding-left: 23%;
     padding-top: 2%;
 }
-.deductive {
+.sidebody {
     font-family: 'Palatino', serif;
     color: #010006;
     background-color: #DFEAE4;
@@ -111,6 +111,10 @@ img.center {
     left: 0;
     width: 100%;
     height: 100%;
+}
+.small-diagram {
+    width: 30%; 
+    height: auto; /* maintains the aspect ratio */
 }
 
  

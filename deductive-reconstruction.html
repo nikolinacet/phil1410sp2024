@@ -1,248 +1,96 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Deductive Argument Reconstruction</title>
-    <style>
-        body {
-            font-family: 'Palatino', serif;
-            color: #010006;
-            background-color: #DFEAE4; 
-            margin: 0px;
-        }
-        header, nav {
-            background-color: #3f5744; 
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        footer {
-            background-color: #657a69; 
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            font-size: smaller;
-            margin-top: 15%;
-        }
-        nav a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease; 
-            display: inline-block;
-        }
-        nav a:hover {
-            transform: scale(1.2); 
-        }
-        .question {
-            margin: auto;
-            padding-top: 5%;
-            padding-left: 20%;
-            padding-right: 20%;
-            line-height: 1.5;
-        }
-        .answer {
-            display: none;
-            margin: auto;
-            padding-top: 1%;
-            padding-left: 23%;
-            padding-right: 25%;
-            color: rgb(26, 7, 149);
-            line-height: 1.5;
-        }
-        .argument {
-            margin: auto;
-            padding-left: 5%;
-            line-height: 1.5;
-        }
-        .button {
-            margin: auto;
-            padding-left: 23%;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
     <header>
         <h1>Deductive Argument Reconstruction</h1>
     </header>
-    <nav>
+
+    <nav class="normalnav">
         <a href="index.html">Home</a>
         <a href="deductive.html">Deductive Arguments</a>
     </nav>
 
-    <div class="container">
-        <br><br>
-        Here is one strategy for reconstructing and evaluating deductive arguments. 
-        <p style="margin-left: 40px;">
-            <br>Step 1) Identify the premise(s) and conclusion(s) in standard form. 
-            <br>Step 2) Omit any extraneous details—e.g. repetition, tangents, guarding terms, assuring terms.   
-            <br>Step 3) Clarify where necessary. E.g. Replace pronouns with proper nouns, split up sentences.
-            <br>Step 4) Represent the parts of the argument in a chain or tree. 
-            <br>Step 5) Assess each argument and subargument for validity. Add suppressed premises if necessary. 
-            <br>Step 6) Assess the truth of the premises. 
-        </p>
+    <div class="question">
+        <strong>Here is one strategy for reconstructing and evaluating deductive arguments.</strong>  
+        <br><br><strong>Step 1</strong> Identify the premise(s) and conclusion(s) in standard form. 
+        <br><strong>Step 2. </strong>Omit any extraneous details—e.g. repetition, tangents, guarding terms, assuring terms.   
+        <br><strong>Step 3. </strong>Clarify where necessary. E.g. Replace pronouns with proper nouns, split up sentences.
+        <br><strong>Step 4. </strong>Represent the parts of the argument in a chain or tree. 
+        <br><strong>Step 5. </strong>Assess each argument and subargument for validity. Add suppressed premises if necessary. 
+        <br><strong>Step 6. </strong>Assess the truth of the premises. 
         <br><br>The steps above are a procedural guide. They do not need to be following in exactly the same order every time. For example, if you add a suppressed premise in step 5, you'll have to go back to step 4 and create a new argument chain or tree to include the suppressed premise, so in some cases, it may make more sense to attempt step 5 before step 4. And for some arguments, it doesn't make sense to attempt each step. For example, Argument 1 below does not have any extrenous details in its original form.  
-        <br><br>Complete steps 1-6 for each of the following arguments. In the examples below, I omit step 6 but you should not neglect attempting it. 
+        <br><br>Complete steps 1-6 for each of the following arguments. In the examples below, I omit step 6 but you should not neglect attempting it. Supressed premises are in bold.
     </div>
 
-    <div class="container">
-        Argument 1:
-        <br><br>You shouldn’t eat a lot of grains because our Paleolithic ancestors didn’t either.        
-       <br><br>
-        <button onclick="toggleText('answer1')">Show/Hide Answer</button>
-       <div id="answer1" class="hidden-text">
-       <p style="color: blue;">
-            <br>Initial Reconstruction:
-            <br><br>1. Our Paleolithic ancestors didn’t eat a lot of grains. 
-            <br>∴ 2. You shouldn’t eat a lot of grains. 
-            <br><br>Invalid. We can add a suppressed premise to make it valid. 
-            <br><br>Second Reconstruction:
-            <br><br> 1. Our Paleolithic ancestors didn’t eat a lot of grains. 
-            <br><b>2. You should eat how our Paleolithic ancestors ate.</b> 
-            <br>∴ 3. You shouldn’t eat a lot of grains. 
-            <br><br>Argument Diagram:
-            <br><br><img
-                class="fit-picture"
-                src="arg-dia-1.png" />
-        </div>
+    <div id="problems-container"></div>
+
+    <script>
+    const problems = [
+        {
+            question: "You shouldn’t eat a lot of grains because our Paleolithic ancestors didn’t either.",
+            reconstruction: "1. Our Paleolithic ancestors didn’t eat a lot of grains. <br><b>2. You should eat how our Paleolithic ancestors ate.</b><br>∴ 3. You shouldn’t eat a lot of grains.",
+            diagramSrc: "arg-dia-1.png"
+        },
+        {
+            question: "",
+            reconstruction: "",
+            diagramSrc: ""
+        },
+
+
+    ];
+    </script>
+
+    <script>
+    function generateProblems() {
+        const container = document.getElementById('problems-container'); // Ensure this container exists in your HTML
+
+    problems.forEach((problem, index) => {
+        const questionId = `question${index}`;
+        const answerId = `answer${index}`;
+
+    // Create question div
+        const questionDiv = document.createElement('div');
+        questionDiv.id = questionId;
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `Argument ${index + 1}:<br><br>${problem.question}`;
+
+        // Create button div and button
+        const buttonDiv = document.createElement('div');
+        buttonDiv.className = 'button';
+        const button = document.createElement('button');
+        button.setAttribute('onclick', `toggleText('${answerId}')`);
+        button.innerText = 'Show/Hide Answer';
+        buttonDiv.appendChild(button);
+
+        // Create answer div
+        const answerDiv = document.createElement('div');
+        answerDiv.id = answerId;
+        answerDiv.className = 'answer';
+        answerDiv.innerHTML = `<p>Reconstruction:</p><div class="argument">${problem.reconstruction}</div><p>Argument Diagram: </p><img src="${problem.diagramSrc}" class="small-diagram" />`;
+
+        // Append everything to the container
+        container.appendChild(questionDiv);
+        container.appendChild(buttonDiv);
+        container.appendChild(answerDiv);
+  });
+}
+    window.onload = generateProblems;
+
+    </script>
+   
+    <div class="question">
+        <br></br>
     </div>
-
-    <div class="container">
-        Argument 2:
-        <br><br>Even white lies are lies and are therefore wrong.
-       <br><br>
-        <button onclick="toggleText('answer2')">Show/Hide Answer</button>
-       <div id="answer2" class="hidden-text">
-       <p style="color: blue;">
-            <br>Initial Reconstruction:
-            <br><br>1. White lies are lies. 
-            <br>∴ 2. White lies are wrong. 
-            <br><br>Invalid. We can add a suppressed premise to make it valid. 
-            <br><br>Second Reconstruction:
-            <br><br> 1. White lies are lies. 
-            <br><b>2. All lies are wrong.</b> 
-            <br>∴ 3. White lies are wrong. 
-            <br><br>Argument Diagram:
-            <br><br><img
-                class="fit-picture"
-                src="arg-dia-1.png" />
-        </div>
-    </div>
-
-    <div class="container">
-        Argument 3: 
-        <br><br>Throughout history global temperature has always risen and fallen. Therefore, humans can’t be causing global warming.
-       <br><br>
-        <button onclick="toggleText('answer3')">Show/Hide Answer</button>
-       <div id="answer3" class="hidden-text">
-       <p style="color: blue;">
-            <br>Initial Reconstruction:
-            <br><br>1. Throughout history global temperature has always risen and fallen.
-            <br>∴ 2. Humans can’t be causing global warming. 
-            <br><br>Invalid. We can add a suppressed premise to make it valid. 
-            <br><br>Second Reconstruction:
-            <br><br> 1.Throughout history global temperature has always risen and fallen. 
-            <br><b>2. If global temperatures have always risen and fallen throughout history, then humans can’t be the cause of global warming. .</b> 
-            <br>∴ 3. Humans can’t be causing global warming.
-            <br><br>The conditional in P2 does make the argument valid, but it is not a great addition because it doesn’t do much to explain why the connection between the premise and conclusion exists. We can slap a conditional like this between any premise and any conclusion to make an argument valid (use the premise as the antecedent and the conclusion as the consequent), but this strategy does not always make for an informative argument.
-            <br><br>Here’s a more informative version of the reconstruction. 
-            <br><br>Third Reconstruction:
-            <br><br>1. Throughout history global temperature has always risen and fallen. 
-            <br>2. If a phenomenon has occurred throughout history, then it has been happening since before humans existed. </b>
-            <br>∴ 3. Global temperature change has been happening since before humans existed.
-            <br>4. If a phenomenon has been happening since before humans existed, then humans can’t be causing it. 
-            <br>∴ 5. Humans can’t be causing global warming (global temperature change).
-            <br><br>This is a better argument than the one above because it is more informative. We can ask, “which version of the reconstruction would the person who originally gave the argument prefer?” It’s probably this last one. (Of course, that doesn’t mean the argument is good—just that we’ve been maximally charitable.)              
-            <br><br>Argument Diagram:
-            <br><br><img
-                class="fit-picture"
-                src="arg-dia-2.png" />
-        </div>
-    </div>
-
-    <div class="container">
-        Argument 4: 
-        <br><br>Why would anyone fear death? There are two possibilities for what death is like. The first is that death is like a deep sleep. Who doesn’t like sleep? The other is a wonderful afterlife where you are reunited with lost loved ones. Sounds amazing!
-       <br><br>
-        <button onclick="toggleText('answer4')">Show/Hide Answer</button>
-       <div id="answer4" class="hidden-text">
-       <p style="color: blue;">
-            <br>Initial Reconstruction:
-            <br><br>1. There are two possibilities for what death is like.
-            <br> 2. The first is that death is like a deep sleep.
-            <br> 3. Who doesn’t like sleep?
-            <br> 4. The other is a wonderful afterlife where you are reunited with lost loved ones.
-            <br> 5. Sounds amazing!
-            <br> ∴ 6. Why would anyone fear death?
-            <br><br>Second Reconstruction: Combining P1, P2, and P4
-            <br><br>1. Death is like a deep sleep or a wonderful afterlife where you are reunited with loved ones. 
-            <br> 2. Who doesn’t like sleep?
-            <br> 3. Sounds amazing!
-            <br> ∴ 4. Why would anyone fear death?
-            <br><br> Third Reconstruction: Removing Extraneous Details (P3)
-            <br><br> 1. Death is like a deep sleep or a wonderful afterlife where you are reunited with loved ones. 
-            <br>2. Who doesn’t like sleep?
-            <br>∴ 3. Why would anyone fear death?
-            <br><br> Fourth Reconstruction: Clarifying P2 and Conclusion
-            <br><br>1. Death is like a deep sleep or a wonderful afterlife where you are reunited with loved ones. 
-            <br>2. Everyone likes sleep. 
-            <br>∴ 3. No one should fear death. 
-            <br><br>Much better than the first reconstruction, but this reconstruction is invalid. We can make it valid by adding some suppressed premises.  
-            <br><br>Fifth Reconstruction:
-            <br><br>1. Death is like a deep sleep or a wonderful afterlife where you are reunited with loved ones. 
-            <br><b>2. No one should fear what everyone likes. </b>
-            <br>3. Everyone likes sleep. 
-            <br><b>∴ 4.If death is like a deep sleep, no one should fear death. (from P2 and P3). </b>
-            <br><b>5. If death is like a wonderful afterlife where you are reunited with loved ones, no one should fear death. </b>
-            <br>∴ 6. No one should fear death. (from P1, P4, and P5)
-            <br><br>Argument Diagram:
-            <br><br><img
-                class="fit-picture"
-                src="arg-dia-3.png" />
-        </div>
-    </div>
-
-    <div class="container">
-        Argument 5:
-        <br><br>E.	Let’s get real now. Abortion should be illegal. A fetus is a person, and so abortion is nothing but murder. Do you really think murder should ever be legal?
-       <br><br>
-        <button onclick="toggleText('answer5')">Show/Hide Answer</button>
-       <div id="answer5" class="hidden-text">
-       <p style="color: blue;">
-            <br>Initial Reconstruction:
-            <br><br>1. Let’s get real now. 
-            <br>2. A fetus is a person, and so abortion is nothing but murder. 
-            <br>3. Do you really think murder should ever be legal? 
-            <br>∴ 4. Abortion should be illegal. 
-            <br><br>Second Reconstruction: Cutting extrenous details, clarifying
-            <br>1. A fetus is a person.
-            <br> ∴ 2. Abortion is murder. 
-            <br> 3. Murder should never be legal. 
-            <br> ∴ 4. Abortion should be illegal. 
-            <br><br>Invalid. We can add a suppressed premises to make it valid. 
-            <br><br>Third Reconstruction:
-            <br><br> 1. A fetus is a person.
-            <br><b>2. Killing a person is murder.</b> 
-            <br><b>3. Abortion kills a fetus. </b> 
-            <br>∴ 4. Abortion is murder. (from P1-P3) 
-            <br>5. Murder should never be legal. 
-            <br>∴ 6. Abortion should be illegal. (from P4 and P5) 
-            <br><br>Argument Diagram:
-            <br><br><img
-                class="fit-picture"
-                src="arg-dia-4.png" />
-        </div>
-    </div>
-
-    </div>
-
-
-
 
     <footer>
-        <p>All content from this site that is not my own is offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> </p>
-        <P>On this page:</P>
-            <a href="https://xkcd.com/703/">xkcd: A webcomic of romance, sarcasm, math, and language</a>
+        All content from this site that is not my own is offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+        <br>On this page: <a href=""></a>
     </footer>
 
     <script>
@@ -258,4 +106,4 @@
     </div>
 </body>
 </html>
-
+ -->
