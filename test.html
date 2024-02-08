@@ -1,0 +1,110 @@
+<!-- <!DOCTYPE html>
+<html>
+<title></title>
+<link rel="stylesheet" href="./styles/style.css">
+
+<body>
+  <header>
+      <h1></h1>
+  </header>
+
+  <body>
+    <nav class="normalnav">
+        <a href=""></a>
+    </nav>
+
+    <div class="question" style="text-align: center;" >
+        <b>Problem Sets:</b>
+     </div>
+ 
+     <div class="problem-sets-navigation">
+         <a href="#set1">Translating to Propositional Form without Conditionals</a>
+
+     </div>
+ 
+     <div id="faq-container"></div>
+ 
+     <script>
+         const faqs = [
+         {
+             question: "<br><br>",
+             answer: ""
+         },
+         ];
+         // Define instruction sets and their insertion indexes
+         const instructions = [
+             { index: 0, id: "set1", content: `<strong>Are the following arguements valid?</strong>` },
+             { index: 52, id: "set2", content: `<strong><br><br>Validity and Truth 1</strong><br><br>Are the following statements true or false?` },
+             { index: 69, id: "set3", content: `<strong><br><br>Validity and Truth 2</strong><br><br>Suppose all that you know about an argument are the truth values of the premises and the conclusion. What can you conclude about the validity of the argument?<br><br>Sample exercise. P1. True. P2. False. P3. True. ∴ C. False.<br>Sample answer. Can’t say.` },
+             // Add more instructions as needed
+             ];
+ 
+         function generateFAQs() {
+             const container = document.getElementById('faq-container'); 
+ 
+             faqs.forEach((faq, index) => {
+                 const questionId = `question${index + 1}`;
+                 const answerId = `answer${index + 1}`;
+ 
+         // Insert instructions with IDs
+                 const instruction = instructions.find(instr => instr.index === index);
+                 if (instruction) {
+                     // Create a container for the instruction with a specific ID
+                     const instructionDiv = document.createElement('div');
+                     instructionDiv.className = 'question';
+                     instructionDiv.id = instruction.id; // This ID corresponds to the navigation link
+                     instructionDiv.innerHTML = instruction.content;
+                     container.appendChild(instructionDiv);
+         }
+                 // Create and append question, button, and answer
+                 // This part remains the same as your existing setup
+                 const questionDiv = document.createElement('div');
+                 questionDiv.id = questionId;
+                 questionDiv.className = 'question';
+                 questionDiv.innerHTML = `${index + 1}. ${faq.question}`;
+ 
+                 const buttonDiv = document.createElement('div');
+                 buttonDiv.className = 'button';
+                 const button = document.createElement('button');
+                 button.innerText = 'Show/Hide Answer';
+                 button.setAttribute('onclick', `toggleText('${answerId}')`);
+ 
+                 const answerDiv = document.createElement('div');
+                 answerDiv.id = answerId;
+                 answerDiv.className = 'answer';
+                 answerDiv.innerHTML = `<p>${faq.answer}</p>`;
+ 
+                 buttonDiv.appendChild(button);
+                 container.appendChild(questionDiv);
+                 container.appendChild(buttonDiv);
+                 container.appendChild(answerDiv);
+             });
+         }
+ 
+         window.onload = generateFAQs;
+ 
+         function toggleText(definitionId) {
+           var textElement = document.getElementById(definitionId);
+           if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                  textElement.style.display = "none";
+             }
+           textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+         }
+ 
+         function scrollToTop() {
+             window.scrollTo({top: 0, behavior: 'smooth'});
+         }
+     </script>
+ 
+     <div class="question">
+         <br>
+         <br>
+     </div>
+     <footer>
+         <br>
+         <a href="javascript:void(0);" onclick="scrollToTop()" class="scrollTopBtn">Go to Top</a>
+         <br><br>All nonoriginal content is used with the permission of the owner or offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+     </footer>
+ 
+ </body>
+ </html> -->

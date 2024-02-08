@@ -1,0 +1,102 @@
+<!-- <!DOCTYPE html>
+<html>
+<title>Propositional Logic</title>
+<link rel="stylesheet" href="./styles/style.css">
+
+<body>
+  <header>
+      <h1>Translating to Propositional Form</h1>
+  </header>
+
+  <body>
+    <nav class="normalnav">
+        <a href="index.html">Home</a>
+        <a href="prop.html">Propositional Logic</a>
+    </nav>
+
+    <div class="problem-sets-navigation">
+        <a href="#set1">Problem Set 1</a>
+        <a href="#set2">Problem Set 2</a>
+    </div>
+    
+    <div id="faq-container"></div>
+
+    <div class="question">
+        <br><br>
+    </div>
+
+    <script>
+        const faqs = [
+        {
+            question: "",
+            answer: ""
+        },
+        // Add your FAQs here
+        ];
+
+        // Define instruction sets and their insertion indexes
+        const instructions = [
+            { index: 0, id: "set1", content: `<strong>Truth-Functional Conjunction or Not?</strong>...` },
+            { index: 5, id: "set2", content: `<strong>Instruction for index 5</strong>...` },
+             // Add more instructions as needed
+            ];
+
+        function generateFAQs() {
+            const container = document.getElementById('faq-container'); 
+
+            faqs.forEach((faq, index) => {
+                const questionId = `question${index + 1}`;
+                const answerId = `answer${index + 1}`;
+
+                // Check and insert instructions
+                const instruction = instructions.find(instr => instr.index === index);
+                if (instruction) {
+                    const instructionDiv = document.createElement('div');
+                    instructionDiv.className = 'question';
+                    instructionDiv.innerHTML = instruction.content;
+                    container.appendChild(instructionDiv);
+                }
+
+                // Create and append question, button, and answer 
+                const questionDiv = document.createElement('div');
+                questionDiv.id = questionId;
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `${index + 1}. ${faq.question}`;
+
+                const buttonDiv = document.createElement('div');
+                buttonDiv.className = 'button';
+                const button = document.createElement('button');
+                button.innerText = 'Show/Hide Answer';
+                button.setAttribute('onclick', `toggleText('${answerId}')`);
+
+                const answerDiv = document.createElement('div');
+                answerDiv.id = answerId;
+                answerDiv.className = 'answer';
+                answerDiv.innerHTML = `<p>${faq.answer}</p>`;
+
+                buttonDiv.appendChild(button);
+                container.appendChild(questionDiv);
+                container.appendChild(buttonDiv);
+                container.appendChild(answerDiv);
+            });
+        }
+
+        window.onload = generateFAQs;
+    </script>
+
+    <footer>
+        All copyright content from this site that is not my own is offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+    </footer>
+
+    <script>
+        function toggleText(definitionId) {
+            var textElement = document.getElementById(definitionId);
+            if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                   textElement.style.display = "none";
+              }
+            textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+        }
+    </script>
+   
+</body>
+</html> -->

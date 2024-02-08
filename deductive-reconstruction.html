@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Deductive Argument Reconstruction</title>
@@ -17,83 +17,162 @@
 
     <div class="question">
         <strong>Here is one strategy for reconstructing and evaluating deductive arguments.</strong>  
-        <br><br><strong>Step 1</strong> Identify the premise(s) and conclusion(s) in standard form. 
-        <br><strong>Step 2. </strong>Omit any extraneous details—e.g. repetition, tangents, guarding terms, assuring terms.   
+        <br><br><strong>Step 1</strong> Identify the premise(s) and conclusion(s) in standard form. Start with the conclusion. 
+        <br><strong>Step 2. </strong>Omit any extraneous details. E.g. repetition, tangents, guarding terms, assuring terms.   
         <br><strong>Step 3. </strong>Clarify where necessary. E.g. Replace pronouns with proper nouns, split up sentences.
         <br><strong>Step 4. </strong>Represent the parts of the argument in a chain or tree. 
         <br><strong>Step 5. </strong>Assess each argument and subargument for validity. Add suppressed premises if necessary. 
         <br><strong>Step 6. </strong>Assess the truth of the premises. 
-        <br><br>The steps above are a procedural guide. They do not need to be following in exactly the same order every time. For example, if you add a suppressed premise in step 5, you'll have to go back to step 4 and create a new argument chain or tree to include the suppressed premise, so in some cases, it may make more sense to attempt step 5 before step 4. And for some arguments, it doesn't make sense to attempt each step. For example, Argument 1 below does not have any extrenous details in its original form.  
+        <br><br>The steps above are a procedural guide. They do not need to be followed in exactly the same order every time. For example, if you add a suppressed premise in step 5, you'll have to go back to step 4 and create a new argument chain or tree to include the suppressed premise, so in some cases, it may make more sense to attempt step 5 before step 4. And for some arguments, it doesn't make sense to attempt each step. For example, Argument 1 below does not have any extrenous details in its original form.  
         <br><br>Complete steps 1-6 for each of the following arguments. In the examples below, I omit step 6 but you should not neglect attempting it. Supressed premises are in bold.
     </div>
 
-    <div id="problems-container"></div>
+    <div id="faq-container"></div>
 
     <script>
-    const problems = [
+        const faqs = [
         {
             question: "You shouldn’t eat a lot of grains because our Paleolithic ancestors didn’t either.",
-            reconstruction: "1. Our Paleolithic ancestors didn’t eat a lot of grains. <br><b>2. You should eat how our Paleolithic ancestors ate.</b><br>∴ 3. You shouldn’t eat a lot of grains.",
-            diagramSrc: "arg-dia-1.png"
+            answer: "1. Our Paleolithic ancestors didn’t eat a lot of grains. <br><b>2. You should eat how our Paleolithic ancestors ate.</b><br>∴ 3. You shouldn’t eat a lot of grains.",
+            diagramSrc: "arg-rec-1.png"
         },
         {
-            question: "",
-            reconstruction: "",
-            diagramSrc: ""
+            question: "Even white lies are lies and are therefore wrong.",
+            answer: "1. White lies are lies. <br><b>2. All lies are wrong.</b><br>∴ White lies are wrong.",
+            diagramSrc: "arg-rec-1.png"
         },
+        {
+            question: "81 is not a prime number, because 81 is divisible by 3.",
+            answer: "1. 81 is divisible by 3. <br><b>2. The definition of a prime number is a number that is evenly divisible only by 1 and itself. <br>3. 3 is neither 1 nor 81. </b><br>∴ 81 is not a prime number",
+            diagramSrc: "arg-rec-3.png"
+        },
+        {
+            question: "Lincoln could not have met Washington, because Washington was dead before Lincoln was born.",
+            answer: "1. Washington was dead before Lincoln was born. <br><b>2. One cannot meet someone who is dead or who is not yet born. </b><br>∴ Lincoln could not have met Washington.",
+            diagramSrc: "arg-rec-1.png"
+        },
+        {
+            question: "Bobo is either stupid or very cunning, so he must be stupid.",
+            answer: "1. Bobo is either stupid or very cunning. <br><b>2. Bobo is not very cunning. </b><br>∴ Bobo must be stupid.",
+            diagramSrc: "arg-rec-1.png"
+        },
+        {
+            question: "Only people with valid licenses can legally drive and only people who pass the test can have a valid license. Therefore, only those who pass the test can legally drive.",
+            answer: "1. Only people who pass the test can have a valid license. <br>2. Only people with valid licenses can legally drive. <br>∴ Therefore, only those who pass the test can legally drive.",
+            diagramSrc: "arg-rec-1.png"
+        },
+        {
+            question: "Why would anyone fear death? There are two possibilities for what death is like. The first is that death is like a deep sleep. Who doesn’t like sleep? The other is a wonderful afterlife where you are reunited with lost loved ones. Sounds amazing!",
+            answer: "1. Death is like a deep sleep or a wonderful afterlife where you are reunited with loved ones. <br>2. Everyone likes sleep. (Original: Who doesn’t like sleep?) <br><b>3. No one should fear what everyone likes. <br>∴ 4. If death is like a deep sleep, no one should fear death. (from P2 and P3). <br>5. If death is like a wonderful afterlife where you are reunited with loved ones, no one should fear death. </b><br>∴ No one should fear death. (from P1, P4, and P5)",
+            diagramSrc: "arg-rec-7.png"
+        },
+        {
+            question: "Let’s get real now. Abortion should be illegal. A fetus is a person, and so abortion is nothing but murder. Do you really think murder should ever be legal?",
+            answer: "1. A fetus is a person. <br><b>2. Abortion kills a fetus. <br>3. Killing a person is murder. </b><br>∴ 4. Abortion is murder. (from P1-P3) <br>5. Murder should never be legal. (Original: Do you really think murder should ever be legal?) <br>∴ Abortion should be illegal. (from P4 and P5) ",
+            diagramSrc: "arg-rec-8.png"
+        },
+        {
+            question: "The rate of psychological problems in children of gay couples is higher than in children of heterosexual couples. Therefore, the state should discourage gay couples from raising children.",
+            answer: "1. The rate of psychological problems in children of gay couples is higher than in children of heterosexual couples. <br><b>2. The higher incidence of psychological problems in children of gay couples is not due to any kind of injustice in society, but to the fact that the parents are gay. <br>3. The state should always do what it can to decrease harm to children. </b><br>∴ Therefore, the state should discourage gay couples from raising children.",
+            diagramSrc: "arg-rec-9.png"
+        },
+        {
+            question: "In 2009 in the United States, the net worth of the median white household was $113,149 a year, whereas the net worth of the median black household was $5,677. What does that mean? As of 2009, the United States was still a racist nation. <blockquote><a href='https://pubs.nmsu.edu/_g/G230/index.html'>How is net worth calculated</a>? <a href='https://www.pewresearch.org/social-trends/2011/07/26/wealth-gaps-rise-to-record-highs-between-whites-blacks-hispanics/'>Where do these numbers come from?</a> <a href='https://www.brookings.edu/articles/examining-the-black-white-wealth-gap/'>More recent numbers.</a></blockquote>",
+            answer: "1. In 2009 in the United States, the net worth of the median white household was $113,149 a year, whereas the net worth of the median black household was $5,677. <br><b>2. Any nation in which there is a large discrepancy between net worths of different races is a racist nation.</b><br>∴ As of 2009, the United States was still a racist nation.",
+            diagramSrc: "arg-rec-1.png"
+        },
+        {
+            question: "Capital punishment sometimes takes innocent lives, such as the lives of individuals who were later found to be not guilty. Given this, we should not allow capital punishment.",
+            answer: "1. Capital punishment sometimes takes innocent lives, such as the lives of individuals who were later found to be not guilty.<br><b>2. We should not allow policies that have the potential to take innocent lives unless there is a very good reason to do so. <br>3. There is no very good reason to allow capital punishment.</b><br>∴ We should not allow capital punishment.",
+            diagramSrc: "arg-rec-3.png"
+        },
+        {
+            question: "Prostitution is a fair economic exchange between two consenting adults. I think it should be allowed.",
+            answer: "1. Prostitution is a fair economic exchange between two consenting adults. <br><b>2. Any fair economic exchange between consenting adults should be allowed.</b><br>∴ Prostitution should be allowed.",
+            diagramSrc: "arg-rec-1.png"
+        },
+        {
+            question: "General Halftrack, looking at the overflowing “Complaints” box: “Look at those complaints! It’s disgraceful! Either the box is too small or I’m not running this camp right. … Have a bigger box built.”",
+            answer: "1. The complaints box is too small or the general is not running the camp right.<br><b>2. It is not the case that the general is not running the camp right.</b><br>∴The complaints box is too small.",
+            diagramSrc: "arg-rec-1.png"
+        },
+        {
+            question: "It is a common notion that morality simply means conformity to the customs of one’s group. But this cannot be the case. If it were, we could never criticize and improve the morals of our group, at least we would have no moral basis for doing so. However superstitious, stupid, or cruel the customs of our community are, they would be, by definition, morally right—for us. The unthinking conformist would be the moral man, the moral reformer the immoral man. There would be no moral progress. But no one really believes this. We all constantly criticize the morals of our group. —Durant Drake, Invitation to Philosophy ",
+            answer: "1. If morality simply means conformity to the customs of one’s group, then we could never criticize the morals of our group. <br>2. We constantly criticize the morals of our group. (Support for P2: We think some customs are superstitious, stupid, or cruel. We do not think the unthinking conformist is always moral. We do not think the moral reformer is always immoral.)<br>∴ Morality does not simply mean conformity to the customs of one’s group. <br><br>Alternative Reconstruction (Second Hidden Argument) <br><br>1. If morality simply means conformity to the customs of one’s group, then there would be no moral progress. <br><b>2. There has been moral progress. </b><br>∴ Morality does not simply mean conformity to the customs of one’s group.",
+            diagramSrc: "arg-rec-1.png"
+        },
+        {
+            question: "Economic theory supposes human beings are rational and will always act in their own self-interest. But this is false. For example, it isn’t in our best interest to be checking our Twitter/FB/Instagram/Snapchat while we’re working but we do it anyway. These policies will fail because they assume economic theory is correct.",
+            answer: "1. It isn’t in our best interest to be checking our social media while we’re working. <br>2. We check our social media while we’re working anyway. <br>∴  3. It is false that human beings are rational and will always act in their own self-interest. (from P1 and P2) <br>4. Economic theory supposes human beings are rational and will always act in their own self-interest. <br><b>∴ 5. Economic theory is incorrect. (from P3 and P4)</b><br>6. Economic policies assume economic theory is correct. <br><b>7. Policies that assume false economic theories will fail.  </b><br∴  Economic policies will fail. (from P5-P7)",
+            diagramSrc: "arg-rec-15.png"
+        },
+        {
+            question: "Do you think your local butcher will reduce the amount of meat she orders from the slaughterhouse if you become a vegetarian? Of course not! The supply chain for meat just isn’t sensitive to the quantities that a single person consumes. So by becoming a vegetarian, you'll never save a single animal’s life! But by becoming a vegetarian you’ll deprive yourself of the pleasure of eating meat (my favorite kind of food), and you should only do that if the benefits would outweigh the losses. So you should only become a vegetarian if doing so would save some animals’ lives.",
+            answer: "Without Original Text Notes: <br><br><b>1. The only way in which becoming vegetarian would save an animal’s life is by affecting the supply chain.</b><br>2. An individual becoming vegetarian does not affect the supply chain. <br>∴ 3. Becoming vegetarian does not save a single animal’s life. (from P1 and P2)<br><b>4. The only potential benefit of becoming vegetarian would be saving animal lives. <br>∴ 5. There are no benefits to becoming vegetarian. (from P3 and P4) </b><br>6. Becoming vegetarian incurs the loss of pleasure from eating meat.<br>7. If the benefits of becoming vegetarian do not outweigh the losses, you should not become vegetarian.<br><b>∴ 8. The benefits of becoming vegetarian do not outweigh the losses. (from P5 and P6) <br>∴ You should not become vegetarian. (from P7 and P8)</b>,<br><br>With Original Text Notes:<br><br><b>1. The only way in which becoming vegetarian would save an animal’s life is by affecting the supply chain.</b> <br><br>2. An individual becoming vegetarian does not affect the supply chain. <blockquote>Original: Do you think your local butcher will reduce the amount of meat she orders from the slaughterhouse if you become a vegetarian? Of course not! The supply chain for meat just isn’t sensitive to the quantities that a single person consumes.</blockquote>∴ 3. Becoming vegetarian does not save a single animal’s life. (from P1 and P2)<blockquote>Original: So you should only become a vegetarian if doing so would save some animals’ lives.</blockquote><b>4. The only potential benefit of becoming vegetarian would be saving animal lives. <br><br>∴ 5. There are no benefits to becoming vegetarian. (from P3 and P4) </b><br><br>6. Becoming vegetarian incurs the loss of pleasure from eating meat. <blockquote>Original: But by becoming a vegetarian you’ll deprive yourself of the pleasure of eating meat.</blockquote>7. If the benefits of becoming vegetarian do not outweigh the losses, you should not become vegetarian. <blockquote>Original: you should only do that if the benefits would outweigh the losses.</blockquote><b>∴ 8. The benefits of becoming vegetarian do not outweigh the losses. (from P5 and P6) <br><br>∴ You should not become vegetarian. (from P7 and P8)</b><br><br><br>",
+            diagramSrc: "arg-rec-16.png"
+        },
+        {
+            question: "Death is the only final and irreversible criminal punishment. As the Richardson and Adams cases vividly show, humans and their governments are fallible and corruptible. Prudent humility dictates that fallible people refrain from inflicting irreversible punishments.<br><blockquote><a href='https://www.nytimes.com/1989/04/29/opinion/why-execution-is-dead-wrong.html'>Why Execution is Dead Wrong, NYT</a></blockquote>",
+            answer: "1. Capital punishment is irreversible.<br>2. Governments are fallible.<br>3. Fallible governments should refrain from inflicting irreversible punishments.<br><b>∴  Therefore, governments should refrain from inflicting capital punishment.</b>",
+            diagramSrc: "arg-rec-3.png"
+        },
+        {
+            question: "Abortion should be legal because abortions are going to be performed whether legal or not.",
+            answer: "1. Abortions are going to be performed whether legal or not.<br><b>2. An activity should be legal if it’s going to be performed whether legal or not.</b><br>∴ Therefore, abortion should be legal.",
+            diagramSrc: "arg-rec-1.png"
+        },
+        {
+            question: "The evolution of one species into another has never been observed and is therefore not an established fact.",
+            answer: "1. The evolution of one species into another has never been observed.<br><b>2. For something to be an established fact it must be observed.</b><br>∴ Therefore the evolution of one species into another is not an established fact.",
+            diagramSrc: "arg-rec-1.png"
+        },
+        {
+            question: "There are myriad problems with the claim that Covid-19 cases in the US are increasing only because more tests are being conducted. To break it down to its most basic level, if this was just about testing, the percentage of positive tests would be declining. But it’s not — and that’s particularly the case in a trio of emerging hot spots: Arizona, Florida and Texas. <blockquote><a href='https://www.washingtonpost.com/politics/2020/06/23/trump-ramps-up-his-coronavirus-denialism-gop-leaders-hard-hit-states-are-singing-very-different-tune/'>As Trump ramps up his coronavirus denialism, GOP allies in hard-hit states are singing a very different tune, The Washington Post</a></blockquote>",
+            answer: "1. If the increase in Covid cases were due only to more testing, the percentage of positive tests would be declining.<br>2. The percentage of positive tests is not declining.<br>∴  Therefore, the increase in Covid cases is not due only to more testing.",
+            diagramSrc: "arg-rec-1.png"
+        },
+        
+        ];
+        
+        function generateFAQs() {
+            const container = document.getElementById('faq-container'); 
 
+            faqs.forEach((faq, index) => {
+                const questionId = `question${index + 1}`;
+                const answerId = `answer${index + 1}`;
 
-    ];
-    </script>
+                // Create and append question, button, and answer
+                const questionDiv = document.createElement('div');
+                questionDiv.id = questionId;
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `${index + 1}. ${faq.question}`;
 
-    <script>
-    function generateProblems() {
-        const container = document.getElementById('problems-container'); // Ensure this container exists in your HTML
+                const buttonDiv = document.createElement('div');
+                buttonDiv.className = 'button';
+                const button = document.createElement('button');
+                button.innerText = 'Show/Hide Answer';
+                button.setAttribute('onclick', `toggleText('${answerId}')`);
 
-    problems.forEach((problem, index) => {
-        const questionId = `question${index}`;
-        const answerId = `answer${index}`;
+                const answerDiv = document.createElement('div');
+                answerDiv.id = answerId;
+                answerDiv.className = 'answer';
+    
+                // Set the innerHTML for the answer, including the diagram if it exists
+                let answerHTML = `<p>${faq.answer}</p>`;
+                if (faq.diagramSrc) {
+                    answerHTML += `<img src="${faq.diagramSrc}" alt="Argument Diagram" class="small-diagram" />`; // Make sure the diagramSrc path is correct and the images are accessible in your project directory
+                }
+                answerDiv.innerHTML = answerHTML;
 
-    // Create question div
-        const questionDiv = document.createElement('div');
-        questionDiv.id = questionId;
-        questionDiv.className = 'question';
-        questionDiv.innerHTML = `Argument ${index + 1}:<br><br>${problem.question}`;
+                buttonDiv.appendChild(button);
+                container.appendChild(questionDiv);
+                container.appendChild(buttonDiv);
+                container.appendChild(answerDiv);
+            });
+        }
 
-        // Create button div and button
-        const buttonDiv = document.createElement('div');
-        buttonDiv.className = 'button';
-        const button = document.createElement('button');
-        button.setAttribute('onclick', `toggleText('${answerId}')`);
-        button.innerText = 'Show/Hide Answer';
-        buttonDiv.appendChild(button);
+        window.onload = generateFAQs;
 
-        // Create answer div
-        const answerDiv = document.createElement('div');
-        answerDiv.id = answerId;
-        answerDiv.className = 'answer';
-        answerDiv.innerHTML = `<p>Reconstruction:</p><div class="argument">${problem.reconstruction}</div><p>Argument Diagram: </p><img src="${problem.diagramSrc}" class="small-diagram" />`;
-
-        // Append everything to the container
-        container.appendChild(questionDiv);
-        container.appendChild(buttonDiv);
-        container.appendChild(answerDiv);
-  });
-}
-    window.onload = generateProblems;
-
-    </script>
-   
-    <div class="question">
-        <br></br>
-    </div>
-
-    <footer>
-        All content from this site that is not my own is offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
-        <br>On this page: <a href=""></a>
-    </footer>
-
-    <script>
         function toggleText(definitionId) {
           var textElement = document.getElementById(definitionId);
           if (textElement.style.display !== "none" && textElement.style.display !== "block") {
@@ -101,9 +180,21 @@
             }
           textElement.style.display = textElement.style.display === "none" ? "block" : "none";
         }
-        </script>
-    
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+    <div class="question">
+        <br>
+        <br>
     </div>
+    <footer>
+        <br>
+        <a href="javascript:void(0);" onclick="scrollToTop()" class="scrollTopBtn">Go to Top</a>
+        <br><br>All nonoriginal content is used with the permission of the owner or offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+    </footer>
+
 </body>
 </html>
- -->

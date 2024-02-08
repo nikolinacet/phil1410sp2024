@@ -1,0 +1,32 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Forms of Reasoning</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Forms of Reasoning</h1>
+    </header>
+    
+    <nav class="normalnav">
+        <a href="index.html">Home</a>
+        <a href="ethics.html">Ethics of Belief</a>
+        <a href="deductive.html">Deductive Arguments</a>
+        <a href="inductive.html">Inductive Arguments</a>
+        <a href="fallacies.html">Fallacies</a>
+        <a href="fun.html">For Fun</a>
+    </nav>
+    
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/nFTRwD85AQ4?si=5kIsamhypouqmkjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <footer>
+        All copywrite content from this site that is not my own is offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+    </footer>
+
+</body>
+</html>
+ -->

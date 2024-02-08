@@ -24,25 +24,6 @@ header {
     transition: transform 0.3s ease, background-color 0.3s ease; 
     display: inline-block;
 }
-.sidenav {
-    background-color: #3f5744;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 200px;
-            height: 100vh;
-            padding: 10px 0;
-            font-size: 16px;
-}
-.sidenav a {
-    color: white;
-            text-decoration: none;
-            text-align: center;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            display: block; 
-            margin: 20px 0; 
-            padding: 10px; 
-}
 nav a:hover {
     transform: scale(1.2); 
 }
@@ -113,8 +94,84 @@ img.center {
     height: 100%;
 }
 .small-diagram {
-    width: 30%; 
-    height: auto; /* maintains the aspect ratio */
+    transform: scale(0.25);
+    transform-origin: top left; /* Adjusts the point from which the image is scaled */
 }
+
+
+
+
+.sitemap-container {
+    padding: 20px;
+}
+
+.sitemap-container ul {
+    list-style-type: none; /* Removes the default list bullet */
+    padding: 0;
+}
+
+.sitemap-container li {
+    margin: 10px 0;
+}
+
+.sitemap-container a {
+    color: #0000EE; /* Example link color */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.sitemap-container a:hover {
+    text-decoration: underline; /* Adds underline on hover for better visibility */
+}
+
+
+
+
+.problem-sets-navigation {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 5%;
+}
+
+.problem-sets-navigation a {
+    display: inline-block; 
+    padding: 15px;
+    margin: 5px auto; 
+    background-color: #78b9d8;
+    color: #010006;
+    text-decoration: none;
+    border-radius: 5px;
+    border-style: outset;
+}
+.problem-sets-navigation a:hover {
+    background-color: #5043a5;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.scrollTopBtn {
+    bottom: 10px; 
+    right: 10px;
+    padding: 7px 40px;
+    background-color: #78b9d8;
+    color: #010006;
+    text-decoration: none;
+    border-radius: 5px;
+    border-style: outset;
+    cursor: pointer;
+    margin-top: 10px; /* Adjust as needed */
+}
+
+.scrollTopBtn:hover {
+    background-color: #5043a5;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
 
  

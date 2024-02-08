@@ -1,68 +1,186 @@
 <!-- <!DOCTYPE html>
 <html>
-<head>Propositional Logic</title>
-
-<style>
-  body {
-      font-family: 'Palatino', serif;
-      color: #010006;
-      background-color: #DFEAE4; 
-      margin: 0px;
-      padding-bottom: 30px;
-  }
-  header, nav, footer {
-      background-color: #3f5744; 
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-  }
-  nav a {
-      color: white;
-      margin: 0 20px;
-      text-decoration: none;
-      transition: transform 0.3s ease, background-color 0.3s ease; 
-      display: inline-block;
-  }
-  nav a:hover {
-      transform: scale(1.2); 
-  }
-  .question {
-      margin: auto;
-      padding-top: 5%;
-      padding-left: 20%;
-      padding-right: 20%;
-      line-height: 1.5;
-  }
-  .answer {
-      display: none;
-      margin: auto;
-      padding-top: 1%;
-      padding-left: 23%;
-      padding-right: 25%;
-      color: rgb(26, 7, 149);
-      line-height: 1.5;
-  }
-  .argument {
-      margin: auto;
-      padding-left: 5%;
-      line-height: 1.5;
-  }
-  .button {
-      margin: auto;
-      padding-left: 23%;
-  }
-</style>
+<title>Propositional Logic</title>
+<link rel="stylesheet" href="./styles/style.css">
 
 <body>
   <header>
       <h1>Propositional Logic</h1>
   </header>
-  
-  <nav>
-      <a href="index.html">Home</a>
-      <a href="deductive.html">Deductive Arguments</a>
-  </nav>
-  
 
-</body>
-</html> -->
+  <body>
+    <nav class="normalnav">
+        <a href="index.html">Home</a>
+        <a href="deductive.html">Deductive Arguments</a>
+    </nav>
+
+    <div class="question" style="text-align: center;" >
+        <b>Problem Sets: </b>
+     </div>
+ 
+     <div class="problem-sets-navigation">
+        <a href="#set1">Truth-Functional Conjunction or Not</a> 
+        <a href="#set2">Translating to Propositional Form without Conditionals: Simple</a>
+        <a href="#set3">Translating to Propositional Form without Conditionals: Complex</a>
+        <a href="#set4">Translating to Propositional Form with Conditionals: Simple</a>
+        <a href="#set5">Translating to Propositional Form with Conditionals: Complex</a>
+        <a href="#set6">Translating to Propositional Form: Mixed</a>
+        <a href="#set7">Truth Tables without Conditionals</a>
+        <a href="#set8">Truth Tables with Conditionals</a>
+     </div>
+ 
+     <div id="faq-container"></div>
+ 
+     <script>
+         const faqs = [
+         {
+             question: "Jack and Jill are coworkers.",
+             answer: "Not truth-functional."
+         },
+         {
+             question: "Tom is a fireman and a father.",
+             answer: "Truth functional: Tom is a fireman. Tom is a father."
+         },
+         {
+             question: "Ringo Starr and John Lennon were bandmates.",
+             answer: "Not truth functional."
+         },
+         {
+             question: "Lucy loves steak and onion sandwiches.",
+             answer: "Not truth functional."
+         },
+         {
+             question: "Cameron Dias has had several relationships, although she has never married.",
+             answer: "Truth functional: Cameron Dias has had several relationships. Cameron Dias has never married."
+         },
+         {
+             question: "Bob and Sally kissed.",
+             answer: "Not truth functional."
+         },
+         {
+             question: "A person who plays both mandolin and guitar is a multi- instrumentalist.",
+             answer: "Not truth functional."
+         },
+         {
+             question: "No one has ever contracted rabies and lived.",
+             answer: "Not truth functional."
+         },
+         {
+             question: "Jack and Jill are cowboys.",
+             answer: "Truth functional: Jack is a cowboy. Jill is a cowboy."
+         },
+         {
+             question: "Josiah is Amish; nevertheless, he is also a drug dealer.",
+             answer: "Truth functional: Josiah is Amish. Josiah is a drug dealer."
+         },
+         {
+             question: "The Tigers are the best baseball team in the state, but they are not as good as the Yankees.",
+             answer: "Truth functional: The Tigers are the best baseball team in the state. The Tigers are not as good as the Yankees."
+         },
+         {
+             question: "Bob went to the beach to enjoy some rest and relaxation.",
+             answer: "Truth functional: Bob went to the beach to enjoy some rest. Bob went to the beach to enjoy some relaxation."
+         },
+         {
+             question: "Lauren isn’t the fastest runner on the team; still, she is fast enough to have made it to the national championship.",
+             answer: "Truth functional: Lauren isn’t the fastest runner on the team. Lauren is fast enough to have made it to the national championship."
+         },
+         {
+             question: "The ring is beautiful but expensive.",
+             answer: "Truth functional: The ring is beautiful. The ring is expensive."
+         },
+         {
+             question: "It is sad, but true that many Americans do not know where their next meal will come from.",
+             answer: "Truth functional: It is sad that many Americans do not know where their next meal will come from. It is true that many Americans do not know where their next meal will come from."
+         },
+         {
+             question: "",
+             answer: ""
+         },
+         {
+             question: "",
+             answer: ""
+         },
+         ];
+         // Define instruction sets and their insertion indexes
+         const instructions = [
+            { index: 0, id: "set1", content: `<strong>Truth-Functional Conjunction or Not</strong><br><br>Identify which of the following sentences are truth-functional conjunctions. If the sentence is a truth-functional conjunction, identify the two conjuncts (by writing them down).` },
+            { index: 15, id: "set2", content: `<strong>Translating to Propositional Form without Conditionals: Simple</strong><br><br>Translate the following English sentences into propositional form using conjunction (&), negation (~), or disjunction (v). Use the suggested constants to stand for the atomic propositions.` },
+            { index: 15, id: "set3", content: `<strong>Translating to Propositional Form without Conditionals: Complex</strong><bre><br>      ` },
+            { index: 15, id: "set4", content: `<strong>Translating to Propositional Form with Conditionals: Simple</strong><bre><br>      ` },
+            { index: 15, id: "set5", content: `<strong>Translating to Propositional Form with Conditionals: Complex </strong><bre><br>     ` },
+            { index: 15, id: "set6", content: `<strong>Translating to Propositional Form: Mixed</strong><bre><br>      ` },
+            { index: 15, id: "set7", content: `<strong>Truth Tables without Conditionals</strong><bre><br>      ` },
+            { index: 15, id: "set8", content: `<strong>Truth Tables with Conditionals </strong><bre><br>     ` },
+             ];
+ 
+         function generateFAQs() {
+             const container = document.getElementById('faq-container'); 
+ 
+             faqs.forEach((faq, index) => {
+                 const questionId = `question${index + 1}`;
+                 const answerId = `answer${index + 1}`;
+ 
+         // Insert instructions with IDs
+                 const instruction = instructions.find(instr => instr.index === index);
+                 if (instruction) {
+                     // Create a container for the instruction with a specific ID
+                     const instructionDiv = document.createElement('div');
+                     instructionDiv.className = 'question';
+                     instructionDiv.id = instruction.id; // This ID corresponds to the navigation link
+                     instructionDiv.innerHTML = instruction.content;
+                     container.appendChild(instructionDiv);
+         }
+                 // Create and append question, button, and answer
+                 // This part remains the same as your existing setup
+                 const questionDiv = document.createElement('div');
+                 questionDiv.id = questionId;
+                 questionDiv.className = 'question';
+                 questionDiv.innerHTML = `${index + 1}. ${faq.question}`;
+ 
+                 const buttonDiv = document.createElement('div');
+                 buttonDiv.className = 'button';
+                 const button = document.createElement('button');
+                 button.innerText = 'Show/Hide Answer';
+                 button.setAttribute('onclick', `toggleText('${answerId}')`);
+ 
+                 const answerDiv = document.createElement('div');
+                 answerDiv.id = answerId;
+                 answerDiv.className = 'answer';
+                 answerDiv.innerHTML = `<p>${faq.answer}</p>`;
+ 
+                 buttonDiv.appendChild(button);
+                 container.appendChild(questionDiv);
+                 container.appendChild(buttonDiv);
+                 container.appendChild(answerDiv);
+             });
+         }
+ 
+         window.onload = generateFAQs;
+ 
+         function toggleText(definitionId) {
+           var textElement = document.getElementById(definitionId);
+           if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                  textElement.style.display = "none";
+             }
+           textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+         }
+ 
+         function scrollToTop() {
+             window.scrollTo({top: 0, behavior: 'smooth'});
+         }
+     </script>
+ 
+     <div class="question">
+         <br>
+         <br>
+     </div>
+     <footer>
+         <br>
+         <a href="javascript:void(0);" onclick="scrollToTop()" class="scrollTopBtn">Go to Top</a>
+         <br><br>All nonoriginal content is used with the permission of the owner or offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+     </footer>
+ 
+ </body>
+ </html>
+  -->
