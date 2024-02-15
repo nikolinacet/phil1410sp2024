@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <title>Propositional Logic</title>
 <link rel="stylesheet" href="./styles/style.css">
@@ -19,12 +19,12 @@
      </div>
  
      <div class="problem-sets-navigation">
-        <a href="#set1">Truth-Functional Conjunction or Not</a> 
+        <a href="#set1">Truth-Functional Conjunction or Not</a> <br>
         <a href="#set2">Translating to Propositional Form without Conditionals: Simple</a>
-        <a href="#set3">Translating to Propositional Form without Conditionals: Complex</a>
+        <a href="#set3">Translating to Propositional Form without Conditionals: Complex</a><br>
         <a href="#set4">Translating to Propositional Form with Conditionals: Simple</a>
-        <a href="#set5">Translating to Propositional Form with Conditionals: Complex</a>
-        <a href="#set6">Translating to Propositional Form: Mixed</a>
+        <a href="#set5">Translating to Propositional Form with Conditionals: Complex</a><br>
+        <a href="#set6">Translating to Propositional Form: Mixed</a><br>
         <a href="#set7">Truth Tables without Conditionals</a>
         <a href="#set8">Truth Tables with Conditionals</a>
      </div>
@@ -90,28 +90,569 @@
              answer: "Truth functional: The ring is beautiful. The ring is expensive."
          },
          {
-             question: "It is sad, but true that many Americans do not know where their next meal will come from.",
+             question: "It is sad, but true, that many Americans do not know where their next meal will come from.",
              answer: "Truth functional: It is sad that many Americans do not know where their next meal will come from. It is true that many Americans do not know where their next meal will come from."
          },
          {
-             question: "",
-             answer: ""
+             question: "Either Bob will mop or Tom will mop. (B = Bob will mop; T = Tom will mop)",
+             answer: "B v T"
          },
          {
-             question: "",
-             answer: ""
+             question: "It is not sunny today. (S = it is sunny today)",
+             answer: "~S"
          },
+         {
+             question: "It is not the case that Bob is a burglar. (B = Bob is a burglar)",
+             answer: "~B"
+         },
+         {
+             question: "Harry is arriving either tonight or tomorrow night. (A = Harry is arriving tonight; B = Harry is arriving tomorrow night)",
+             answer: "A v B"
+         },
+         {
+             question: "Gareth does not like his name. (G = Gareth likes his name)",
+             answer: "~G"
+         },
+         {
+             question: "Either it will not rain on Monday or it will not rain on Tuesday. (M = It will rain on Monday; T = It will rain on Tuesday)",
+             answer: "~M v ~T"
+         },
+         {
+             question: "Tom does not like cheesecake. (T = Tom likes cheesecake)",
+             answer: "~T"
+         },
+         {
+             question: "Bob would like to have both a large cat and a small dog as a pet. (C = Bob would like to have a large cat as a pet; D = Bob would like to have a small dog as a pet)",
+             answer: "C & D"
+         },
+         {
+             question: "Bob Saget is not actually very funny. (B = Bob Saget is very funny)",
+             answer: "~B"
+         },
+         {
+             question: "Albert Einstein did not believe in God. (A = Albert Einstein believed in God)",
+             answer: "~A"
+         },
+         {
+             question: "Tom does not know how to swim or how to ride a horse. (S = Tom knows how to swim; H = Tom knows how to ride a horse)",
+             answer: "~S & ~H"
+         },
+         {
+             question: "Theresa writes poems, not novels. (P = Theresa writes poems; N = Theresa writes novels)",
+             answer: "P & ~N"
+         },
+         {
+             question: "Lansing is east of Grand Rapids but west of Detroit. (E = Lansing is east of Grand Rapids; W = Lansing is west of Detroit)",
+             answer: "E & W"
+         },
+         {
+             question: "Children should be seen, but not heard. (S = Children should be seen; H = Children should be heard)",
+             answer: "S & ~H"
+         },
+         {
+             question: "Peter Jennings is either a liar or has a really bad memory. (L = Peter Jennings is a liar; M = Peter Jennings has a really bad memory)",
+             answer: "L v M"
+         },
+         {
+             question: "Peter Jennings is both a liar and has a really bad memory. (L = Peter Jennings is a liar; M = Peter Jennings has a really bad memory)",
+             answer: "L & M"
+         },
+         {
+             question: "Mother Theresa may be a saint. Even so, she has not been canonized yet by the Catholic Church. (S = Mother Theresa is a saint; C = Mother Theresa has been canonized by the Catholic Church)",
+             answer: "S & ~C"
+         },
+         {
+             question: "Jim Ryun was the best high school miler of all time, but he ran a slower time than Alan Webb. (R = Jim Ryun was the best high school miler of all time; W = Jim Ryun ran a slower time than Alan Webb)",
+             answer: "R & W"
+         },
+         {
+             question: "Bob does not know how to fly an airplane or pilot a ship, but he does know how to ride a motorcycle. (A, S, M)",
+             answer: "Bob knows how to fly an airplane; S = Bob knows how to pilot a ship; M = Bob knows how to ride a motorcycle<br><br>(~A & ~S) & M<br><br>(In this case, it doesn’t actually matter where the parentheses go because the sentence has the same meaning even if they are around the second two atomic propositions.)"
+         },
+         {
+             question: "Bob does not like Sally or Felicia, but he does like Alice. (S, F, A)",
+             answer: "Bob likes Sally; F = Bob likes Felicia; A = Bob likes Alice<br><br>(~S & ~F) & A <br><br>(In this case, it doesn’t actually matter where the parentheses go because the sentence has the same meaning even if they are around the second two atomic propositions.)"
+         },
+         {
+             question: "Cricket is not widely played in the United States, but both football and baseball are. (C, F, B)",
+             answer: "Cricket is widely played in the U.S.; F = Football is widely played in the U.S.; B = Baseball is widely played in the U.S.<br><br> ~C & (F & B) <br><br>(In this case, it doesn’t actually matter where the parentheses go because the sentence has the same meaning even if they are around the first two atomic propositions.)"
+         },
+         {
+             question: "Tom and Linda are friends, but Tom and Susan aren’t—although Linda and Susan are. (T, S, L)",
+             answer: "T = Tom and Linda are friends; S = Tom and Susan are friends; L = Linda and Susan are friends<br><br>(T & ~S) & L<br><br>(In this case, it doesn’t actually matter where the parentheses go because the sentence has the same meaning even if they are around the first two atomic propositions.)"
+         },
+         {
+             question: "Either Tom or Linda brought David home after his surgery, but it wasn’t Steve. (T, L, S)",
+             answer: "T = Tom brought David home after his surgery; L = Linda brought David home after his surgery; S = Steve brought David home after his surgery<br><br>(T v L) & ~S "
+         },
+         {
+             question: "Next year, Steve will be living in either Boulder or Flagstaff, but not Phoenix or Denver. (B, F, P, D)",
+             answer: "B = Next year Steve will be living in Boulder; F = Next year Steve will be living in Flagstaff; P = Next year Steve will be living in Phoenix; D = Next year Steve will be living in Denver<br><br>(B v F) & (~P & ~D)"
+         },
+         {
+             question: "Henry VII of England was married to Anne Boleyn and Jane Seymour, but he only executed Anne Boleyn. (A, J, E)",
+             answer: "A = Henry VII of England was married to Anne Boleyn; J = Henry VII of England was married to Jane Seymour; E = Henry VII of England executed one of them<br><br>(A & J) & E <br><br>(In this case, it doesn’t actually matter where the parentheses go because the sentence has the same meaning even if they are around the second two atomic propositions.)"
+         },
+         {
+             question: "Henry VII of England executed either Anne Boleyn and Jane Boleyn or Thomas Cromwell and Thomas More. (A, J, C, M)",
+             answer: "A = Henry VII of England Anne Boleyn; J = Henry VII of England Jane Boleyn; C = Henry VII of England executed Thomas Cromwell; M = Henry VII of England executed Thomas More<br><br>(A & J) v (C & M)"
+         },
+         {
+             question: "Coral is not both a plant and an animal. (P, A)",
+             answer: "P = Coral is a plant; A = Coral is an animal<br><br>~(P & A)"
+         },
+         {
+             question: "Although protozoa and chimpanzees are both eukaryotes, they are not both animals. (There are four atomic propositions here; just use A, B, C, and D for each different proposition.)",
+             answer: "A = Protozoa are eukaryotes; B = Chimpanzees are eukaryotes; C = Protozoa are animals; D = Chimpanzees are animals<br><br>(A & B) & ~(C & D)"
+         },
+         {
+             question: "Neither chimpanzees nor protozoa are prokaryotes. (C, P)",
+             answer: "C = Chimpanzees are prokaryotes; P = Protozoa are prokaryotes<br><br>~(C v P)"
+         },
+         {
+             question: "China has not signed the Kyoto Protocol and neither has the United States. (C, U)",
+             answer: "C = China signed the Kyoto Protocol; U = The United States signed the Kyoto Protocol<br><br>~(C v U)"
+         },
+         {
+             question: "Either Chevrolet or McDonald’s will support the Olympic team, but they won’t both support it. (C, M)",
+             answer: "C = Chevrolet will support the Olympic team; M = McDonald’s will support the Olympic team<br><br>(C v M) & ~(C & M)"
+         },
+         {
+             question: "Peter Jennings is neither a liar nor has a really bad memory. (L, M)",
+             answer: "L = Peter Jennings is a liar; M = Peter Jennings has a really bad memory<br><br>~(L v M)"
+         },
+         {
+             question: "Peter Jennings is not both a liar and a person with a really bad memory. (L, M)",
+             answer: "L = Peter Jennings is a liar; M = Peter Jennings has a really bad memory.<br><br>~(L & M)"
+         },
+         {
+             question: "Chevrolet won’t support the Olympic team this year, and McDonald’s won’t either. (C, M)",
+             answer: "C = Chevrolet will support the Olympic team this year; M =McDonald’s will support the Olympic team this year<br><br>~(C v M)"
+         },
+         {
+             question: "The best distance runner of the last two decades is either Paul Tergat or Haile Gebrselassie, but it certainly isn’t Jim Ryun. (T, G, R)",
+             answer: "Paul Tergat was the best distance runner of the last two decades; G = Haile Gebrselassie was the best distance runner of the last two decades; R = Jim Ryun was the best distance runner of the last two decades<br><br>(T v G) & ~R"
+         },
+         {
+             question: "Neither Paul Tergat nor Haile Gebrselassie knows how to play hockey, but they both know how to play soccer. (A, B, C, D)",
+             answer: "A = Paul Tergat knows how to play hockey; B = Haile Gebrselassie knows how to play hockey; C = Paul Tergat knows how to play soccer; D = Haile Gebrselassie knows how to play soccer<br><br>~(A v B) & (C & D)"
+         },
+         {
+             question: "Before Helen Keller met Annie Sullivan, she could neither speak, read, nor communicate. (S, R, C)",
+             answer: "S = Before Helen Keller met Annie Sullivan she could speak; R =Before Helen Keller met Annie Sullivan she could read; C = Before Helen Keller met Annie Sullivan she could communicate<br><br>(~S & ~R) & ~C<br><br>(In this case, it doesn’t matter where the parentheses go.) "
+         },
+         {
+             question: "Although Helen Keller learned to communicate, she never learned to play soccer or baseball. (C, S, B)",
+             answer: "C = Helen Keller learned to communicate; S = Helen Keller learned to play soccer; B = Helen Keller learned to play baseball<br><br>C & (~S & ~B)"
+         },
+         {
+             question: "Tom is allowed to play football or soccer, but not both. (F, S)",
+             answer: F = "Tom is allowed to play football; S = Tom is allowed to play soccer <br><br>(F v S) & ~(F & S)"
+         },
+         {
+             question: "Tom will major in either engineering and physics, or business and sociology. (E, P, B, S)",
+             answer: "E = Tom will major in engineering; P = Tom will major in physics; B = Tom will major in business; S = Tom will major in sociology<br><br>(E & P) v (B & S)"
+         },
+         {
+             question: "Cartman is both xenophobic and racist, but he isn’t a murderer or a thief. (X, R, M, T)",
+             answer: "X = Cartman is xenophobic; R = Cartman is a racist; M = Cartman is a murderer; T = Cartman is the thief<br><br>(X & R) & (~M & ~T)"
+         },       
+         {
+             question: "The Tigers will win only if the Indians lose their star pitcher. (T, I)",
+             answer: "T = The Tigers will win; I = The Indians will lose their star pitcher<br><br>T ⊃ I "
+         },
+         {
+             question: "Tom will pass the class provided that he does all the homework. (P, H)",
+             answer: "P = Tom will pass the class; H = Tom does all of his homework<br><br>H ⊃ P "
+         },
+         {
+             question: "The car will run only if it has gas. (R, G)",
+             answer: "R = The car will run; G = The car has gas<br><br>R ⊃ G "
+         },
+         {
+             question: "The fact that you are asking me about your grade implies that you care about your grade. (A, C)",
+             answer: "A = You are asking me about your grade; C = You care about your grade<br><br>A ⊃ C "
+         },
+         {
+             question: "If Obama isn’t a U.S. citizen, then I’m a monkey’s uncle. (O, M)",
+             answer: "O = Obama is a U.S. citizen; M = I am a monkey’s uncle<br><br>~O ⊃ M "
+         },
+         {
+             question: "If Toad wears his bathing suit, he doesn’t want Frog to see him in it. (T, F)",
+             answer: "T = Toad wears his bathing suit; F = Toad wants Frog to see him in his bathing suit<br><br>T ⊃ ~F "
+         },
+         {
+             question: "Bekele will win the race as long as he stays healthy. (W, H)",
+             answer: "W = Bekele will win the race; H = Bekele stays healthy<br><br>H ⊃ W "
+         },
+         {
+             question: "If that plant has three leaves then it is poisonous. (T, P)",
+             answer: "T = That plant has three leaves; P = That plant is poisonous<br><br>T ⊃ P "
+         },
+         {
+             question: "The fact that the plant is poisonous implies that it has three leaves. (T, P)",
+             answer: "T = That plant has three leaves; P = That plant is poisonous<br><br>P ⊃ T "
+         },
+         {
+             question: "The plant is poisonous only if it has three leaves. (T, P)",
+             answer: "T = That plant has three leaves; P = That plant is poisonous<br><br>P ⊃ T "
+         },
+         {
+             question: "The plant has three leaves if it is poisonous. (T, P)",
+             answer: "T = That plant has three leaves; P = That plant is poisonous<br><br>P ⊃ T "
+         },
+         {
+             question: "Olga will swim in the open water as long as there is a shark net present. (O, N)",
+             answer: "O = Olga will swim in the open water; N = There is a shark net present<br><br>O ⊃ N "
+         },
+         {
+             question: "The fact that Olga is swimming implies that she is wearing a bathing suit. (O, B)",
+             answer: "O = Olga is swimming; B = Olga is wearing a bathing suit<br><br>O ⊃ B "
+         },
+         {
+             question: "If Terrence pulls Philip’s finger, something bad will happen. (T, B)",
+             answer: "T = Terrence pulls Philip’s finger; B = Something bad will happen<br><br>T ⊃ B "
+         },
+         {
+             question: "Although Frog will swim without a bathing suit, Toad will swim only if he is wearing a bathing suit. (F, T, B)",
+             answer: "F = Frog will swim without his bathing suit; T = Toad will swim; B = Toad is wearing a bathing suit<br><br>F & (T ⊃ B) "
+         },
+         {
+             question: "If Tom doesn’t pass the exam, then he is either sick or tired. (P, S, T)",
+             answer: "P = Tom passes his exam; S = Tom is sick; L = Tom is tired<br><br>~P ⊃ (S v T) "
+         },
+         {
+             question: "If Bekele is either sick or injured, he will not win the race. (S, I, W)",
+             answer: "S = Bekele is sick; I = Bekele is injured; W = Bekele will win the race<br><br>(S v I) ⊃ ~W "
+         },
+         {
+             question: "Bobo will become president only if he runs a good campaign and doesn’t say anything stupid. (P, C, S)",
+             answer: "P = Bobo will become president; C = Bobo runs a good campaign; S = Bobo says something stupid<br><br>P ⊃ (C ⋅ ~S) "
+         },
+         {
+             question: "I will graduate, provided I pass both logic and history. (G, L, H)",
+             answer: "G = I will graduate; L = I pass logic; H = I pass history<br><br>(L & H) ⊃ G"
+         },
+         {
+             question: "I will not graduate if I don't pass both logic and history. (G, L, H)",
+             answer: "I will graduate; L = I pass logic; H = I pass history<br><Br>~(L & H) ⊃ ~G"
+         },
+         {
+             question: "I will succeed only if I work hard and take risks. (S, W, R)",
+             answer: "I will succeed; W = I work hard; R = I take risks<br><br> ~(W & R) ⊃ ~S"
+         },
+         {
+             question: "I won't graduate unless I pass Logic and history. (G, L. H)",
+             answer: "I will graduate; L = I pass logic; H = I pass history	<br><br>~(L & H) ⊃ ~G"
+         },
+         {
+             question: "In order to PASS, it is both necessary and sufficient to average at least sixty. (P, S)",
+             answer: "You pass; F = You average sixty<br><br>(~F ⊃ ~P) & (F ⊃ P)"
+         },
+         {
+             question: "If it is raining, I will play basketball; otherwise, I will go jogging. (R, B, J) ",
+             answer: "R = It is raining; B = I will play basketball; I = I will go jogging<br><br>(R ⊃ B) & (~R ⊃ J)"
+         },
+         {
+             question: "Jones will win the championship unless he gets injured, in which case Smith will win. (J, I, S)",
+             answer: "J = Jones will win the championship; I = Jones gets injured; S = Smith will win the championship<br><br>(~I ⊃ J) & (I ⊃ S)"
+         },
+         {
+             question: "Provided that he has made a bet, Jones is happy if and only if his horse wins. (B, H, W)",
+             answer: "J = Jones has made a bet; H = Jones is happy; W = Jones’ horse wins<br><br>B ⊃ ((W ⊃ H) & (~W ⊃ ~H))"
+         },
+         {
+             question: "It is not RAINING, but it is still too WET to play.",
+             answer: "~R & W"
+         },
+         {
+             question: "JAY and KAY are Sophomores. ",
+             answer: "J & K "
+         },
+         {
+             question: "It is DINNER time, but I am not HUNGRY. ",
+             answer: "D & ~H"
+         },
+         {
+             question: "Although I am TIRED, I am not QUITTING. ",
+             answer: "T & ~Q"
+         },
+         {
+             question: "If you GIVE him an inch, he will TAKE a mile. ",
+             answer: "G ⊃ T "
+         },
+         {
+             question: "Either I am CRAZY or I just SAW a flying saucer. ",
+             answer: "C ∨ S "
+         },
+         {
+             question: "Either Jones is a FOOL or he is DISHONEST. ",
+             answer: "F v D"
+         },
+         {
+             question: "JAY and KAY won't both be present at graduation. ",
+             answer: "~(J & K)"
+         },
+         {
+             question: "JAY will win, or KAY will win, but not both.",
+             answer: "(J v K) & ~(J & K) "
+         },
+         {
+             question: "Either it is RAINING, or it is SUNNY and COLD. ",
+             answer: "R v (S & C)"
+         },
+         {
+             question: "It is RAINING or OVERCAST, but in any case it is not SUNNY.",
+             answer: "(R v O) & ~S"
+         },
+         {
+             question: "If JONES is honest, then so is SMITH. ",
+             answer: "J ⊃ S "
+         },
+         {
+             question: "If JONES isn't a crook, then neither is SMITH. ",
+             answer: "~J ⊃ ~S "
+         },
+         {
+             question: "Provided that I CONCENTRATE, I will not FAIL.",
+             answer: "C ⊃ ~F "
+         },
+         {
+             question: "Neither JAY nor KAY is able to attend the meeting. ",
+             answer: "~J & ~K <br><br>Or: ~(J ∨ K) "
+         },
+         {
+             question: "Although I have been here a LONG time, I am neither TIRED nor BORED. ",
+             answer: "L & (~T & ~B) <br><br> Or: L & ~(T v B)"
+         },
+         {
+             question: "I will GRADUATE this semester only if I PASS intro logic. ",
+             answer: "G ⊃ P"
+         },
+         {
+             question: "I will go to the BEACH this weekend, unless I am SICK. ",
+             answer: "~S ⊃ B "
+         },
+         {
+             question: "Unless I GOOF off, I will not FAIL intro logic. ",
+             answer: "~G ⊃ ~F "
+         },
+         {
+             question: "In order to ACE intro logic, it is sufficient to get a HUNDRED on every exam. ",
+             answer: "H ⊃ A "
+         },
+         {
+             question: "In order to become a PHYSICIAN, it is necessary to RECEIVE an M.D. and do an INTERNSHIP. ",
+             answer: "~(R & I) ⊃ ~P "
+         },
+         {
+             question: "Getting a HUNDRED on every exam is sufficient, but not necessary, for ACING intro logic. ",
+             answer: "(H ⊃ A) & ~(~H ⊃ ~A) "
+         },
+         {
+             question: "TAKING all the exams is necessary, but not sufficient, for ACING intro logic. ",
+             answer: "(~T ⊃ ~A) & ~(T ⊃ A) "
+         },
+         {
+             question: "In order to get into MEDICAL school, it is necessary but not sufficient to have GOOD grades and take the ADMISSIONS exam. ",
+             answer: "[~(G & A) ⊃ ~M] & ~[(G & A) ⊃ M] "
+         },
+         {
+             question: "In order to be a BACHELOR it is both necessary and sufficient to be ELIGIBLE but not MARRIED. ",
+             answer: "[~(E & ~M) ⊃ ~B] & [(E & ~M) ⊃ B] "
+         },
+         {
+             question: "In order to be ARRESTED, it is sufficient but not necessary to COMMIT a crime and GET caught. ",
+             answer: "[(C & G) ⊃ A] & ~[~(C & G) ⊃ ~A] "
+         },
+         {
+             question: "If both JAY and KAY are home this weekend, we will go to the BEACH; otherwise, we will STAY home. ",
+             answer: "[(J & K) ⊃ B] & [~(J & K) ⊃ S] "
+         },
+         {
+             question: "We will have DINNER and attend the CONCERT, provided that JAY and KAY are home this weekend. ",
+             answer: "(J & K) ⊃ (D & C)  "
+         },
+         {
+             question: "If neither JAY nor KAY can make it, we should either POSTPONE or CANCEL the trip. ",
+             answer: "(~J & ~K) ⊃ (P ∨ C) "
+         },
+         {
+             question: "Both Jay and Kay will go to the beach this weekend, provided that neither of them is sick. ",
+             answer: "(~S & ~T) ⊃ (J & K) "
+         },
+         {
+             question: "If I STUDY too hard I will not ENJOY college, but at the same time I will not ENJOY college if I FLUNK out. ",
+             answer: "(S ⊃ ~E) & (F ⊃ ~E) "
+         },
+         {
+             question: "If you NEED a thing, you will have THROWN it away, and if you THROW a thing away, you will NEED it.",
+             answer: "(N ⊃ T) & (T ⊃ N) "
+         },
+         {
+             question: "If you WORK hard only if you are THREATENED, then you will not SUCCEED. ",
+             answer: "(~T ⊃ ~W) ⊃ ~S "
+         },
+         {
+             question: "If I do not STUDY, then I will not PASS unless the prof ACCEPTS bribes. ",
+             answer: "~S ⊃ (~A ⊃ ~P) "
+         },
+         {
+             question: "Provided that the prof doesn't HATE me, I will PASS if I STUDY. ",
+             answer: "~H ⊃ (S ⊃ P) "
+         },
+         {
+             question: "Unless logic is very DIFFICULT, I will PASS provided I CONCENTRATE. ",
+             answer: "~D ⊃ (C ⊃ P) "
+         },
+         {
+             question: "Unless logic is EASY, I will PASS only if I STUDY. ",
+             answer: "~E ⊃ (~S ⊃ ~P) "
+         },
+         {
+            question: "If you do not PAY, Jones will KILL you unless you ESCAPE.",
+            answer: "~P ⊃ (~E ⊃ K)"
+        },
+        {
+            question: "If he CATCHES you, Jones will KILL you unless you PAY.",
+            answer: "C ⊃ (~P ⊃ K)"
+        },
+        {
+            question: "If neither JAY nor KAY comes home this weekend, we shall not stay HOME unless we are SICK.",
+            answer: "(~J & ~K) ⊃ (~S ⊃ ~H)"
+        },
+        {
+            question: "If you MAKE an appointment and do not KEEP it, then I shall be ANGRY unless you have a good EXCUSE.",
+            answer: "(M & ~K) ⊃ (~E ⊃ A)"
+        },
+        {
+            question: "If I am not FEELING well this weekend, I will not GO out unless it is WARM and SUNNY.",
+            answer: "~F ⊃ [~(W & S) ⊃ ~G]"
+        },
+        {
+            question: "If JAY will go only if KAY goes, then we will CANCEL the trip unless KAY goes.",
+            answer: "(~K ⊃ ~J) ⊃ (~K ⊃ C)"
+        },
+        {
+            question: "If KAY will come to the party only if JAY does not come, then provided we WANT Kay to come we should DISSUADE Jay from coming.",
+            answer: "(~~J ⊃ ~K) ⊃ (W ⊃ D)"
+        },
+        {
+            question: "If KAY will go only if JAY does not go, then either we will CANCEL the trip or we will not INVITE Jay.",
+            answer: "(~~J ⊃ ~K) ⊃ (C ∨ ~I)"
+        },
+        {
+            question: "If JAY will go only if KAY goes, then we will CANCEL the trip unless KAY goes.",
+            answer: "(~K ⊃ ~J) ⊃ (~K ⊃ C)"
+        },
+        {
+            question: "If you CONCENTRATE only if you are INSPIRED, then you will not SUCCEED unless you are INSPIRED.",
+            answer: "(~I ⊃ ~C) ⊃ (~I ⊃ ~S)"
+        },
+        {
+            question: "If you are HAPPY only if you are DRUNK, then unless you are DRUNK you are not HAPPY.",
+            answer: "(~D ⊃ ~H) ⊃ (~D ⊃ ~H)"
+        },
+        {
+            question: "In order to be ADMITTED to law school, it is necessary to have GOOD grades, unless your family makes a large CONTRIBUTION to the law school.",
+            answer: "~C ⊃ (~G ⊃ ~A)"
+        },
+        {
+            question: "I am HAPPY only if my assistant is COMPETENT, but if my assistant is COMPETENT, then he/she is TRANSFERRED to a better job and I am not HAPPY.",
+            answer: "(~C ⊃ ~H) & (C ⊃ [T & ~H])"
+        },
+        {
+            question: "If you do not CONCENTRATE well unless you are ALERT, then you will FLY an airplane only if you are SOBER; provided that you are not a MANIAC.",
+            answer: "~M ⊃ [(~A ⊃ ~C) ⊃ (~S ⊃ ~F)]"
+        },
+        {
+            question: "If you do not CONCENTRATE well unless you are ALERT, then provided that you are not a MANIAC you will FLY an airplane only if you are SOBER.",
+            answer: "(~A ⊃ ~C) ⊃ [~M ⊃ (~S ⊃ ~F)]"
+        },
+        {
+            question: "If you CONCENTRATE well only if you are ALERT, then provided that you are WISE you will not FLY an airplane unless you are SOBER.",
+            answer: "(~A ⊃ ~C) ⊃ [W ⊃ (~S ⊃ ~F)]"
+        },
+        {
+            question: "If you CONCENTRATE only if you are THREATENED, then you will not PASS unless you are THREATENED – provided that CONCENTRATING is a necessary condition for PASSING.",
+            answer: "(~C ⊃ ~P) ⊃ [(~T ⊃ ~C) ⊃ (~T ⊃ ~P)]"
+        },
+        {
+            question: "If neither JAY nor KAY is home this weekend, we will go to the BEACH; otherwise, we will STAY home.",
+            answer: "[(~J & ~K) ⊃ B] & [~(~J & ~K) ⊃ S]"
+        },
+        {
+            question: "<br><br>1. ~p ∨ q<br>2. p<br>∴ ~q",
+            answer: "<embed src='tables/~p∨q.p.~q.html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1.. ~(p ∨ q)<br>∴ ~q",
+            answer: "Valid<br><br><embed src='tables/not(pvq).notq.html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. ~(p ∨ q)<br>2. p<br>∴ q",
+            answer: "Valid, but premises are never all true at the same time<br><br><embed src='tables/not(pvq).p.q.html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. ~(p ∨ q)<br>2. p	<br>∴ r",
+            answer: "Valid, but premises are never all true at the same time<embed src='tables/not(pvq).p.r.html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. ~(p & q)<br>2. q<br>∴ ~p",
+            answer: "Valid<br><br><embed src='tables/not(p&q).q.notp.html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. ~(p & q)<br>2. ~q<br>∴ p",
+            answer: "<embed src='tables/not(p&q).notq.p.html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. (p & q) ∨ (p & r)<br>∴ p & (q ∨ r)",
+            answer: "Valid<br><br><embed src='tables/(p & q) ∨ (p & r).p & (q ∨ r).html' width='110%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. (p ∨ q) & (p ∨ r)<br>∴ p & (q ∨ r)",
+            answer: "<embed src='tables/(p ∨ q) & (p ∨ r).p & (q ∨ r).html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br> 1. p & q<br>∴ (p ∨ r) & (q ∨ r)",
+            answer: "Valid<br><br><embed src='tables/p & q. (p ∨ r) & (q ∨ r).html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. p ∨ q<br>∴ (p & r) ∨ (q & r)",
+            answer: "<embed src='tables/p ∨ q.(p & r) ∨ (q & r).html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. p <br>∴ (p ⊻ q)",
+            answer: "<embed src='tables/p.pvq.html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. (p ⊻ q)<br>2. p  <br>∴ ~q  ",
+            answer: "Valid<br><br><embed src='tables/(p ⊻ q).p.notq.html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. p & q <br>∴ ~(p ⊻ q)  ",
+            answer: "Valid<br><br><embed src='tables/p & q.~(p ⊻ q).html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. ~(p & q)<br>∴ p ⊻ q",
+            answer: "<embed src='tables/not(p & q).p ⊻ q   .html' width='100%'' height='200px'>"
+        },
+        // {
+        //     question: "<br><br>",
+        //     answer: "<embed src='html' width='100%'' height='200px'>"
+        // },
+   
          ];
          // Define instruction sets and their insertion indexes
          const instructions = [
             { index: 0, id: "set1", content: `<strong>Truth-Functional Conjunction or Not</strong><br><br>Identify which of the following sentences are truth-functional conjunctions. If the sentence is a truth-functional conjunction, identify the two conjuncts (by writing them down).` },
-            { index: 15, id: "set2", content: `<strong>Translating to Propositional Form without Conditionals: Simple</strong><br><br>Translate the following English sentences into propositional form using conjunction (&), negation (~), or disjunction (v). Use the suggested constants to stand for the atomic propositions.` },
-            { index: 15, id: "set3", content: `<strong>Translating to Propositional Form without Conditionals: Complex</strong><bre><br>      ` },
-            { index: 15, id: "set4", content: `<strong>Translating to Propositional Form with Conditionals: Simple</strong><bre><br>      ` },
-            { index: 15, id: "set5", content: `<strong>Translating to Propositional Form with Conditionals: Complex </strong><bre><br>     ` },
-            { index: 15, id: "set6", content: `<strong>Translating to Propositional Form: Mixed</strong><bre><br>      ` },
-            { index: 15, id: "set7", content: `<strong>Truth Tables without Conditionals</strong><bre><br>      ` },
-            { index: 15, id: "set8", content: `<strong>Truth Tables with Conditionals </strong><bre><br>     ` },
+            { index: 15, id: "set2", content: `<strong>Translating to Propositional Form without Conditionals: Simple</strong><br><br>Translate the following English sentences into propositional form using conjunction (&), negation (~), and disjunction (v). Use the suggested variables to stand for the atomic propositions. <br><br>These sentences do not require parentheses because they do not contain more than two atomic propositions or the joint negation of two atomic propositions. ` },
+            { index: 33, id: "set3", content: `<strong>Translating to Propositional Form without Conditionals: Complex</strong><br><br>Translate the following English sentences into propositional form using conjunction (&), negation (~), and disjunction (v). Use the variables at the end of each sentence to represent the atomic propositions they are obviously meant for. (You come up with the atomic propositions this time.) <br><br>These sentences require parentheses because they contain more than two atomic propositions or the joint negation of two or more atomic propositions. ` },
+            { index: 56, id: "set4", content: `<strong>Translating to Propositional Form with Conditionals: Simple</strong><br><br>Translate the following English sentences into propositional form using the variables indicated. Make sure you write out what the atomic propositions are. In some cases, this will be straightforward, but not in every case. <br><br>These sentences do not require parentheses.<br><br> Remember: Atomic propositions never contain any truth-functional connectives—and that includes negation.` },
+            { index: 71, id: "set5", content: `<strong>Translating to Propositional Form with Conditionals: Complex </strong><br><br>Translate the following English sentences into propositional form using the variables indicated. Make sure you write out what the atomic propositions are. In some cases, this will be straightforward, but not in every case.<br><br>These sentences require parentheses. <br><br>Remember: Atomic propositions never contain any truth-functional connectives—and that includes negation.` },
+            { index: 82, id: "set6", content: `<strong>Translating to Propositional Form: Mixed</strong><br><br> Translate the following English sentences into propositional form using conjunction (&), negation (~), disjunction (v), and conditionals (⊃). Define vairiables with the first letter of the capitalized words. <br><br>Example 1: <br><br>Although it is RAINING, I plan to go JOGGING this afternoon.<br>R = It is raining; J = I plan to go jogging<br>R & J<br><br>Example 2: <br><br>In order to ACE intro logic, it is sufficient to get a HUNDRED on every exam.<br>A = One aces intro logic; H = One gets a hundred on every exam<br>H ⊃ A<br><br>Some of these sentences require parentheses because they contain more than two atomic propositions or the joint negation of two atomic propositions. <br><br>Remember: Atomic propositions never contain any truth-functional connectives—and that includes negation.` },
+            { index: 137, id: "set7", content: `<strong>Truth Tables without Conditionals</strong><br><br>Use truth tables to determine whether the following arguments are valid.` },
+            { index: 151, id: "set8", content: `<strong>Truth Tables with Conditionals </strong><br><br>     ` },
              ];
  
          function generateFAQs() {
@@ -183,4 +724,4 @@
  
  </body>
  </html>
-  -->
+ 
