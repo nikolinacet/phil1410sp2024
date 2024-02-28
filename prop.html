@@ -27,6 +27,8 @@
         <a href="#set6">Translating to Propositional Form: Mixed</a><br>
         <a href="#set7">Truth Tables without Conditionals</a>
         <a href="#set8">Truth Tables with Conditionals</a>
+        <br><a href="#set9">Using Truth Tables for Natural Language Arguments</a>
+        <a href="#set10">Extra Argument Reconstruction Practice</a>
      </div>
  
      <div id="faq-container"></div>
@@ -637,11 +639,208 @@
             question: "<br><br>1. ~(p & q)<br>∴ p ⊻ q",
             answer: "<embed src='tables/not(p & q).p ⊻ q   .html' width='100%'' height='200px'>"
         },
-        // {
-        //     question: "<br><br>",
-        //     answer: "<embed src='html' width='100%'' height='200px'>"
-        // },
-   
+        
+        //Truth Tables with Conditionals 
+
+        {
+            question: "<br><br>1. p ⊃ q<br>∴ q ⊃ p",
+            answer: "<embed src='cond_tables/1.html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. p ⊃ q<br>∴ ~q ⊃ ~p",
+            answer: "Valid<embed src='cond_tables/2.html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. ~q ⊃ ~p<br>∴ p ⊃ q",
+            answer: "Valid<embed src='cond_tables/3.html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. p ⊃ q<br>2. q ⊃ r<br>∴ p ⊃ (q & r)",
+            answer: "Valid<embed src='cond_tables/4.html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. p ⊃ q<br>2. q ⊃ r<br>3. ~r<br>∴ ~p",
+            answer: "Valid<embed src='cond_tables/5.html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. p ⊃ q<br>2. q ⊃ r<br>∴ ~r ⊃ ~p",
+            answer: "Valid<embed src='cond_tables/6.html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. p ∨ q<br>2. p ⊃ q<br>3. q ⊃ r<br>∴ r",
+            answer: "Valid<embed src='cond_tables/7.html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. p ⊃ (q ∨ r)<br>2. ~q<br>3. ~r<br>∴ ~p",
+            answer: "Valid<embed src='cond_tables/8.html' width='110%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. (p ∨ q) ⊃ r<br>∴ p ⊃ r",
+            answer: "<embed src='cond_tables/9.html' width='110%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. (p & q) ⊃ r<br>∴ p ⊃ r",
+            answer: "<embed src='cond_tables/10.html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. p ⊃ (q ⊃ r)<br>∴ (p & q) ⊃ r",
+            answer: "Valid<embed src='cond_tables/11.html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. (p & q) ⊃ r<br>∴ p ⊃ (q ⊃ r)",
+            answer: "Valid<embed src='cond_tables/12.html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. p ⊃ (q ⊃ r)<br>2. q<br>3. ~r<br>∴ ~p",
+            answer: "Valid, but the premises will never all be true at the same time.<embed src='cond_tables/13.html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. p ⊃ (q ⊃ r)<br>2. p ⊃ q<br>∴ r",
+            answer: "<embed src='cond_tables/14.html' width='100%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. (p ∨ q) & (p ∨ r)<br>2. ~r<br>∴ ~q",
+            answer: "<embed src='cond_tables/15.html' width='110%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. (p ⊃ q) & (p ⊃ ~r)<br>2. q & r<br>∴ ~p",
+            answer: "Valid<embed src='cond_tables/16.html' width='110%'' height='300px'>"
+        },
+        {
+            question: "<br><br>1. (p ∨ q) ⊃ p<br>∴ ~q",
+            answer: "<embed src='cond_tables/17.html' width='100%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. (p ∨ q) ⊃ (p & q)<br>∴ (p ⊃ q) & (q ⊃ p)",
+            answer: "Valid<embed src='cond_tables/18.html' width='110%'' height='200px'>"
+        },
+        {
+            question: "<br><br>1. r<br>∴ (p ⊃ q) ∨ (q ⊃ p)",
+            answer: "<embed src='cond_tables/19.html' width='100%'' height='300px'>Valid, surprisingly. This argument is valid because the conclusion is a tautology, a proposition that can’t be false. Is it not obvious why? Explanation: <br><br>(p ⊃ q) ∨ (q ⊃ p) is truth functionally equivalent to (~p ∨ q) ∨ (~q ∨ p). <br><br>“Or” is communicative, meaning it doesn’t matter which order the p and q in “p ∨ q” is in.  And it is associative, meaning it doesn’t matter how you arrange the parentheses in “(p ∨ q) ∨ r”—it could be “p ∨ (q ∨ r)”. <br><br>So we could re-write (~p ∨ q) ∨ (~q ∨ p) as (p ∨ ~p) ∨ (q ∨ ~q)."
+        },
+
+        // Using Truth Tables for Natural Language Arguments
+        {
+            question: "If you’re not first, then you’re last. I’m not last, so I’m first!  <br><br><iframe width='560' height='315' src='https://www.youtube.com/embed/ZWICKSP6vhQ?si=K2e95sFneu-SZciq' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+            answer: "1. If one is not first, then one is last. <br>2. I’m not last. <br>∴ I’m first. <br><br>F = one is first [I am first]<br>L = one is last [I am last]<br><br>1. ~F ⊃ L<br>2. ~L<br>∴ F<br><br>Valid <br><br><iframe width='560' height='315' src='https://www.youtube.com/embed/20iio0wLpPA?si=aiNSRerS7adf89I4' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>"
+        },
+        {
+            question: "Total pacifism might be a good principle if everyone were to follow it. But not everyone does, so it isn’t. ",
+            answer: "1. If everyone followed total pacifism, then total pacifism would be a good principle.<br>2. Not everyone follows total pacifism.<br>∴ Total pacifism is not a good principle.<br><br>E = everyone followed total pacifism<br>G = total pacifism is a good principle<br><br>1. E ⊃ G<br>2. ~E<br>∴ ~G<br><br>Invalid "
+        },
+        {
+            question: "Nadia will play only if the situation is hopeless. But the situation is hopeless. So Nadia will play. ",
+            answer: "1. If Nadia will play, then the situation is hopeless. <br>2. The situation is hopeless. <br>∴ Nadia will play. <br><br>P = Nadia will play<br>H = the situation is hopeless<br><br>1. P ⊃ H <br>2. H <br>∴ P<br><br>Invalid"
+        },
+        {
+            question: "America will win the Olympics unless China does. China will win the Olympics unless Germany does. So America will win the Olympics unless Germany does. ",
+            answer: "1. If China does not win the Olympics, then America will win the Olympics. <br>2. If Germany does not win the Olympics, then China will win the Olympics. <br>∴ If Germany does not win the Olympics, then America will win the Olympics.<br><br>A = America will win the Olympics <br>C = China will win the Olympics<br>G = Germany will win the Olympics <br><br>1. ~C ⊃ A<br>2. ~G ⊃ C <br>∴ ~G ⊃ A<br><br>Invalid "
+        },
+        {
+            question: "The Democrats will run either Jones or Borg. If Borg runs, they will lose the South. If Jones runs, they will lose the North. So the Democrats will lose either the North or the South. ",
+            answer: "1. The Democrats will run Jones or the Democrats will run Borg.<br>2. If the Democrats run Jones, the Democrats will lose the North. <br>3. If the Democrats run Borg, the Democrats will lose the South.<br>∴ The democrats will lose the South or the Democrats will lose the North. <br><br>J = the Democrats will run Jones<br>B = the Democrats will run Borg<br>S = the Democrats will lose the South<br>N = the Democrats will lose the North <br><br>1. J ∨ B <br>2. B ⊃ S <br>3. J ⊃ N <br>∴ N ∨ S<br><br>Valid"
+        },
+        {
+            question: "Either interest rates go up or inflation gets worse. Since interest rates have not gone up, we can be sure that inflation is getting worse.",
+            answer: "1. Interest rates go up or inflation gets worse/is getting worse. <br>2. Interest rates have not gone up. <br>∴ Inflation is getting worse. <br><br>R = interest rates go up <br>I = inflation gets worse <br><br>1. R ∨ I<br>2. ~I<br>∴ R<br><br>Valid"
+        },
+        {
+            question: "We should be against big corporations only if we are against their stock holders. We are not against the stock holders. So we should not be against big corporations.",
+            answer: "1. If we should be against big corporations, then it is because we are against the stock holders or big corporations. <br>2. We are not against the stock holders or big corporations. <br>∴ We should not be against big corporations. <br><br>C = we should be against big corporations<br>S = we are against the stock holders of big corporations<br><br>1. C ⊃ S<br>2. ~S<br>∴ ~C <br><br>Valid"
+        },
+        {
+            question: "If climate change wasn’t getting worse, then we wouldn’t have to do anything about it. But it is getting worse, so we do have to do something about it. ",
+            answer: "1. If climate change wasn’t getting worse, then we wouldn’t have to do anything about climate change. <br>2. Climate change is getting worse. <br>∴ We do have to do something about climate change. <br><br>W = climate change is getting worse<br>S = we have to do something about climate change <br><br>1. ~W ⊃ ~S<br>2. W<br>∴ S <br><br>Invalid"
+        },
+        {
+            question: "Although these textbooks purport to be a universal guide to learning of great worth and importance, there is a single clue that points to another direction. In the six years I taught in city and country schools, no one ever stole a textbook. <br>-W. Ron Jones, Changing Education <br><br>(Hint: This argument depends on an implicit “if-then” statement and has an implied conclusion.)",
+            answer: "1. If the textbooks were of great worth, then they would have been stolen. <br>2. The textbooks were not stolen. <br>∴ The textbooks were not of great worth. <br><br>W = the textbooks were of great worth <br>S = the textbooks were stolen <br><br>1. W ⊃ S<br>2. ~S<br>∴ ~W <br><br>Valid"
+        },
+        {
+            question: "Twitter, as another high-tech innovation, will inevitably fragment community rather than enhance it. <br><br>(Hint: This argument depends on an implicit “if-then” statement and has an implied conclusion.)",
+            answer: "1. If something is a high-tech innovation, it will inevitably fragment society rather than enhance it. <br>2. Twitter is a high tech-innovation. <br>∴ Twitter will inevitably fragment society rather than enhance it. <br><br>I = something/Twitter is a high-tech innovation <br>F = something/Twitter will fragment society rather than enhance it <br><br>1. I ⊃ F<br>2. I<br>∴ F<br><br>Valid"
+        },
+        {
+            question: "Universal mandatory screening for AIDS can be justified on the basis of beneficence when a therapeutic intervention is available or when an infectious state puts others at risk merely by casual contact. However, neither is the case with AIDS. Thus, there is no demonstrable public health benefit that justifies universal mandatory screening.<br>-N. F. McKenzie, ed., <i>The AIDS Reader</i> ",
+            answer: "1. If a therapeutic intervention is available or if an infectious state puts others at risk merely by casual contact, then universal mandatory screening for AIDS can be justified on the basis of beneficence. <br>2. A therapeutic intervention for AIDS is not available and it is not the case for AIDS that an infectious state puts others at risk merely by casual contact. <br>∴ Universal mandatory screening for AIDS cannot be justified on the basis of beneficence. <br><br>T = a therapeutic intervention is available [for AIDS]<br>R = an infectious state puts others at risk merely by casual contact [for AIDS]<br>B = universal mandatory screening [for AIDS] can be justified on the basis of beneficence<br><br>1. (T ∨ R) ⊃ B<br>2. ~(T ∨ R)<br>∴ ~B<br><br>Invalid"
+        },
+        {
+            question: "Ladies and Gentlemen, I’ll be brief. The issue here is not whether we broke a few rules or took a few liberties with our female party guests. We did. But you can’t hold a whole fraternity responsible for the behavior of a few sick perverted individuals. For if you do, then shouldn’t we blame the whole fraternity system? And if the whole fraternity system is guilty, then isn’t this an indictment of our educational institutions in general? I put it to you, Greg: Isn’t this an indictment of our entire American society? Well, you can do what you want to us, but we’re not going to sit here and listen to you badmouth the entire United States of America.”<br>—Eric “Otter” Stratton, in the film <i>Animal House</i> ",
+            answer: "1. If a whole fraternity should be blamed for the bad behavior of a few individuals, then the whole fraternity system should be blamed for the bad behavior of a few individuals. <br>2. If the whole fraternity system should be blamed for the bad behavior of a few individuals, then educational institutions in general should be blamed for the bad behavior of a few individuals. <br>3. If educational institutions in general should be blamed for the bad behavior of a few individuals, then the entire American society should be blamed for the bad behavior of a few individuals. <br>4. The entire American society should not be blamed for the bad behavior of a few individuals. [Original: Well, you can do what you want to us, but we’re not going to sit here and listen to you badmouth the entire United States of America.]<br>5. Educational institutions in general should not be blamed for the bad behavior of a few individuals. (From 3 and 4, modus tollens) <br>∴ 6. The whole fraternity system should not be blamed for the bad behavior of a few individuals. (From 2 and 5, modus tollens) <br>∴ A whole fraternity should not be blamed for the bad behavior of a few individuals. (From 1 and 6, modus tollens)  <br><br>F = a whole fraternity should be blamed for the bad behavior of a few individuals<br>S = the whole fraternity system should be blamed for the bad behavior of a few individuals<br>E = educational institutions in general should be blamed for the bad behavior of a few individuals<br>A = the entire American society should be blamed for the bad behavior of a few individuals <br><br>1. F ⊃ S<br>2. S ⊃ E <br>3. E ⊃ A<br>4. ~A<br>∴ 5. ~E (From 3 and 4, modus tollens)<br>∴ 6. ~S (From 2 and 5, modus tollens)<br>∴ ~F (From 1 and 6, modus tollens) <br><br>Valid"
+        },
+        {
+            question: "Global warming can be slowed down only if we switch to cleaner energy sources. But the current level of industrial production can be sustained only if we continue to use fossil fuels. Either we won’t switch to cleaner energy sources or we won’t continue to use fossil fuels. As a result, global warming cannot be slowed down or the current level of industrial production cannot be sustained.",
+            answer: "1. If global warming can be slowed down, then it is because we switched to cleaner energy sources. <br>2. If we sustain the current level of industrial production, then it is because [made possible by the fact that] we continue to use fossil fuels. <br>3. We won’t switch to cleaner energy sources or we won’t continue to use fossil fuels. <br>∴ Global warming cannot be slowed down or we cannot sustain the current level of industrial production.<br><br>W = global warming can be slowed down<br>C = we switch to cleaner energy sources<br>S = we sustain the current level of industrial production <br>F = we continue to use fossil fuels <br><br>1. W ⊃ C<br>2. S ⊃ F<br>3. ~C ∨ ~F<br>∴ ~W ∨ ~S<br><br>Valid"
+        },
+        //Extra Argument Reconstruction Practice 
+        {
+            question: "The prolonged study of ethics does not by itself make you a better person. If it did, philosophy professors would in general be better people than average. But they aren’t.<br>—William Bennett, <i>The De-Valuing of America</i>",
+            answer: ""
+        },
+        {
+            question: "If the North Koreans are smart—and we know they are smart—they will move in the direction of reform.<br>—Daryl Plank, Korea expert and visiting fellow at Washington’s Heritage Foundation",
+            answer: ""
+        },
+        {
+            question: "And if, for example, antiabortionism required the perverting of natural reason and normal sensibilities by a system of superstitions, then the liberal could discredit it—but it doesn’t, so he can’t.<br>—Roger Wertheimer, <i>Philosophy and Public Affairs</i>",
+            answer: ""
+        },
+        {
+            question: "There will always be books. You can show them off on the shelf behind you during a Zoom meeting, and you still can’t do that with your iPhone.<br>—Robert Maxwell",
+            answer: ""
+        },
+        {
+            question: " <q>With the layout of the San Francisco-Oakland area, a rail line there had a better chance than most,</q> said rail critic Peter Gordon, a regional planner at USC. <q>If it doesn’t work there, and I assert it doesn’t, there is no way rail transit will work in a place like Los Angeles.</q> —<i>Los Angeles Times</i>",
+            answer: ""
+        },
+        {
+            question: "<q>But if evolution proceeded as a lockstep, then the fossil record should display a pattern of gradual and sequential advance in organization. It does not, and I regard this failure as the most telling argument against an evolutionary ratchet.</q><br>—Stephen Gould, <i>Panda’s Thumb </i><br><br>(Gould is a noted professor of paleontology at Harvard. By a “ratchet” and a “lockstep” he means a “gradual, uniform progression.”)",
+            answer: ""
+        },
+        {
+            question: "<q>If each man had a definite set of rules of conduct by which he regulated his life he would be no better than a machine. But there are no such rules, so men cannot be machines.</q><br> —A. M. Turing, <i>Mind</i> ",
+            answer: ""
+        },
+        {
+            question: "Q: <q>Even so, don’t you think that the use of computers reinforces a child’s problem-solving ability?</q> <br>A: <q>If that were true, then computer professionals would lead better lives than the rest of the population. We know very well that isn’t the case.</q>”<br>—Interview with computer expert Joseph Weizenbaum, <i>Le Nouvel Observateur</i> <br><br>(The argument is in the answer.)",
+            answer: ""
+        },
+        {
+            question: "Scientists believe that the most likely location of our country’s next severe earthquake is a fault zone that centers on New Madrid, MO. But residents here, where the quake probably will be centered, are unimpressed. “I’m just a non-believer,” said L. H. Rector, publisher of the New Madrid Weekly Record, whose motto is “The only paper in the world that cares about New Madrid.” “It hasn’t been proved that we’re going to have one,” Rector said. “Now, out in California, they can see the fault. It’s been proved. But no one here in New Madrid has seen one fault.”<br>—Los Angeles Times ",
+            answer: ""
+        },
+        {
+            question: "<q>The church never wanted disease to be under the control of man. Timothy Dwight, president of Yale College, preached a sermon against vaccination. His idea was that if God had decreed from all eternity that a certain man should die with the smallpox, it was a frightful sin to avoid and annul that decree by the trick of vaccination. Smallpox being regarded as one of the heaviest guns in the arsenal of heaven, to spike it was the height of presumption.</q><br>—Robert Ingersoll, <i>The Immortal Infidel</i>",
+            answer: ""
+        },
+        {
+            question: "<q>The key premise is that a human fetus is a full-fledged, actualized human life. Supposing human embryos are human beings, their innocence is beyond question. So nothing could justify our destroying them except, perhaps, the necessity of saving some other innocent human life.</q><br>—Roger Wertheimer, “Understanding the Abortion Argument”",
+            answer: ""
+        },
+        {
+            question: "<q>If there be righteousness in the heart, there will be beauty in the character. If there be beauty in the character, there will be harmony in the home. If there be harmony in the home, there will be order in the nation. If there be order in the nation, there will be peace in the world.</q><br>—Confucius ",
+            answer: ""
+        },
+
+        {
+            question: "<q>If a man could not have done otherwise than he in fact did, then he is not responsible for his action. But if determinism is true, it is true of every action that the agent could not have done otherwise. Therefore, if determinism is true, no one is ever responsible for what he does.</q><br>—Winston Nesbitt and Stewart Candlish, <i>Mind</i>",
+            answer: ""
+        },
+
+        {
+            question: "<q>In spite of the popularity of the finite-world picture, however, it is open to a devastating objection. In being finite the world must have a limiting boundary, such as Aristotle’s outermost sphere. That is impossible. This objection was put forward by the Greeks, reappeared in the scientific skepticism of the early Renaissance and probably occurs to any schoolchild who thinks about it today. On the basis of the objection, one must conclude that the universe is infinite.</q><br>—J. J. Callahan, <i>Scientific American</i> <br><br>(The stylistic variant for the if–then statement is unusual—it is “in being . . . must have . . .”)",
+            answer: ""
+        },
+
+        {
+            question: "<q>There was little doubt, then, that if the earth moved through an immovable sea of ether, there would be an ether wind, and if there were an ether wind, the Michelson-Morley apparatus would detect it. In fact, both scientists were confident that they would not only find such a wind, but that they could also determine (by rotating the slab until there was a maximum difference in the time it took light to make the two journeys) the exact direction, at any given moment, of the earth’s path through the ether. Michelson was astounded and disappointed. This time the astonishment was felt by physicists all over the world. Regardless of how Michelson and Morley turned their apparatus, they found no sign of an ether wind! Michelson never dreamed that this ‘failure’ would make the experiment one of the most successful, revolutionary experiments in the history of science. The reason Michelson and Morley were unable to detect an ether wind, Einstein said, is simple: there is no ether wind.</q><br>—Martin Gardner, <i>Relativity for the Million</i>",
+            answer: ""
+        },
+
+
+
+
+
          ];
          // Define instruction sets and their insertion indexes
          const instructions = [
@@ -652,50 +851,63 @@
             { index: 71, id: "set5", content: `<strong>Translating to Propositional Form with Conditionals: Complex </strong><br><br>Translate the following English sentences into propositional form using the variables indicated. Make sure you write out what the atomic propositions are. In some cases, this will be straightforward, but not in every case.<br><br>These sentences require parentheses. <br><br>Remember: Atomic propositions never contain any truth-functional connectives—and that includes negation.` },
             { index: 82, id: "set6", content: `<strong>Translating to Propositional Form: Mixed</strong><br><br> Translate the following English sentences into propositional form using conjunction (&), negation (~), disjunction (v), and conditionals (⊃). Define vairiables with the first letter of the capitalized words. <br><br>Example 1: <br><br>Although it is RAINING, I plan to go JOGGING this afternoon.<br>R = It is raining; J = I plan to go jogging<br>R & J<br><br>Example 2: <br><br>In order to ACE intro logic, it is sufficient to get a HUNDRED on every exam.<br>A = One aces intro logic; H = One gets a hundred on every exam<br>H ⊃ A<br><br>Some of these sentences require parentheses because they contain more than two atomic propositions or the joint negation of two atomic propositions. <br><br>Remember: Atomic propositions never contain any truth-functional connectives—and that includes negation.` },
             { index: 137, id: "set7", content: `<strong>Truth Tables without Conditionals</strong><br><br>Use truth tables to determine whether the following arguments are valid.` },
-            { index: 151, id: "set8", content: `<strong>Truth Tables with Conditionals </strong><br><br>     ` },
-             ];
+            { index: 151, id: "set8", content: `<strong>Truth Tables with Conditionals </strong><br><br>Use truth tables to determine whether the following arguments are valid.` },
+            { index: 170, id: "set9", content: `<strong>Using Truth Tables for Natural Language Arguments</strong><br><br>First, reconstruct the following arguments in standard form. Then translate the arguments into propositional form. Pause to see if you can determine the validity of the argument from its propositional form alone. If not, use a truth table to determine the validity of the argument. <br><br>If an invalid argument may be made valid with the addition of a suppressed premise, add that premise. <br><br>In the example answers, I provide translations and note whether the argument is valid. I don’t provide examples of truth tables for these arguments. See the “Truth Tables without Conditionals” and “Truth Tables with Conditionals” problem sets for examples of truth tables.` },     
+            { index: 183, id: "set10", content: `<strong>Extra Argument Reconstruction Practice</strong><br><br>First, reconstruct the following arguments in standard form. Then translate the arguments into propositional form. Pause to see if you can determine the validity of the argument from its propositional form alone. If not, use a truth table to determine the validity of the argument. <br><br>If an invalid argument may be made valid with the addition of a suppressed premise, add that premise. <br><br>You’re on your own here—there are no example answers. Come talk during office hours if you would like to review your work!` }, 
+        ];
  
-         function generateFAQs() {
-             const container = document.getElementById('faq-container'); 
- 
-             faqs.forEach((faq, index) => {
-                 const questionId = `question${index + 1}`;
-                 const answerId = `answer${index + 1}`;
- 
-         // Insert instructions with IDs
-                 const instruction = instructions.find(instr => instr.index === index);
-                 if (instruction) {
-                     // Create a container for the instruction with a specific ID
-                     const instructionDiv = document.createElement('div');
-                     instructionDiv.className = 'question';
-                     instructionDiv.id = instruction.id; // This ID corresponds to the navigation link
-                     instructionDiv.innerHTML = instruction.content;
-                     container.appendChild(instructionDiv);
-         }
-                 // Create and append question, button, and answer
-                 // This part remains the same as your existing setup
-                 const questionDiv = document.createElement('div');
-                 questionDiv.id = questionId;
-                 questionDiv.className = 'question';
-                 questionDiv.innerHTML = `${index + 1}. ${faq.question}`;
- 
-                 const buttonDiv = document.createElement('div');
-                 buttonDiv.className = 'button';
-                 const button = document.createElement('button');
-                 button.innerText = 'Show/Hide Answer';
-                 button.setAttribute('onclick', `toggleText('${answerId}')`);
- 
-                 const answerDiv = document.createElement('div');
-                 answerDiv.id = answerId;
-                 answerDiv.className = 'answer';
-                 answerDiv.innerHTML = `<p>${faq.answer}</p>`;
- 
-                 buttonDiv.appendChild(button);
-                 container.appendChild(questionDiv);
-                 container.appendChild(buttonDiv);
-                 container.appendChild(answerDiv);
-             });
-         }
+        function generateFAQs() {
+    const container = document.getElementById('faq-container'); 
+    let currentSetIndex = -1; // Initialize to -1 to indicate no current set
+    let questionNumber = 1; // Initialize question number
+
+    faqs.forEach((faq, index) => {
+        const instruction = instructions.find(instr => instr.index === index);
+        if (instruction) {
+            // New instruction set found, reset question number and update current set index
+            questionNumber = 1;
+            currentSetIndex = index; // Update current set index to the new set's start index
+            const instructionDiv = document.createElement('div');
+            instructionDiv.className = 'question';
+            instructionDiv.id = instruction.id; // This ID corresponds to the navigation link
+            instructionDiv.innerHTML = instruction.content;
+            container.appendChild(instructionDiv);
+        }
+
+        // Generate IDs using the index to ensure they are unique
+        const questionId = `question${index + 1}`;
+        const answerId = `answer${index + 1}`;
+
+        // Create and append question with updated numbering
+        const questionDiv = document.createElement('div');
+        questionDiv.id = questionId;
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `${questionNumber}. ${faq.question}`; // Use questionNumber for display
+        container.appendChild(questionDiv);
+
+        // Check if the question has an answer before appending button and answer div
+        if (faq.answer.trim() !== "") {
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'button';
+            const button = document.createElement('button');
+            button.innerText = 'Show/Hide Answer';
+            button.setAttribute('onclick', `toggleText('${answerId}')`);
+            buttonDiv.appendChild(button);
+            container.appendChild(buttonDiv);
+
+            const answerDiv = document.createElement('div');
+            answerDiv.id = answerId;
+            answerDiv.className = 'answer';
+            answerDiv.style.display = "none"; // Initially hide the answer
+            answerDiv.innerHTML = `<p>${faq.answer}</p>`;
+            container.appendChild(answerDiv);
+        }
+
+        // Increment question number for the next question
+        questionNumber++;
+    });
+}
+
  
          window.onload = generateFAQs;
  

@@ -97,6 +97,11 @@ img.center {
     transform: scale(0.25);
     transform-origin: top left; /* Adjusts the point from which the image is scaled */
 }
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
 
 
 

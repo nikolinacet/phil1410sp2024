@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Common Argument Forms</title>
@@ -15,11 +15,171 @@
         <a href="deductive.html">Deductive Arguments</a>
     </nav>
 
-    <footer>
-        All content from this site that is not my own is offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
-        <br>On this page: <a href="https://xkcd.com/703/">xkcd: A webcomic of romance, sarcasm, math, and language</a> 
-    </footer>
+    <div class="question">
+        As arguments get longer, their truth tables  have more rows. Using truth tables to determine their validity can become quite time-consuming. For example, the truth table of the following argument has 16 rows, and can take quite a bit of time to construct.
+
+            <blockquote>If interest rates are raised, the stock market will be hurt. If the stock market is hurt, the economy will slow down. But if interest rates are not raised, inflation will get worse. If inflation gets worse, the economy will slow down. So the economy will slow down.</blockquote>
+        
+        Since using truth tables to determine validity can be tedious, there is an incentive to find a more efficient way.
+            
+        <br><br>Arguments such as the one above are built by combining small and basic valid argument forms. This means that if we can recognize the small forms and see how they are put together to form longer arguments, then we can determine validity without constructing truth tables. 
+
+        <br><br><strong>Use the list of common argument forms below to identify the form of the arguments which follow. For each argument, determine if it is valid. </strong>
+
+        <br><br><blockquote>Example: 
+
+        <br><br>1. If it rains, then I won't go out.
+        <br>2. I went out.
+        <br>∴ Therefore, it didn't rain.
+        
+        <br><br>R = It rains
+        <br>O = I go out/went out
+        
+        <br><br>1. P ⊃ ~O
+        <br>2. O
+        <br>∴ ~P
+        
+        <br><br>Denying the Consequent, Valid</blockquote>
+         
+    </div>
+
+    <div class="center" >
+        <br><br>
+        <embed src='tables/common_forms.html' width='100%'' height=1100px>
+    </div>
+
+    <div id="faq-container"></div>
+
+    <script>
+        const faqs = [
+        {
+            question: "Either interest rates go up or inflation gets worse. Since interest rates have not gone up, we can be sure that inflation is getting worse.",
+            answer: "Disjunctive Syllogism, Valid",
+        },
+        {
+            question: "If Republicans favor free market economy, then they should oppose farm subsidies. Republicans favor free market economy. So they should oppose farm subsidies.",
+            answer: "Modus Ponens, Valid",
+        },
+        {
+            question: "If Isaac Newton is a biologist, then he is a scientist. Isaac Newton is a scientist. Therefore, he is a biologist.",
+            answer: "Affirming the Consequent, Invalid",
+        },
+        {
+            question: "The current economic growth cannot be sustained unless inflation is under control. Inflation is not under control. Therefore, the current economic growth cannot be sustained.",
+            answer: "Disjunctive Syllogism, Valid",
+        },
+        {
+            question: "If consumers increase spending, then inflation will get worse. If consumers cut back on spending, then there will be a recession. Consumers either increase or cut back on spending. It follows that the inflation will get worse or there will be a recession.",
+            answer: "Constructive Dilemma, Valid",
+        },
+        {
+            question: "If more prisons are built, public education will get worse due to lack of funding. If public education gets worse due to lack of funding, there will be more criminals. As a result, if more prisons are built, there will be more criminals.",
+            answer: "Hypothetical Syllogism, Valid",
+        },
+        {
+            question: "We should be against big corporations only if we are against their stock holders. We are not against the stock holders. So we should not be against big corporations.",
+            answer: "Modus Tollens, Valid",
+        },
+        {
+            question: "GM can be competitive only if it increases outsourcing. UAW workers can have job security only if GM does not increase outsourcing. GM either increases or does not increase outsourcing. Therefore, either GM cannot be more competitive or UAW workers cannot have job security.",
+            answer: "Destructive Dilemma, Valid",
+        },
+        {
+            question: "If Bill Gates owns Exxon Mobil, then he is a billionaire. Bill Gates does not own Exxon Mobil. Therefore, he is not a billionaire.",
+            answer: "Denying the Antecedent, Invalid",
+        },
+        {
+            question: "With protectionism, prices for consumer goods would become higher. Without protectionism, jobs would be lost. Since we either adopt protectionism or reject it, prices for consumer goods would become higher or jobs would be lost.",
+            answer: "Constructive Dilemma, Valid",
+        },
+        {
+            question: "Global warming can be slowed down only if we switch to cleaner energy sources. But the current level of industrial production can be sustained only if we continue to use fossil fuels. We won’t switch to cleaner energy sources or we won’t continue to use fossil fuels. As a result, global warming cannot be slowed down or the current level of industrial production cannot be sustained.",
+            answer: "Destructive Dilemma, Valid",
+        },
+        {
+            question: "Her letters of reference say that she’s qualified to work as either a manager or a sales representative. I can see from the interview that she’s qualified as a sales rep. So we can conclude, based on the letters, that she’s not qualified as a manager.",
+            answer: "Affirming a Disjunct, Invalid",
+        },
+        {
+            question: "If interest rates are raised, the stock market will be hurt. If the stock market is hurt, the economy will slow down. But if interest rates are not raised, inflation will get worse. If inflation gets worse, the economy will slow down. So the economy will slow down.",
+            answer: "Combination of two hypothetical syllogisms and a constructive dilemma, Valid",
+        },
+        {
+            question: "A new game console is in high demand only if there are a lot of exciting games available for it. However, many game developing companies won’t design new games for a new console unless it is in high demand. Since there are not a lot of exciting games available for a new console, it follows that many game developing companies won’t design new games for it.",
+            answer: "Combination of modus tollens and disjunctive syllogism, Valid",
+        },
+        {
+            question: "If one is a fiscal conservative, then one would be against big government spending. But if one is against big government spending, then one would support budget cut on military spending. President Bush supported budget cut on military spending. Therefore, he was a fiscal conservative.",
+            answer: "Combination of Hypothetical Syllogism and Affirming the Consequent, Invalid",
+        },
+        {
+            question: "There is a well-known philosophical problem called the problem of evil in western philosophy and religions. <br><br><blockquote>1. If God is all-powerful, He would be able to eliminate evil.<br>2. If God is all-good, He would want to eliminate evil.<br>3. Evil exists. (This means that God is not able to eliminate evil, or God does not want to eliminate evil.)<br>∴ Therefore, God is either not all-powerful or not all-good.</blockquote>",
+            answer: "Destructive Dilemma, Valid",
+        },
+        {
+            question: "If we continue the acceleration of production and consumption, we will deplete natural resources within one hundred years. If natural resources are depleted within one hundred years, life on earth will not be sustainable. We continue to accelerate production and consumption. As a result, life on earth will not be sustainable.",
+            answer: "Combination of Hypothetical Syllogism and Modus Ponens, Valid",
+        },
+        ];
+        
+        function generateFAQs() {
+            const container = document.getElementById('faq-container'); 
+
+            faqs.forEach((faq, index) => {
+                const questionId = `question${index + 1}`;
+                const answerId = `answer${index + 1}`;
+
+                // Create and append question, button, and answer
+                const questionDiv = document.createElement('div');
+                questionDiv.id = questionId;
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `${index + 1}. ${faq.question}`;
+
+                const buttonDiv = document.createElement('div');
+                buttonDiv.className = 'button';
+                const button = document.createElement('button');
+                button.innerText = 'Show/Hide Answer';
+                button.setAttribute('onclick', `toggleText('${answerId}')`);
+
+                const answerDiv = document.createElement('div');
+                answerDiv.id = answerId;
+                answerDiv.className = 'answer';
     
+                // Set the innerHTML for the answer, including the diagram if it exists
+                let answerHTML = `<p>${faq.answer}</p>`;
+                answerDiv.innerHTML = answerHTML;
+
+                buttonDiv.appendChild(button);
+                container.appendChild(questionDiv);
+                container.appendChild(buttonDiv);
+                container.appendChild(answerDiv);
+            });
+        }
+
+        window.onload = generateFAQs;
+
+        function toggleText(definitionId) {
+          var textElement = document.getElementById(definitionId);
+          if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                 textElement.style.display = "none";
+            }
+          textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+    <div class="question">
+        <br>
+        <br>
+    </div>
+    <footer>
+        <br>
+        <a href="javascript:void(0);" onclick="scrollToTop()" class="scrollTopBtn">Go to Top</a>
+        <br><br>All nonoriginal content is used with the permission of the owner or offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+    </footer>
 
 </body>
-</html> -->
+</html>
