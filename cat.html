@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Categorical Logic</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Categorical Logic</h1>
+    </header>
+    <nav class="normalnav">
+        <a href="index.html">Home</a>
+        <a href="deductive.html">Deductive Arguments</a>
+    </nav>
+
+    <div class="question" style="text-align: center;" >
+       <b>Problem Sets: </b>
+    </div>
+
+    <div class="problem-sets-navigation">
+        <a href="#set1">Translating to Categorical Form</a>
+        <a href="#set2">Testing for Validity with Venn Diagrams</a>
+    </div>
+
+    <div id="faq-container"></div>
+
+    <script>
+        const faqs = [
+        {
+            question: "Children are human beings.",
+            answer: "All children are human beings."
+        },
+        {
+            question: "Dinosaurs are not birds.",
+            answer: "No dinosaurs are birds."
+        },
+        {
+            question: "Birds evolved from dinosaurs.",
+            answer: "All birds are things that evolved from dinosaurs."
+        },
+        {
+            question: "Some mammals are not predators.",
+            answer: "Some mammals are not predators. "
+        },
+        {
+            question: "Some predators are not mammals.",
+            answer: "Some predators are not mammals. "
+        },
+        {
+            question: "If it’s a mouse, then it is a mammal.",
+            answer: "All mice are mammals."
+        },
+        {
+            question: "Jewelry is expensive if it is made of gold.",
+            answer: "All pieces of jewelry made of gold are expensive things."
+        },
+        {
+            question: "Unless a boy misbehaves he will be treated decently.",
+            answer: "All boys who do not misbehave are boys who will be treated decently.<br><br>Or: All boys who behave are boys who will be treated decently."
+        },
+        {
+            question: "Violence breeds violence.",
+            answer: "All acts of violence are violence breeders."
+        },
+        {
+            question: "Many entertainers are actors.",
+            answer: "Some entertainers are actors."
+        },
+        {
+            question: "There are no blue parrots.",
+            answer: "No parrots are blue things."
+        },
+        {
+            question: "Not all who wander are lost.",
+            answer: "Some things that wander are not things that are lost."
+        },
+        {
+            question: "All presidents are not women.",
+            answer: "No presidents are women."
+        },
+        {
+            question: "Boxers aren’t rich.",
+            answer: "No boxers are rich people."
+        },
+        {
+            question: "If someone is sleeping then they aren’t conscious.",
+            answer: "No sleeping people are conscious people."
+        },
+        {
+            question: "If someone is conscious then they aren’t sleeping.",
+            answer: "No conscious people are sleeping people."
+        },
+        {
+            question: "All’s well that ends well.",
+            answer: "All things that end well are things that are well. <br><br>[Note that this is in a different order than the sentence states. However, if you think about the meaning of the cliché, it should be clear that this is the correct order. What is being said is that as long as something ends well, it is well. It is not saying that the only things that can be well are things that end well.]"
+        },
+        {
+            question: "My friends are the only ones that care.",
+            answer: "All people who care are my friends."
+        },
+        {
+            question: "Someone loves you.",
+            answer: "Some people are people who love you."
+        },
+        {
+            question: "Some people don’t love Santa Claus.",
+            answer: "Some people are not people who love Santa Claus."
+        },
+        {
+            question: "Only pedestrians may use the Appalachian Trail.",
+            answer: "All people that may use the Appalachian Trail are pedestrians."
+        },
+        {
+            question: "Only citizens can be president.",
+            answer: "All presidents are citizens."
+        },
+        {
+            question: "Anyone who is a Hindu believes in God.",
+            answer: "All Hindus are people who believe in God."
+        },
+        {
+            question: "Not all mammals have legs.",
+            answer: "Some mammals are not animals that have legs."
+        },
+        {
+            question: "There are people who hate cats.",
+            answer: "Some people are cat-haters."
+        },
+        {
+            question: "Nothing that is sharp is safe.",
+            answer: "No sharp things are safe things."
+        },
+        {
+            question: "No poodle could run faster than a cheetah.",
+            answer: "No poodles are animals that can run faster than a cheetah."
+        },
+        {
+            question: "Baboons aren’t friendly.",
+            answer: "No baboons are friendly creatures."
+        },
+        {
+            question: "Pigs will eat anything.",
+            answer: "All things are things that would be eaten by a pig."
+        },
+        {
+            question: "Every landscape is beautiful, except the desert. ",
+            answer: "All non-desert landscapes are beautiful landscapes.<br><br>And: No desert landscapes are beautiful landscapes."
+        },
+        {
+            question: "Not all that glitters is gold.",
+            answer: "Some glittery things are not gold."
+        },
+        {
+            question: "All except children are allowed to do a job.",
+            answer: "All non-children are people allowed to do a job. <br><br>And: No children are people allowed to do a job."
+        },
+        {
+            question: "Accountants are the only one who will be hired.",
+            answer: "All those who will be hired are accountants."
+        },
+        // Venn diagrams
+        {
+            question: "No tyrannosaurus is a king. Therefore, no king is a tyrannosaurus.",
+            answer: "Categorical Form:<br><br>1. No tyrannosauruses are kings. <br>∴ No kings are tyrannosauruses. <br><br><embed src='Venn/Venn_1.png' width='75%'' height='75%'> <br><br>Valid"
+        },
+        {
+            question: "All trespassers will be fined. Therefore, some trespassers will be fined.",
+            answer: "Categorical Form:<br><br> 1. All trespassers are people who get fined. <br>∴ Some trespassers are people who get fined. <br><br><embed src='Venn/Venn_2.png' width='75%'' height='75%'> <br><br>Invalid"
+        },
+        {
+            question: "<br><br>1. All men are mortal.<br>2. Socrates is mortal.<br>∴ Socrates is a man.",
+            answer: "Categorical Form:<br><br> 1. All men are mortals. <br>2. All people identical to Socrates are mortals. <br>∴ All people identical to Socrates are men. <br><br><embed src='Venn/Venn_3.png' width='75%'' height='75%'><br><br>Invalid"
+        },
+        {
+            question: "<br><br>1. If you are financially successful, you have a lot of money.<br>2. Bobo has a lot of money.<br>∴ Bobo is financially successful.",
+            answer: "Categorical Form:<br><br> 1. All financially successful people are people who have a lot of money. <br>2. All people identical to Bobo are people who have a lot of money. <br>∴ All people identical to Bobo are financially successful people. <br><br><embed src='Venn/Venn_4.png' width='75%'' height='75%'> <br><br> Invalid"
+        },
+        {
+            question: "<br><br>1. If Keanu Reeves got a chance to meet Nikolina in person, then he would love her.<br>2. Keanu Reeves did not get a chance to meet Nikolina in person.<br>∴ Keanu Reeves does not love Nikolina.",
+            answer: "Categorical Form:<br><br> 1. All the worlds in which KR meets Nikolina are worlds in which KR loves Nikolina. <br>2. All the actual worlds are not worlds in which KR meets Nikolina. <br>∴ All the actual worlds are worlds in which KR does not love Nikolina. :(<br><br><embed src='Venn/Venn_5.png' width='75%'' height='75%'> <br><br> Invalid :)"
+        },
+        {
+            question: "<br><br>1. If Keanu Reeves got a chance to meet Nikolina in person, then he would love her.<br>2. Keanu Reeves does not love Nikolina.<br>∴ Keanu Reeves did not get a chance to meet Nikolina in person.",
+            answer: "Categorical Form:<br><br> 1. All the worlds in which KR gets to meet Nikolina are worlds in which KR loves Nikolina. <br>2. All the actual worlds are not worlds in which KR loves Nikolina. <br>∴ All the actual worlds are not worlds in which KR gets to meet Nikolina. <br><br><embed src='Venn/Venn_6.png' width='75%'' height='75%'> <br><br>Valid"
+        },
+        {
+            question: "<br><br>1. All surfers are slackers.<br>2. Bobo is not a surfer.<br>∴ Bobo is not a slacker.",
+            answer: "Categorical Form:<br><br>1. All suffers are slackers. <br>2. No people identical to Bobo are surfers. <br>∴ No people identical to Bobo are slackers. <br><br><embed src='Venn/Venn_7.png' width='75%'' height='75%'> <br><br> Invalid"
+        },
+        {
+            question: "Some American citizens are not eligible to vote, and all Americans are patriotic. Hence some American patriots cannot participate in the election process.",
+            answer: "Categorical Form:<br><br>1. Some Americans are not people who are eligible to vote. <br>2. All Americans are patriots. <br>∴ Some patriots are not people who are eligible to vote. <br><br><embed src='Venn/Venn_8.png' width='75%'' height='75%'> <br><br> Valid"
+        },
+        {
+            question: "The only rational response to conspiracy is skepticism. But some varieties of skepticism are unjustified. So some rational responses to conspiracy are unjustified.",
+            answer: "Categorical Form:<br><br> 1. All rational responses to conspiracy are skeptical responses. <br>2. Some skeptical responses are unjustified responses. <br>∴ Some rational responses are unjustified responses. <br><br><embed src='Venn/Venn_9.png' width='75%'' height='75%'> <br><br> Invalid"
+        },
+        ];
+        // Define instruction sets and their insertion indexes
+        const instructions = [
+            { index: 0, id: "set1", content: `<strong>Translate the following statements into categorical form. </strong>` },
+            { index: 33, id: "set2", content: `<strong><br><br>Use Venn diagrams to determine the validity of the following arguments. If may be helpful to translate into categorical form before diagraming. Do not assume existential commitment for universal statements. </strong>` },
+            ];
+
+            function generateFAQs() {
+    const container = document.getElementById('faq-container'); 
+    let questionNumber = 1; // Initialize the question number counter
+
+    faqs.forEach((faq, index) => {
+        const instruction = instructions.find(instr => instr.index === index);
+        if (instruction) {
+            questionNumber = 1; // Reset the question number for each new set
+
+            const instructionDiv = document.createElement('div');
+            instructionDiv.className = 'question';
+            instructionDiv.id = instruction.id;
+            instructionDiv.innerHTML = instruction.content;
+            container.appendChild(instructionDiv);
+        }
+
+        const questionId = `question${index + 1}`;
+        const answerId = `answer${index + 1}`;
+
+        const questionDiv = document.createElement('div');
+        questionDiv.id = questionId;
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `${questionNumber++}. ${faq.question}`; // Use and increment the question number
+
+        const buttonDiv = document.createElement('div');
+        buttonDiv.className = 'button';
+        const button = document.createElement('button');
+        button.innerText = 'Show/Hide Answer';
+        button.setAttribute('onclick', `toggleText('${answerId}')`);
+
+        const answerDiv = document.createElement('div');
+        answerDiv.id = answerId;
+        answerDiv.className = 'answer';
+        answerDiv.innerHTML = `<p>${faq.answer}</p>`;
+
+        buttonDiv.appendChild(button);
+        container.appendChild(questionDiv);
+        container.appendChild(buttonDiv);
+        container.appendChild(answerDiv);
+    });
+}
+
+
+        window.onload = generateFAQs;
+
+        function toggleText(definitionId) {
+          var textElement = document.getElementById(definitionId);
+          if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                 textElement.style.display = "none";
+            }
+          textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+    <div class="question">
+        <br>
+        <br>
+    </div>
+    <footer>
+        <br>
+        <a href="javascript:void(0);" onclick="scrollToTop()" class="scrollTopBtn">Go to Top</a>
+        <br><br>All nonoriginal content is used with the permission of the owner or offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+    </footer>
+
+</body>
+</html>
+
