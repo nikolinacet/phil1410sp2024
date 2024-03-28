@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistical Generalizations and Applications</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Statistical Generalizations and Applications</h1>
+    </header>
+    
+    <nav class="normalnav">
+        <a href="index.html">Home</a>
+        <a href="inductive.html">Inductive Arguments</a>
+    </nav>
+    
+    <div class="question" style="text-align: center;" >
+        <b>Problem Sets: </b>
+     </div>
+ 
+    <div class="problem-sets-navigation">
+        <a href='#set1'>Discussion Questions</a> 
+        <a href='#set2'>Margin of Error</a> <br>
+        <a href='#set3'>Evaluating Generalizations 1</a>
+        <a href='#set4'>Evaluating Generalizations 2</a> <br>
+        <a href='#set5'>Extra Generalization Evaluation Practice</a>
+        <a href='#set6'>Evaluating Statistical Applications</a> <br>
+        <a href='#set7'>Statistical Applications and Averages</a>
+        <a href='#set8'>Generalization Case Study</a>
+     </div>
+
+    <div class="question">
+       
+    </div>
+
+    <div id="faq-container"></div>
+
+    <script>
+        const faqs = [
+        {
+            question: "After having attended numerous Pistons home games over 20 years, Alice cannot remember a time when she didn’t see ticket scalpers selling tickets outside the stadium. She generalizes that there are ticket scalpers at every sporting event.",
+            answer: "" 
+        },
+        {
+            question: "After having attended numerous Pistons home games over 20 years, Alice cannot remember a time when she didn’t see ticket scalpers selling tickets outside the stadium. She generalizes that there are ticket scalpers at every NBA game.",
+            answer: "" 
+        },
+        {
+            question: "After having attended numerous Pistons home games over 20 years, Alice cannot remember a time when she didn’t see ticket scalpers selling tickets outside the stadium. She generalizes that there are always scalpers at every Pistons home game.",
+            answer: "" 
+        },
+        {
+            question: "A poll administered to 10,000 registered voters who were home-owners showed that 90% supported a policy to slash Medicaid funding and decrease property taxes. Therefore, 90% of voters support a policy to slash Medicaid funding.",
+            answer: "" 
+        },
+        {
+            question: "A telephone poll administered by a computer randomly generating numbers to call found that 68% of Americans in the sample of 2000 were in favor of legalizing recreational marijuana use. Thus, almost 70% of Americans favor legalizing recreational marijuana use.",
+            answer: "" 
+        },
+        {
+            question: "A balanced, vegan diet is the best way to overcome any disease. My aunt had breast cancer, and then she removed all meats and dairy from her diet and now only eats vegetables, fruits, and whole foods. She is now healthier than ever before.",
+            answer: "" 
+        },
+        {
+            question: "Anyone who says a carnivore diet is unhealthy really doesn’t know what they’re talking about. I’ve been doing it for the past year and I’m fine. The diet is perfectly healthy. I’ll even show you my blood work. ",
+            answer: "" 
+        },
+        {
+            question: "I never used calculus after high school. So, it’s just not that useful. ",
+            answer: "" 
+        },
+        {
+            question: "<embed src='anecdotal.png' width='100%'' height='100%px'>",
+            answer: "" 
+        },
+        {
+            question: "90% of people in LA, San Francisco, Manhattan, San Diego, Austin, and Seattle support gay marriage, therefore 90% of Americans support it.",
+            answer: ""
+        },
+        {
+            question: "A randomized telephone poll in the United States asked respondents whether they supported: <blockquote>a) a policy that allows killing innocent children in the womb or <br>b) a policy that saves the lives of innocent children in the womb.</blockquote>The results showed that 69% of respondents chose option “b” over option “a.” The generalization was made that “most Americans favor a policy that disallows abortion.”",
+            answer: ""
+        },
+        {
+            question: "A randomized telephone poll in the United States asked respondents whether they supported <blockquote>a) a policy that grants women access to basic reproductive health care or <br>b) a policy that denies women access to basic reproductive health care. </blockquote>The results showed that 69% of respondents chose option “a” over option “b.” The generalization was made that “most Americans favor a policy that allows abortion.”",
+            answer: ""
+        },
+        {
+            question: "<br><embed src='trump_poll.png' width='50%'' height='50%px'>",
+            answer: ""
+        },
+        {
+            question: "I’ve developed a new method for studying–using this ONE WEIRD TRICK that THEY don’t want you to know about!!!! In small short trials students have shown a 20% increase in their test scores compared to their previous test in the same class. <br><br>I want to run a year-long trial to make sure the effects “stick.” <br><br>To get participants, I advertise for volunteers with flyers all over campus and I do a campus-wide email blast. I get 1000 participants to volunteer. As part of the study, they have to log their study hours using my one weird study trick. By the end of the first month about 10% of the students stop submitting data and drop out of the study. By the end of the study, I’ve lost about 60% of my volunteers. But chin up, folks! My method works because of the 40% that remained, 87% of them increased their GPA by at least a full letter grade.",
+            answer: ""
+        },
+        {
+            question: "Shortly after 9/11, a Pew Research survey suggested that more than half of Americans believe it is necessary to give up some civil liberties in order to curb terrorism: <br><br><embed type='text/html' src='https://www.pewresearch.org/short-reads/2013/06/07/balancing-act-national-security-and-civil-liberties-in-post-911-era/' width='1000' height='450'><br><br>Is it fair to make a generalization about American beliefs concerning the relationship between curbing terrorism and civil liberties based on this poll? ",
+            answer: ""
+        },
+        {
+            question: "During the coronavirus pandemic in late April 2020, two California doctors, Drs. Dan Erickson and Artin Massihi, held a press conference claiming that the death rate was much lower than other estimates. They arrived at this conclusion because they estimated the total number of infections was higher than estimated. <br><br>Here was how they arrived at their numbers:  340 / 5213 (6.5%) diagnostic tests were positive at their urgent cares. Here is how they decided who to test at their urgent cares: <br><br> <iframe width='560' height='315' src='https://www.youtube.com/embed/SteZYpWmrYY?si=kD1VVa5p9Xt4-dAc' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe><br><br>They conclude, scaling up, that 6.5% of the entire Central Valley is therefore positive. For Bakersfield, CA: it would mean about 58,000 people had the virus, far more than the 700 confirmed cases. We should calculate mortality and morbidity (hospitalization, ICU) rates accordingly, they argue.",
+            answer: ""
+        },
+        {
+            question: "In a random sample of 10 owners of Subarus in the most recent model year, 5 of them were “extremely pleased” with their car.",
+            answer: "50% (+/- 30%) of owners of Subarus in the most recent model year were “extremely pleased” with their car. "
+        },
+        {
+            question: "Four percent of 2,000 randomly sampled American homeowners said they preferred renting.",
+            answer: "4% (+/- 2%) of American homeowners prefer renting"
+        },
+        {
+            question: "In a random sample of 100 days in Atlanta, on 7 of them unhealthful levels of ozone were in the air.",
+            answer: "7% (+/- 10%) of days in Atlanta have unhealthful levels of ozone in the air."
+        },
+        {
+            question: "One-tenth of a random sample of 1,000 mosquitoes captured in a Florida swamp were carrying the virus that causes encephalitis.",
+            answer: "10% (+/- 3%) of Florida swamp mosquitoes carry the virus that causes encephalitis."
+        },
+        {
+            question: "In a random sample of 1,000 Texas adults, 483 believe the state sport should be rodeo.",
+            answer: "48% (+/- 3%) of Texas adults believe the state sport should be rodeo."
+        },
+        {
+            question: "In a random sample of 500 television episodes from 50 years of television history, one-third of them depicted at least one murder.",
+            answer: "33% (+/- 4%) of television episodes from 50 years of television history depicted at least one murder. "
+        },
+        {
+            question: "Eighteen percent of the 500 streetlights sampled at random in Manhattan were out of order.",
+            answer: "18% (+/- 4%) of streetlights in Manhattan are out of order. "
+        },
+        {
+            question: "Of 2,000 randomly sampled American Express cardholders, 1,609 were pleased with their customer service.",
+            answer: "80% (+/- 2%) of American Express cardholders are pleased with their customer service"
+        },
+        //Evaluating Gens 1
+        {
+            question: "Bob, from Silverton, CO drives a 4x4 pickup truck, so most people from Silverton, CO drive 4x4 pickup trucks.",
+            answer: "Not cogent. The sample size is too small. There is also a sampling bias present: even if many other people from Silverton, CO drove pickups, it doesn’t follow that people generally do. There is a high percentage of trucks in Silverton because the rough roads there almost require trucks."
+        },
+        {
+            question: "Tom counts and categorizes birds that land in the tree in his backyard every morning from 5:00-5:20 am. He counts mostly morning doves and generalizes, “most birds that land in my tree in the morning are morning doves.”",
+            answer: "Not cogent. Biased sample: even if he has an adequate sample size, Tom needs to sample at different times during the morning to be sure that he has a representative sample. If morning doves are disproportionately represented during the early morning hours, then his sample will be biased."
+        },
+        {
+            question: "Tom counts and categorizes birds that land in the tree in his backyard every morning from 5:00-6:00 am. He counts mostly morning doves and generalizes, “most birds that land in my tree during the 24-hour day are morning doves.”",
+            answer: "Not cogent. Even more clearly than the previous example, this one is a biased sample (grab sampling): even if he has an adequate sample size, Tom needs to sample from different times of the day. Morning doves will likely be disproportionately represented in the morning since they are more likely to be out in the morning than other kinds of birds."
+        },
+        {
+            question: "Tom counts and categorizes birds that land in the tree in his backyard every day from 5:00-6:00 am, from 11:00-12:00 pm, and from 5:00-6:00 pm. He counts mostly morning doves and generalizes, “most birds that land in my tree during the 24-hour day are morning doves.”",
+            answer: "This example corrects the problems of the previous two: Tom has sampled from different times during the day. As long as he has taken these samples on multiple different days (preferably in different seasons too), then his sample is representative and his generalization is cogent. The appropriate sample size depends on how precise Tom wants to be in the making his generalization. "
+        },
+        {
+            question: "A poll administered to 10,000 registered voters who were homeowners showed that 90% supported a policy to slash Medicaid funding and decrease property taxes. Therefore, 90% of voters support a policy to slash Medicaid funding.",
+            answer: "Not cogent. Biased sample. Of course, the homeowners will be likely to support a policy that slashes property taxes. Most likely, those on Medicaid (governmental health care support for the elderly) will not be homeowners but will be in nursing home facilities. If the poll had been administered to Medicaid recipients (who are less likely to own homes), the results would likely have been different."
+        },
+        {
+            question: "A telephone poll administered by a computer randomly generating numbers to call, found that 68% of Americans in the sample of 2000 were in favor of legalizing recreational marijuana use. Thus, almost 70% of Americans favor legalizing recreational marijuana use.",
+            answer: "This seems a cogent generalization (if the premise is true). Telephone polls are a good way of getting a random sample, and the sample size is large enough—twice the polling standard of 1000—if a good random sampling technique is used."
+        },
+        {
+            question: "Steve’s first rock and roll concert was an Ani Difranco concert, in which most of the concert-goers were women with feminist political slogans written on their t-shirts. Steve makes the generalization that “most rock and roll concert-goers are women who are feminists.” He then applies this generalization to the next concert he attends (Tom Petty) and is greatly surprised by what he finds.",
+            answer: "Not cogent. Steve’s problem is that he has gotten a biased sample (grab sampling). Ani Difranco concert-goers are not representative of concert-goers tout court. Since Ani Difranco is very political (and from a feminist perspective), we should expect to see a much higher proportion of such speech at an Ani Difranco concert. In contrast, Tom Petty is about as apolitical as any musician."
+        },
+        {
+            question: "A high school principal conducts a survey of how satisfied students are with his high school by asking students in detention to fill out a satisfaction survey. Generalizing from that sample, he infers that 79% of students are dissatisfied with their high school experience. He is surprised and saddened by the result.",
+            answer: "Not cogent. Biased sample. We should expect students in detention to be less satisfied, on average, than students generally. Thus, since the principal’s survey was only administered to students in detention, the rate of dissatisfaction will be much higher, which will make the sample unrepresentative and the generalization bad."
+        },
+        {
+            question: "Bobo once ordered a hamburger from Burger King and got violently ill shortly after he ate it. From now on, he never eats at Burger King because he fears he will get food poisoning.",
+            answer: "Not cogent. Bobo’s sample size is too small since he is generalizing from only one case at one Burger King to all Burger Kings, all the time. A sample size of one seems inadequate here given that there is likely a variety of conditions across all Burger Kings. "
+        },
+        {
+            question: "Bobo the teacher asks 15 of his 20 students what they thought of his course at the end of the semester during one-on-one in-person surveys. He gets overwhelmingly positive responses, so he concludes that his students really enjoyed the class.",
+            answer: "Not cogent. Bobo’s sample size is small, but the general population is small as well, so that’s not the central problem. The issue is that the info Bobo collects is not likely true because of the psychological bias built into Bobo’s “poll.” Typically, people provide more positive, and less honest, feedback in person than they do anonymously. Consider, for example, how much more vicious hate speech is online than in real life. Some of Bobo’s students are probably lying to him.  "
+        },
+        {
+            question: "Bobo conducts a poll among 1000 shoppers at various Wegmans locations asking for their response to the following question: Is there scientific consensus about whether or not climate change poses a serious environmental threat to humanity? <blockquote>Possible answers: <br>(a) there is no consensus at all<br>(b) there is a small amount of consensus <br>(c) there is a moderate amount of consensus <br>(d) there is a great amount of consensus <br>(e) there is total consensus. </blockquote>5% of the 1000 respondents choose (a), 40% choose (b), 40% choose (c), 10% choose (d), and 5% choose (e). <br><br>Bobo concludes the following: There is a small to moderate amount of consensus in the scientific community about whether or not climate change poses a serious environmental threat to humanity.  ",
+            answer: "Not cogent. The sample of 1000 Wegmans shoppers is not even close to being representative of the target population, “the scientific community.” "
+        },
+        //Evaluating Generalizations 2
+        {
+            question: "Only 25 percent of 1,000 residents of Manhattan polled at a free concert in Central Park said they would support privatizing the park and instituting a mandatory fee for entrance. The sample would seem to reflect the attitude of New Yorkers in general.",
+            answer: "25% of sampled Manhattan residents said they would support privatizing the park and instituting a mandatory fee for entrance.<br>∴ About 25 % of New Yorkers support privatizing the park and instituting a mandatory fee for entrance.<br><br>Not cogent. Biased sample (grab sampling). "
+        },
+        {
+            question: "You are in charge of quality control for a pharmaceutical company, and part of your job is to run a laboratory that collects random samples of your company’s drugs each month and examines them carefully for purity. One month your lab obtains a startling result: 60 percent of the sampled drugs are impure. You alert the company president (and, of course, the public relations officer) that over half of that month’s product is tainted. (Meanwhile, one of your lab technicians inspects the beakers used for pre-examination sample storage and discovers that due to a change in laboratory cleaning protocol this month, a microscopic chemical residue is left on the beakers after cleaning. Minute amounts of this residue have commingled with many of the drugs, causing the impurity.)",
+            answer: "60% of the sampled drugs are impure. <br>∴ About 60% of the laboratory drugs are impure. <br><br>Not cogent. Biased sampling procedure due to dirty sampling. "
+        },
+        {
+            question: "In 1936, in the midst of the Great Depression, the <i>Literary Digest</i> randomly selected 10 million names from phone books across the country and mailed them sample ballots for the upcoming presidential election between Republican Alf Landon and Democrat Franklin Delano Roosevelt. About 2 million of the ballots were returned and, based on the results of that sample, the magazine predicted confidently that Landon would win by a clear majority. (Postscript: Roosevelt won with 60 percent of the popular vote, and the <i>Literary Digest</i>, having lost all credibility, ceased publication soon after.)",
+            answer: "More than half of sampled Americans chose Landon over Roosevelt. <br>∴ Most Americans will choose Landon over Roosevelt. <br><br>Infamously biased due to self-selection in sample. Not cogent. "
+        },
+        {
+            question: "An elderly woman overheard speaking to her friend: “Recently I drove through a small ‘art-colony’ village in Pennsylvania, which is normally frequented by tourists. I got the shock of my life when I saw about 75 young people all dressed exactly alike—in blue denim! I wondered if there had been a prison break or an invasion of the Union Army. What is it with our young people? They have about as much individuality as connected sausage links. They all look alike. Same dress, same jeans, same long straight hair—it’s hard to tell one from the other.”",
+            answer: "This is especially difficult to evaluate because we don’t know what percentage of the art colony 75 people are. Here’s an attempt anyway: <br><br>75 young people “sampled” in an art colony all dressed the same. <br>∴ All young American people dress the same. <br><br>Not cogent, of course. Biased sample due to grab sampling—an art colony in which people all dress the same, read “cult,” is not representative of all young American people. "
+        },
+        {
+            question: "Most of the kids in this remote, rural high school in Grants, New Mexico, have only television to provide them with their images of big cities. Paul Sanchez confesses that he hates what he has seen of New York on television. As part of a class assignment, he writes: “New York seems like a corrupt place. Crime seems to rule. I am not a person who is easily intimidated but TV did it.”<br><i>—TV Guide</i>",
+            answer: "Like the previous example, this one is difficult to put in standard form, but here’s an attempt:<br><br>New York as 'sampled' on TV is corrupt and crime-ridden. <br>∴ New York is corrupt and crime-ridden. <br><br>Not cogent due to sample bias—TV is not representative of real life. And also possibly due to sample size if Paul is referring to only one TV show or, worse, one episode. "
+        },
+        {
+            question: "Americans support the idea of letting children attend public schools of their choice. The public favored by a margin of 62 percent to 33 percent allowing students and parents to choose which public schools in their community the students attend. Officials said the Gallup-Phi Delta Kappa poll is the most comprehensive survey of American attitudes on educational issues since the series began in 1969. This year, Gallup interviewers asked a selected sample of 1,500 American adults 80 questions. The margin of error was 3 percentage points.<br><i>—Associated Press</i>",
+            answer: "62% of sampled American adults support letting students and parents choose which public school in their community the student attends. <br>∴ 62% (+/- 3%) of Americans support letting students and parents choose which public school in their community the student attends. <br><br>The sample size is greater than the standard for polls (1000) and the margin of error is comparable (actually a bit better) than what can be expected for a poll with 1000 responses and a 95% confidence level (+/- 3%). If the selected sample of respondents is random, the generalization seems cogent. "
+        },
+        {
+            question: "I have a master’s degree in mathematics and was well thought of by my professors. I am working as a computer programmer, and my coworkers, supervisors, and users admire my abilities. I scored in the upper 2 percentile on college entrance tests, usually in the upper percentile for mathematics and biology. However, I would probably score poorly on the Kaufmans’ test because I have a poor short-term memory. It sometimes takes me several months to learn my telephone number and address when I move. I find it hard to believe there is a strong correlation between short-term memory and the ability to think logically.<br><i>—Letter to the editor, Science News</i>",
+            answer: "One correspondent’s ability to think logically and their short-term memory are not correlated. <br>∴ No one’s ability to think logically and their short-term memory are correlated. <br><br>Not cogent due to an inadequate sample size. In this case, a sample size of one is not adequate because the property in question (correlation between logical thinking and short-term memory) is not all-or-nothing among all human beings. "
+        },
+        {
+            question: "Across the board, reputable polls in 2016 estimated Trump’s level of support to be around 40%. Yet when the votes came in, he received over 46% of the votes. (Consider the “shy Trumper” view that many voters knew that supporting Trump was socially undesirable and thus did not admit it to pollsters.) <br><br>You can read about the “shy Trumper” theory here: <br><br><embed type='text/html' src='https://www.pewresearch.org/short-reads/2016/11/09/why-2016-election-polls-missed-their-mark/' width='1000' height='450'>",
+            answer: "40% of sampled voters support Trump. <br>∴40% of voters support Trump. <br><br>This summary tells us the polls concerning Trump were mistaken, so we already know something went wrong with them. (The generalization is not cogent.) What went wrong? According to the “shy Trumper” view, it’s that info collected by polls did not reflect voters’ actual allegiances (the premise of the generalization was not true) because “Trump curious” voters were embarrassed to admit as much. This was a popular theory used to describe the discrepancy between Trump poll results and outcomes. What do you think? "
+        },
+        {
+            question: "Two University of Texas at Austin sociologists, David A. Snow and Cynthia L. Phillips, tested 1,125 students to see whether they were primarily concerned with themselves or society—with “impulse” or “institution,” as the researchers put it. Eighty percent saw themselves guided by their own “feeling, thought, and experience.” Only 20 percent saw themselves guided by “institutionalized roles and statuses.”<br><i>—Psychology Today</i>",
+            answer: "80% of students sampled were “primarily concerned with themselves” rather than “society.”<br>∴ 80% of students are “primarily concerned with themselves” rather than “society.”<br><br>This generalization is not cogent because the poll does not test what it purports to test. “Primarily concerned with themselves or society” is not a distinction that obviously maps onto “guided by “feeling, thought, and experience rather than institutionalized roles and statuses.” The premise is not true. "
+        },
+        //Evaluating Generalizations Extra 
+        {
+            question: "Most teenage girls now aspire to professional occupations, such as doctor or lawyer, according to a report by Helen Farmer, a psychologist at the University of Illinois. Farmer queried 1,234 9th and 12th graders from nine Illinois schools. By way of contrast, less than half of the boys had similar aspirations.<br><i>—Associated Press</i>",
+            answer: ""
+        },
+        {
+            question: "“I’m grateful that CBS still carries the ‘Bugs Bunny/Road Runner’ show, that collection of Warner Bros. animated classics. The only catch is that occasional bits of cartoon ‘violence’ have been trimmed away by the network. This strikes me as unnecessary and downright silly. After all, I watched these cartoons without cuts when I was a kid, and I turned out fine. Or at least OK.”<br><i>—TV Guide</i>",
+            answer: ""
+        },
+        {
+            question: "“I watched ‘PBS NewsHour’ one night last week and I watched the ‘ABC Evening News’ an hour later. With about 28.5 minutes more than the 21 actually delivered by ABC, PBS did an inferior job. I know that ABC’s commercials reap a good deal more cash from the network’s news operation in a month than the alms givers contribute to PBS stations in a year. But I also know that thorough reportage and editing costs no more than sloppy work. The network product is much better, and that’s not what the beggars are claiming.” (Take PBS newscasts as the population.)<br>—George Higgins, <i>Wall Street Journal</i>",
+            answer: ""
+        },
+        {
+            question: "Yankelovich Clancy Shulman, a market research company based in Westport, Conn., asked 2,500 consumers whether they agreed or disagreed with the statement: “I feel somewhat guilty when buying non-American made products generally.” The figure was 51 percent, with a margin of error of 2 percentage points. “Something in the back of Americans’ heads is saying that they do or ought to feel guilty,” said Susan Hayward, senior vice president of Yankelovich.<i>—Washington Post</i>",
+            answer: ""
+        },
+        {
+            question: "I confess in advance that I saw only a few gusts-worth of “The Winds of War. Not the least amazing thing about the series is that so many had so many evenings free to give it. It is absolutely true that I am, metaphorically speaking, judging the roll by the caraway seed, but caraway seeds aren’t nothing. It seemed to me on brief acquaintance that the acting, to put it in a kindly way, was serviceable rather than inspired.<br>—Charles Champlin, <i>Los Angeles Times</i>",
+            answer: ""
+        },
+        //Evaluating Statistical Applications
+        {
+            question: "<br>1. Three percent of socialists from California voted for Romney. <br>2. Maureen is a socialist from California. <br>∴ Maureen did not vote for Romney. ",
+            answer: "Likely cogent. There is probably homogeneity among socialists from California with respect to their willingness to vote for Romney. Romney is a Republican, and the great majority of socialists don’t vote Republican. "
+        },
+        {
+            question: "<br>1. Almost all birds can fly. <br>2. This penguin is a bird. <br>∴ This penguin can fly. ",
+            answer: "Not cogent. There is heterogeneity among birds with respect to the ability to fly."
+        },
+        {
+            question: "Only about 3% of cigarette smokers die from lung cancer, so my smoking won’t result in death from lung cancer. ",
+            answer: "Not cogent.  “Smokers” is a large and heterogeneous group with important sub-groups with respect to the trait in question, “dying of lung cancer.” For example, whether or not a smoker dies of lung cancer may depend on how much they smoke or genetic factors. So if I am one of those smokers who smokes 2 packs a day, I probably have much more than a 3% chance of dying of lung cancer. "
+        },
+
+        {
+            question: "More than 95% of UVA students earn their degrees. So don’t bother studying tonight—come party with us! There’s a very small chance you’re <i>not</i> going to earn your degree. ",
+            answer: "Not cogent. This application is not strong because there is heterogeneity among UVA students with respect to the chance that they will get their degree. For example, some students can get good grades without studying whereas others (most of us) need practice. Some seek out classes because they’ve heard the professor gives out lots of As’s, whereas others take classes they are interested in, regardless of how difficult they seem. For there to be a high percentage chance, like 95% or higher, of getting your degree without studying, then you need to bank on more than just being a UVA student—like being the kind of student who can generally pass classes without studying or being the kind of student who only takes relatively easy classes. "
+        },
+        //Statistical Applications and Averages 
+        {
+            question: "<br>P1. In 2016, the average price of a home in the U.S. increased by 10% year over year.<br>P2. Your brother owns a home.<br>∴  The price of your brother’s home must have increased by 10% year over year.",
+            answer: "Not cogent. The use of “average” in this argument is misleading because the average increase in home price in 2016 is not a good representative of most home price increases in that same year. This is because there is a huge distribution of home price market dynamics in the U.S. In some cities, prices are growing very rapidly, e.g. San Diego. This skews the average. Because there is a big distribution in this case, median would be a more informative measure. "
+        },
+        {
+            question: "The average annual cost of health care in the U.S. is about $9, 000/person. It follows that most Americans will spend about that much on health care this year.",
+            answer: "Not cogent for the same reason as above. There is a huge distribution in how much Americans spend on health care. Outliers, e.g. some who must spend hundreds of thousands of dollars, skew the average, so it is not a good representative of most American’s health care costs. "
+        },
+        {
+            question: "You want to take stats with a professor who gives you the best shot at a good grade. Professor Plum’s class GPA is a 3.5 average and Professor Apple’s is a 3.0 average. You decide to take stats with Professor Apple. Using the concept of distribution and median, explain why you might make this decision.",
+            answer: "If the distribution of grades in Plum’s class is wacky, e.g. she gives most students 2.5’s, a few get 3’s, none get 3.5’s, and a few get 4’s, then you may want to take Apple’s class, assuming that the distribution is tighter in her class, e.g. because the most common grade is 3 and no one gets below 2.7. "
+        },
+        //Generalizations Case Study 
+        {
+            question: "<br><embed src='Physicians’ Willingness To Participate in the Process of Lethal Injection for Capital Punishment (2001).pdf' width='1000px'' height='700px'> <br><br>A media headline reads: “Over 40% of Doctors Willing to Assist with the Death Penalty.” Is this a cogent generalization? Consider how the study was conducted and the results that are reported. Support your response with specific details from the study summary. <br><br>In the Discussion section, it’s revealed that only 3% of the study respondents were aware of the American Medical Association (AMA) guidelines related to lethal injection. That is, the vast majority did not know that 8 of the 10 actions from <i>Figure</i> (page 3) were prohibited by the AMA. How might this have affected the results of the study?",
+            answer: ""
+        },
+
+        ];
+        
+         // Define instruction sets and their insertion indexes
+         const instructions = [
+            {index: 0, id: 'set1', content: `<strong>Discussion Questions</strong><br><br>For each generalization, determine if it is strong, and why. As you go, craft a list of requirements a strong generalization must meet. `},
+            {index: 16, id: 'set2', content: `<strong>Margin of Error</strong><br><br>For each sample that is described write a conclusion with a margin of error that is equivalent in precision to a margin of error of +/- 3% for a sample of 1000 with a 95% confidence level.<br><br>Sample exercise. A random sample of 500 pairs of socks put into clothes dryers showed that one-fourth of the pairs lost one member by the end of the cycle.<br><br>Sample answer. 25% (+/- 4 percent) of pairs of socks put into clothes dryers lose a member by the end of the cycle.`},
+            {index: 24, id: 'set3', content: '<strong>Evaluating Generalizations 1</strong><br><br>Determine whether the following generalizations are cogent. Cogent generalizations have: <blockquote>1. True premises<br>2. Conclusions that have a high probability of being true<br>3. Conclusions that are true because the premises are true. This happens when: <blockquote>•	The sample size is adequate. <br>•	The sample is unbiased.<br>•	The sampling procedure is unbiased.</blockquote>Common factors that prevent generalizations from being cogent include: <blockquote>•	Psychological bias that gets in the way of collecting true premises, e.g. framing bias in polls<br>•	Sample sizes that are too small, e.g. samples of one for properties that are not all-or-nothing<br>•	The sample is biased, i.e. not representative of the greater population. This may be caused by, e.g. grab sampling, snowball sampling, or self-selected sampling.<br>•	Biased sampling procedures caused by dirty sampling </blockquote></blockquote>If the generalization is not likely cogent, explain why.'},
+            {index: 35, id: 'set4', content: '<strong>Evaluating Generalizations 2</strong><br><br>Put the following generalizations in standard form and then determine if they are cogent as above. <br><br>When putting the generalization in standard form, use the word “sampled” in the premise. <br><br>The standard form for a generalization is: <blockquote>1. <i>n</i> of sampled <i>F</i>s are <i>G</i>.<br>∴ <i>n</i> (+ or – <i>m</i>) of <i>F</i> are <i>G</i>.</blockquote>If the margin of error is not explicitly provided, as in most cases, it may be appropriate to use “almost” or “about” instead of a numerical amount. (For the margin of error, you must have information about the sample size and the desired confidence level of the researchers.)<br><br>Sample exercise. <br><br>“The people, it seems, have declared California Republican Ronald Reagan the winner of the Reagan–Carter debate. Nearly 700,000 people paid 50 cents each to take part in an instant ABC News telephone survey following the presidential debate, and by a 2-to-1 margin, they said Ronald Reagan had gained more from the encounter than Georgia Democrat Carter. ABC said that of the callers who reached one of the two special 900-prefix numbers during the 100 minutes following Tuesday night’s debate, 469,412 people, or 67 percent dialed the number designated for Reagan, and 227,017 or 33 percent dialed the one assigned to Carter. The network said an especially heavy volume of calls was recorded from ‘Western states’ but had no more precise breakdown immediately.”<br>—from the <i>Associated Press</i><br><br>Sample answer.<blockquote>67% of the sampled Americans considered Reagan the winner of the debate.<br>∴ About 67% of Americans considered Reagan the winner of the debate.</blockquote>Not cogent. The sample is easily big enough (by 700 times). But it is not randomly selected. It was self-selected, with callers who were not willing to pay 50 cents filtered out. If the willingness to pay 50 cents to participate in a political poll is related to political affiliation (e.g. being a Republican or Democrat), then the sample is biased. Additionally, more non-Westerners (who would have been less likely to favor the Californian Reagan) were filtered out because they were in a later time zone and had gone to bed.'},
+            {index: 44, id: 'set5', content: '<strong>Extra Generalizations Evaluation Practice</strong><br><br> You are on your own here! Put these generalizations into standard form and evaluate thier cogency.'},
+            {index: 49, id: 'set6', content: '<strong>Evaluating Statistical Applications</strong><br><br>Determine whether the following applications are cogent. <br><br>The standard form of statistical applications is: <blockquote>1. <i>n</i> amount of <i>F</i>s are <i>G</i>.<br>2. <i>a</i> is an <i>F</i>.<br>∴ <i>a</i> is a <i>G</i>. </blockquote>In Cogent Statistical Applications:<blockquote>•	The premises are true.<br><br>•	An adequate percentage (n) of the target population (F) has the trait in question (G). (The higher the percentage, the stronger the argument.)  <br><br>•	There are no important sub-groups in the target population (F) with respect to the trait in question (G). (If there is heterogeneity in the target population, there is a greater chance the argument will not be strong.)</blockquote> '},
+            {index: 53, id: 'set7', content: '<strong>Statistical Applications and Averages</strong><br><br>Using what you know about the difference between distribution, median, and average (mean), explain whether the following arguments are cogent. <br><br> This video illustrates the importance of median in heterogeneous populations: <br><br><iframe width="560" height="315" src="https://www.youtube.com/embed/QPKKQnijnsM?si=0nqC5ouuamYszYnC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'},
+            {index: 56, id: 'set8', content: '<strong>Generalization Case Study</strong><br><br> Review the summary below:'},
+        ];
+ 
+        function generateFAQs() {
+        const container = document.getElementById('faq-container'); 
+        let currentSetIndex = -1; // Initialize to -1 to indicate no current set
+        let questionNumber = 1; // Initialize question number
+
+    faqs.forEach((faq, index) => {
+        const instruction = instructions.find(instr => instr.index === index);
+        if (instruction) {
+            // New instruction set found, reset question number and update current set index
+            questionNumber = 1;
+            currentSetIndex = index; // Update current set index to the new set's start index
+            const instructionDiv = document.createElement('div');
+            instructionDiv.className = 'question';
+            instructionDiv.id = instruction.id; // This ID corresponds to the navigation link
+            instructionDiv.innerHTML = instruction.content;
+            container.appendChild(instructionDiv);
+        }
+
+        // Generate IDs using the index to ensure they are unique
+        const questionId = `question${index + 1}`;
+        const answerId = `answer${index + 1}`;
+
+        // Create and append question with updated numbering
+        const questionDiv = document.createElement('div');
+        questionDiv.id = questionId;
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `${questionNumber}. ${faq.question}`; // Use questionNumber for display
+        container.appendChild(questionDiv);
+
+        // Check if the question has an answer before appending button and answer div
+        if (faq.answer.trim() !== "") {
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'button';
+            const button = document.createElement('button');
+            button.innerText = 'Show/Hide Answer';
+            button.setAttribute('onclick', `toggleText('${answerId}')`);
+            buttonDiv.appendChild(button);
+            container.appendChild(buttonDiv);
+
+            const answerDiv = document.createElement('div');
+            answerDiv.id = answerId;
+            answerDiv.className = 'answer';
+            answerDiv.style.display = "none"; // Initially hide the answer
+            answerDiv.innerHTML = `<p>${faq.answer}</p>`;
+            container.appendChild(answerDiv);
+        }
+
+        // Increment question number for the next question
+        questionNumber++;
+    });
+}
+
+
+        window.onload = generateFAQs;
+
+        function toggleText(definitionId) {
+          var textElement = document.getElementById(definitionId);
+          if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                 textElement.style.display = "none";
+            }
+          textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+    <div class="question">
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <footer>
+        <br>
+        <a href="javascript:void(0);" onclick="scrollToTop()" class="scrollTopBtn">Go to Top</a>
+        <br><br>All nonoriginal content is used with the permission of the owner or offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+    </footer>
+
+</body>
+</html>

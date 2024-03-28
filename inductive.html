@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deductive Arguments</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Inductive Arguments</h1>
+    </header>
+
+</body>
+</html>
+
+    <nav class="normalnav">
+        <a href="index.html">Home</a>
+        <a href="gen.html">Statistical Generalizations and Applications</a>
+        <a href="inference.html">Inference to the Best Explanation</a>
+        <a href="analogy.html">Analogy</a>
+        <a href="causal.html">Causal Reasoning</a>     
+    </nav>
+</body>
+
+<img src="causation_fallacy.jpeg" alt="xkcd comics" class="center" style="width: 250pt; height: 300pt;">
+ 
+    <div class="question">
+       
+    </div>
+
+    <div id="faq-container"></div>
+
+    <script>
+        const faqs = [
+        {
+            question: "The lights were all out and the car was gone, so we conclude that nobody was home. ",
+            answer: "Inductive" 
+        },
+        {
+            question: "Women office workers work just as hard as men office workers, and are just as productive. Women office workers should receive the same pay as men in comparable positions.",
+            answer: "Deductive" 
+        },
+        {
+            question: "Thinking is taken as the main function of the human mind. So if computers can think, that would entail that the human mind is a material thing.",
+            answer: "Deductive" 
+        },
+        {
+            question: "Most Toyota cars are very reliable, so the Toyota you just bought will be reliable too.",
+            answer: "Inductive" 
+        },
+        {
+            question: "If we had state-sponsored religion, then religious freedom would be threatened. To make sure we do not have state-sponsored religion, we need to uphold the separation of church and state. This means that religious freedom requires the separation of church and state. ",
+            answer: "Deductive" 
+        },
+        {
+            question: "Given that there are billions of galaxies in the universe and billions stars in each galaxy, there must be other life forms beyond the earth.",
+            answer: "Inductive" 
+        },
+        {
+            question: "Many people believe that near-death experiences are evidence of life after death. Since there are so many reports about the near-death experience, life after death probably exists.",
+            answer: "Inductive" 
+        },
+        {
+            question: "To be a sentient being one needs to exist in time. This means that if consciousness and memory are retained in the afterlife, then the afterlife cannot be a timeless existence.",
+            answer: "Deductive" 
+        },
+
+        ];
+        
+         // Define instruction sets and their insertion indexes
+         const instructions = [
+            { index: 0, id: "set1", content: `<strong>Inductive or Deductive</strong><br><br>Determine whether each of the following arguments is deductive or inductive. `,}
+        ];
+ 
+        function generateFAQs() {
+        const container = document.getElementById('faq-container'); 
+        let currentSetIndex = -1; // Initialize to -1 to indicate no current set
+        let questionNumber = 1; // Initialize question number
+
+    faqs.forEach((faq, index) => {
+        const instruction = instructions.find(instr => instr.index === index);
+        if (instruction) {
+            // New instruction set found, reset question number and update current set index
+            questionNumber = 1;
+            currentSetIndex = index; // Update current set index to the new set's start index
+            const instructionDiv = document.createElement('div');
+            instructionDiv.className = 'question';
+            instructionDiv.id = instruction.id; // This ID corresponds to the navigation link
+            instructionDiv.innerHTML = instruction.content;
+            container.appendChild(instructionDiv);
+        }
+
+        // Generate IDs using the index to ensure they are unique
+        const questionId = `question${index + 1}`;
+        const answerId = `answer${index + 1}`;
+
+        // Create and append question with updated numbering
+        const questionDiv = document.createElement('div');
+        questionDiv.id = questionId;
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `${questionNumber}. ${faq.question}`; // Use questionNumber for display
+        container.appendChild(questionDiv);
+
+        // Check if the question has an answer before appending button and answer div
+        if (faq.answer.trim() !== "") {
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'button';
+            const button = document.createElement('button');
+            button.innerText = 'Show/Hide Answer';
+            button.setAttribute('onclick', `toggleText('${answerId}')`);
+            buttonDiv.appendChild(button);
+            container.appendChild(buttonDiv);
+
+            const answerDiv = document.createElement('div');
+            answerDiv.id = answerId;
+            answerDiv.className = 'answer';
+            answerDiv.style.display = "none"; // Initially hide the answer
+            answerDiv.innerHTML = `<p>${faq.answer}</p>`;
+            container.appendChild(answerDiv);
+        }
+
+        // Increment question number for the next question
+        questionNumber++;
+    });
+}
+
+
+        window.onload = generateFAQs;
+
+        function toggleText(definitionId) {
+          var textElement = document.getElementById(definitionId);
+          if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                 textElement.style.display = "none";
+            }
+          textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+    <div class="question">
+        <br>
+        <br>
+    </div>
+
+    <footer>
+        <br><br>All nonoriginal content is used with the permission of the owner or offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+    </footer>
+    
+
+
+</html>
