@@ -108,6 +108,12 @@ img.center {
     height: 50%;
     padding: 10px; 
 }
+.boxed {
+    border: 2px double black; /* solid black border */
+    padding: 20px; /* Adds space inside the box */
+    margin: 0px; /* Adds space outside the box */
+    background-color: lightblue;
+}
 
 
 

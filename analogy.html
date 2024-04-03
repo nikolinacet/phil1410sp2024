@@ -1,67 +1,288 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Analogy</title>
-    <style>
-        body {
-            font-family: 'Palatino', serif;
-            color: #010006;
-            background-color: #DFEAE4; 
-            margin: 0px;
-            padding-bottom: 30px;
-        }
-        header, nav, footer {
-            background-color: #3f5744; 
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease; 
-            display: inline-block;
-        }
-        nav a:hover {
-            transform: scale(1.2); 
-        }
-        .question {
-            margin: auto;
-            padding-top: 5%;
-            padding-left: 20%;
-            padding-right: 20%;
-            line-height: 1.5;
-        }
-        .answer {
-            display: none;
-            margin: auto;
-            padding-top: 1%;
-            padding-left: 23%;
-            padding-right: 25%;
-            color: rgb(26, 7, 149);
-            line-height: 1.5;
-        }
-        .argument {
-            margin: auto;
-            padding-left: 5%;
-            line-height: 1.5;
-        }
-        .button {
-            margin: auto;
-            padding-left: 23%;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
     <header>
         <h1>Analogy</h1>
     </header>
-    <nav>
+    
+    <nav class="normalnav">
         <a href="index.html">Home</a>
         <a href="inductive.html">Inductive Arguments</a>
     </nav>
 
+    <div class="question">
+        This is the standard form of an analogical argument: 
+    <br><div class="argument">
+        <br>1. Object <i>A</i> has properties <i>P, Q, R,</i> and so on. 
+	    <br>2. Objects <i>B, C, D,</i> and so on also have properties <i>P, Q, R,</i> and so on.
+	    <br>3. Objects <i>B, C, D,</i> and so on have property <i>X.</i>
+        <br>∴ Object <i>A</i> probably also has property <i>X.</i> (For evaluative conclusions: Object <i>A</i> <strong>should</strong> also have property <i>X.</i>)
+    </div>
+
+   <br><br> Standard Form Example 1: 
+
+   <div class="argument">
+   
+   <br>I have always owned Subaru cars in the past and they have always been reliable. The new car I just purchased will also be reliable because it is a Subaru.
+
+    <br><br>1. The car I just purchased is a Subaru. (Object A has property P.)
+    <br>2. All of my old cars have been Subarus. (Objects B, C, etc. also have property P.) 
+    <br>3. All of my old cars have been reliable. (Objects B, C, etc. have property X.)
+    <br>∴ My new car will also be reliable. (Object A has property X.) 
+
+    </div>
+
+    <br><br>Standard Form Example 2: 
+
+    <div class="argument">
+
+    <br>Health insurance companies pay for heart surgery, brain surgery, LASIK eye surgery, treatment for mental disorders, elective cognitive behavioral therapy, and marriage counseling, which can all increase an individual’s happiness. Given this, they should also pay for cosmetic surgery, which can also increase an individual’s happiness.
+
+    <br><br>1. Cosmetic surgery makes people happier. (Object A has property P.)
+    <br>2. Heart surgery, brain surgery, LASIK, etc. also make people happier. (Objects B, C, etc. also have property P.)
+    <br>3. Heart surgery, brain surgery, LASIK, etc. are covered by health insurance. (Objects B, C, etc. have property X.)
+    <br>∴ Cosmetic surgery should also be covered by health insurance. (Object A should also have property X.)
+
+    </div>
+    
+    <br><br>For each of the following analogies, put them in standard form like in the examples above. Next, determine if they are cogent.
+    
+    <br><br>In cogent analogies: 
+
+    <div class="argument">
+    
+    <br>1.	The premises are true
+    <br>2.	The cited comparison between two objects supports the implied comparison
+
+    <br><br>One cited comparison between two objects is better than another when: 
+
+    <br><br>2. a. More and closer similarities between the two objects are provided
+    <br>2. b. There are fewer and less relevant dissimilarities between the two objects
+    <br>2. c. The cited similarities are diverse
+    </div>
+
+    <br><br>In evaluating analogies, refer to these guidelines: 
+
+    <br><br><strong>Guideline 1:</strong> Address the premises of the argument, not the conclusion. In this case, that means focusing on evaluating the quality of the comparison being made in P1 and P2, in addition to the truth of the premises. Explaining why the conclusion of an argument is false for reasons that do not have to do with any of the argument’s premises is irrelevant.
+
+    <br><br><strong>Guideline 2:</strong> Provide reasons in support of any claim you make. Do not merely restate your claim in different words, and do not merely suggest the possibility of something you cannot substantiate with what you understand to be a reason in its favor.
+
+    <br><br><strong>Guideline 3:</strong> It’s okay to be a relativist about the truth status of any premise, but you must provide a reason for this as well. That reason cannot be “people disagree about this issue.”
+
+    <br><br><br>
+
+    <div class="boxed">
+    
+    <strong>Evaluation Example:</strong>
+
+    <br><br>I know I have a mind because I experience mental states, like perceptions, beliefs, desires, and fears. Bobo’s body is really similar to mine—he’s a human after all—so I know he probably has a mind and mental states (perceptions, beliefs, desires, fears, etc.) too. 
+
+    <br><br><strong>Standard Form Reconstruction:</strong>
+
+    <br><br>1. I have a human body. 
+    <br>2. Bobo has a human body. 
+    <br>3. I experience mental states like perceptions, beliefs, desires, and fears. In other words, I have a mind. 
+    <br>∴ Bobo also has a mind. 
+
+    <br><br><strong>Bad Evaluation Example 1:</strong> This is not a strong analogy because it does not demonstrate beyond a shadow of a doubt that the conclusion is true. It could be false. It could be the case that Bobo does not have a mind even though he has a body, which is the opposite of the conclusion. This is possible because Bobo could have a body but still not experience mental states. 
+
+    <div class="argument">
+    <br>Why this is bad: This violates guidelines 1 and 2. The response suggests the conclusion could be false, but does not address the quality of the comparison made in the premises. It also provides no reason why the conclusion might be false, independent of the premises or otherwise. All of the sentences after “It could be false” are just different ways of restating that the conclusion could be false, even though they use words that suggest a reason is being given, like “because.” 
+    <br><br>Furthermore, no analogy provides conclusive support for its conclusion because analogies are inductive arguments, and as such, they do not aim to demonstrate that a conclusion is certainly true. But that by itself doesn’t mean it’s a bad argument because it may provide some strong reasons why we should probably believe in the truth of its conclusion. If you feel tempted to give a response similar to this one, provide a compelling reason why you think we should doubt the argument.   
+    </div>
+
+    <br><br><strong>Bad Evaluation Example 2:</strong> If you believe that having a specific kind of body is what it takes to have a mind, then this is a good argument. 
+
+    <div class="argument">
+    <br>Why this is bad: Well, is that what one should believe? There is no evaluation here, just a summary of the main point of the argument. Not only does this response not address the premises of the argument (Guideline 1), it doesn’t even really address the conclusion because it takes no stance at all. 
+    </div>
+
+    <br><br><strong>Bad Evaluation Example 3:</strong> This analogy is good because it points out that the fact in virtue of which humans have minds is the physical makeup of the bodies they have, a view with which I agree. The mind just is the brain. 
+
+    <div class="argument">
+    <br>Why this is bad: There is no evaluation here, just a summary of the main point of the argument. This violates Guidelines 1 and 2. If you agree with the conclusion of an analogy, you still have to defend it. That means you cannot say you just agree and move on. One way to defend an argument with which you agree is to provide a possible objection and then explain why that objection does not actually weaken the argument, apply, etc. 
+    </div>
+  
+    <br><br><strong>Bad Evaluation Example 4:</strong> This analogy makes the point that what it takes to have a mind is just having a certain kind of body. For example, if you have a human body, like Bobo, then that is sufficient for having a mind. But the nature of the mind and some of its relatives, like consciousness or the soul, are tricky subjects to pin down. There are lots of different theories about what a mind is. Some of these theories are bound up with people’s deeply held personal beliefs, which are all valid. No one can know for certain what’s correct outside of individuals’ subjective beliefs.
+
+    <div class="argument">
+    <br>Why this is bad: As in the previous examples, Guidelines 1 and 2 are violated. In this case, Guideline 3 is violated as well. 
+    <br><br>At first glance, this may seem like a balanced, sophisticated response, but it really says almost nothing at all with regard to evaluating the argument. The first two sentences are a nice summary of the argument—but they’re just that, a summary. The next three sentences point out that defining the mind is hard and that people have different ideas about what it is. That is certainly true! However, it is not an evaluation of the argument. Finally, the last sentence says that no one can know for sure what the mind is, which suggests that the previous three sentences were just setting up a relativist position about the nature of the mind. But this position is not supported. Why should we be relativists about this? The author doesn’t say. She merely points out that there is disagreement, which we know by itself does not support relativism about an issue. 
+    <br><br>Finally, a point about the claim that no one can be certain about what the nature of the mind is like: the argument is an analogy. As such, it aims to provide probable, not conclusive, support for its conclusion, so this point is irrelevant. Moreover, just because a question is difficult to answer does not mean (1) it’s not worth an attempt and (2) an answer does not exist.  
+    </div>
+
+    <br><br><strong>Good Evaluation Example 1:</strong>
+
+    <br><br>This analogy is cogent. It points out that the fact in virtue of which humans have minds is the physical makeup of the bodies they have, a view with which I agree. One might say that this analogy is weak because it only compares two very similar things, two humans. The objection might go like this: In order to figure out whether a certain kind of physical body is the substrate of the mind, we ought to look at creatures with a diversity of bodies, like chimps, octopuses, dogs, coral, and bacteria, not just humans. Broadening the objects of comparison would be good, but in this case, it would only make the analogy stronger, not weaker! For example, of all the animals we would say have minds, chimps are probably on that list, and coral are probably not. Why? Precisely for the reason that chimps have bodies that are similar to ours—for example, they have central nervous systems and pain receptors—whereas coral are physically very different from us. 
+
+    <br><br><strong>Good Evaluation Example 2: </strong>
+
+    <br><br>This analogy is not cogent because there could be relevant dissimilarities between me and Bobo, even if we both have human bodies, which could affect the conclusion that Bobo has a mind. For example, if Bobo has been in a coma for 10 years, I’m not convinced that he has a mind any longer. Long-term coma patients may exhibit some characteristics that misleadingly suggest that they have minds, like muted pain responses, but plants demonstrate an aversion to environmental stressors as well, and they don’t have minds. Furthermore, it’s not clear that long-term coma patients have anything like mental states—perceptions, beliefs, desires, fears, etc. To demonstrate that an organism has anything like beliefs, desires, etc., we need to be able to observe how they behave in an environment, and long-term coma patients don’t behave at all. This points to what the analogy gets fundamentally wrong—attributing a mind to a physical substrate instead of the ability to behave in sophisticated ways. 
+    <br>
+    </div>
+
+    </div>    
+
+    <div class="question" style="text-align: center;" >
+        <b>Problem Sets: </b>
+     </div>
+ 
+    <div class="problem-sets-navigation">
+        <a href='#set1'>Evaluating Analogies</a><br>
+        <a href='#set2'>Extra Practice</a>
+     </div>
+       
+    
+
+    <div id="faq-container"></div>
+
+    <script>
+        const faqs = [
+        {
+            question: "I know I have a mind because I experience mental states, like perceptions, beliefs, desires, and fears. Bobo behaves much in the same way that I do. For example, he jumps when someone scares him, cries at sad movies, and smiles when someone tells a joke. So I know he probably has a mind and mental states (perceptions, beliefs, desires, fears, etc.) too. ",
+            answer: "1. I behave a certain way: I jump when someone scares me, cry at sad movies, and smile when someone tells a joke.<br>2. Bobo behaves in much the same way: he jumps when someone scares him, cries at sad movies, and smiles when someone tells a joke. <br>3. I have a mind. <br>∴ Bobo also has a mind. " 
+        },
+        {
+            question: "In a text-based conversation, chatbot A converses in a way that is indistinguishable from a human. Humans have minds, so chatbot A probably has a mind as well. <br><br><a href='https://plato.stanford.edu/entries/turing-test/'>This is the premise of Alan Turing’s famous Turing Test.</a><br><br><embed src='Turing_test_diagram.png' width='50%'' height='50%px'>",
+            answer: "1. Chatbot A converses a certain way, like a human. <br>2. Humans converse in the same way. <br>3. Humans have minds. <br>∴ Chatbot A has a mind.  " 
+        },
+        {
+            question: " <strong>The Chinese Room Thought Experiment:</strong> <br><br>Suppose that Bobo is locked in a room and given a large batch of Chinese writing. Bobo knows no Chinese and Bobo is not even confident that he could recognize Chinese writing as distinct from, say, Persian writing or meaningless squiggles. Bobo is so ignorant about Chinese writing that, to him, Chinese characters are just meaningless squiggles. <br><br>Suppose further that after this first batch of Chinese writing, Bobo is given a second batch of Chinese script together with a set of rules that allow him to correlate the second batch with the first batch and, based on this correlation, to produce a set of Chinese characters himself. The rules are in English, and Bobo understands these rules as well as any other native speaker of English. The rules enable Bobo to correlate one set of Chinese characters with another set based solely on their form, not their meaning. Importantly, at no point in this process is Bobo translating from Chinese characters to English.  <br><br>Unknown to Bobo, the people who are giving him all of these inputs call the first batch &quot;a story,&quot; the second batch &quot;questions,&quot; the rules &quot;a program,&quot; and Bobo’s output &quot;answers.&quot; <br><br>After a lot of time, Bobo gets really good at producing answers. He gets so good, in fact, that his answers are indistinguishable in quality from those of a native writer and reader of Chinese characters. The native reader understands the meaning of the story, the questions, and her answers, of course. <br><br>And here we arrive at the central question of the thought experiment: Does Bobo understand the stories he is responding to? <br><br>According to the author of this thought experiment, John Searle, Bobo will never come to have any understanding of the Chinese characters because there’s no way to get semantic meaning from syntactic (formal) symbol manipulation. The characters Bobo works with will never come to mean anything to him, so Bobo will never understand them, no matter how well he performs in producing output. <br><br><strong>The analogy:</strong> Bobo performs computational operations on formally specified elements. In this way, he is like the central processing unit inside a computer. Because Bobo doesn’t have understanding, computers will probably never have understanding either, no matter how impressive their output is, because computers merely do what Bobo is doing.  ",
+            answer: "1. Bobo performs computational operations on formally specified elements. All his work is syntactic.  <br>2. Computers perform computational operations on formally specified elements. All their work is syntactic. <br>3. Bobo has no understanding.  <br>∴ Computers have no understanding. " 
+        },
+        {
+            question: "The politician was caught cheating in his marriage, and he will have to face similarly strong temptations in his public duties, so he will probably cheat in political life as well. ",
+            answer: "1. The politician faces strong temptations in his marriage. <br>2. The politician faces strong temptations in his public duties. <br>3. The politician cheated in his marriage. <br>∴ The politician will probably cheat in the fulfillment of his public duties as well." 
+        },
+        {
+            question: "Democracy does not work in a family. Parents should have the ultimate say because they are wiser and their children do not know what is best for themselves. Similarly, the best form of government for a society is not a democratic one but one where the leaders are more like parents.",
+            answer: "1. Parents are wiser than their children and children do not know what is best for themselves.  <br>2. Leaders are wiser than their constituents and constituents do not know what is best for themselves. (Suppressed) <br>3. Parents should have the ultimate say—the best form of organization for a family is not a democracy.<br>∴ Leaders should have the ultimate say—the best form of government for a society is not a democracy. " 
+        },
+        {
+            question: "During World War I, the Socialist Party distributed leaflets to recent draftees, urging them to oppose the draft. The draft, they contended, violated the constitutional amendment against involuntary servitude. Oliver Wendell Holmes, chief justice of the Supreme Court, argued that they did not have the right to circulate the leaflets during wartime. The right to free speech, he asserted, “would not protect a man in falsely shouting fire in a theater and causing a panic.” Since in both cases “the words used . . . create a clear and present danger,” he concluded, the right to free speech did not protect the Socialists in expressing ideas that might harm the war effort. ",
+            answer: "1. Shouting fire in a crowded theater creates a clear and present danger. <br>2. The distribution of leaflets expressing opposition to the draft during wartime creates a clear and present danger. <br>3. Shouting fire in a crowded theater is not protected by the right to free speech. <br>∴ The distribution of leaflets expressing opposition to the draft during wartime should not be protected by the right to free speech. " 
+        },
+        {
+            question: "“We feel instinctive sympathy for the defendant who pleads, ‘I tried to get a job and nobody would hire me. Only in desperation did I turn to robbery.’ Now consider a logically parallel defense: ‘I tried to seduce a woman legitimately and nobody would sleep with me. Only in desperation did I turn to rape.’ Nobody would buy that from a rapist, and nobody should buy it from a robber.”<br>–Steven Landsburg, <i>Forbes</i>",
+            answer: "1. The rapist defends themselves by pleading they turned to rape only in desperation. <br>2. The robber defends themselves by pleading they turned to robbery only in desperation.  <br>3. We don’t accept the defense of “I did it in desperation” from the rapist. <br>∴ We shouldn’t accept the defense of “I did it in desperation” from the robber." 
+        },
+        //Extra
+        {
+            question: "<i>“Question:</i> Surely society has a right to rid itself of a man like Ted Bundy?<br><br><i>&quot;Answer:</i> My main opposition to the death penalty is what it does to society. Our society kills people in cages. It is like going hunting in a zoo. In the cage they are not dangerous, but executing them is very dangerous—for us.” <br><br>—I. Gray and M. Stanley, eds., <i>A Punishment in Search of a Crime: Americans Speak Out Against the Death Penalty</i>",
+            answer: " " 
+        },
+        {
+            question: "&quot;Suppose you had a son, a fine writer who had brought national recognition for his college newspaper and a scholarship for himself. Suppose that, in his junior year, a big-city newspaper offered him a reporter's job with a three-year guarantee at an unheard-of salary. Would you advise him to turn down the offer of a professional newspaper job? We know the answer. And we would not think twice before urging him, begging him, to hire on with the newspaper. After all, we'd say, the reason he was in college was to start to prepare himself for a decent career in the field of his choosing. So, why all the fulmination about a star athlete's taking the chance to make himself a cool $5 million by doing for pay what he's been doing for free (presumably) for three years?&quot;<br>—William Raspberry, <i>Los Angeles Times</i> ",
+            answer: " " 
+        },
+        {
+            question: "To solve our drug problems, instead of outlawing drugs we must make them as safe and risk-free, and yes, as healthy as possible. It's like sex. We recognize that people will continue to have sex for nonreproductive reasons, whatever the laws, and with that in mind we try to make sexual practices as safe as possible in order to minimize the spread of sexually transmitted diseases.",
+            answer: " " 
+        },
+        {
+            question: "Gerry Spence is serving as the pro bono defense attorney for an &quote;environmental terrorist&quote; who embedded metal plates in trees so that the bulldozers would be wrecked (and, potentially, the drivers injured). He is asked if &quote;monkeywrenching&quote; trees is ever justified. Spence's sleight-of-hand answer reveals why he wins so many cases: &quote;In most circumstances, breaking the law is improper. Now, suppose a tractor is about to run over a child. Is it improper to demolish the tractor? Suppose the tractor was going to run over something inanimate, a painting by Van Gogh that cost $32 million. Now, what about a tractor running down a tree? A 400-year-old original-growth tree?&quote; <br><i>—Forbes</i>",
+            answer: " " 
+        },
+        {
+            question: "One philosopher, arguing that the rights of a rape victim to make decisions about her body can be more important than the right to life of a fetus, develops the following analogy: <br><br>&quot;Let me ask you to imagine this. You wake up in the morning and find yourself back to back in bed with an unconscious violinist. A famous unconscious violinist. He has been found to have a fatal kidney ailment, and the Society of Music Lovers has canvassed all the available medical records and found that you alone have the right blood type to help. They have therefore kidnapped you, and last night the violinist's circulatory system was plugged into yours, so that your kidneys can be used to extract poisons from his blood as well as your own. The director of the hospital now tells you, 'Look, we're sorry the Society of Music Lovers did this to you—we would never have permitted it if we had known. But still, they did it, and the violinist now is plugged into you. To unplug you would be to kill him. But never mind, it's only for nine months. By then he will have recovered from his ailment, and can safely be unplugged from you.' Is it morally incumbent on you to accede to this situation?&quot; [The answer Thompson intends to imply is “No.”]<br><br>—Judith Jarvis Thompson, <i>Philosophy and Public Affairs</i>",
+            answer: " " 
+        },
+        
+
+        ];
+        
+         // Define instruction sets and their insertion indexes
+         const instructions = [
+            {index: 0, id: 'set1', content: '<strong>Evaluating Analogies</strong><br><br>Reconstruct the following analogies in standard form and evaluate them. In the example answers, I omit the evaluation step, but you should not. See example evaluations above. '},
+            {index: 7, id: 'set1', content: '<strong>Extra Practice</strong><br><br>Reconstruct the following analogies in standard form and evaluate them. You are on your own here! No example answers.'}
+
+        ];
+ 
+        function generateFAQs() {
+        const container = document.getElementById('faq-container'); 
+        let currentSetIndex = -1; // Initialize to -1 to indicate no current set
+        let questionNumber = 1; // Initialize question number
+
+    faqs.forEach((faq, index) => {
+        const instruction = instructions.find(instr => instr.index === index);
+        if (instruction) {
+            // New instruction set found, reset question number and update current set index
+            questionNumber = 1;
+            currentSetIndex = index; // Update current set index to the new set's start index
+            const instructionDiv = document.createElement('div');
+            instructionDiv.className = 'question';
+            instructionDiv.id = instruction.id; // This ID corresponds to the navigation link
+            instructionDiv.innerHTML = instruction.content;
+            container.appendChild(instructionDiv);
+        }
+
+        // Generate IDs using the index to ensure they are unique
+        const questionId = `question${index + 1}`;
+        const answerId = `answer${index + 1}`;
+
+        // Create and append question with updated numbering
+        const questionDiv = document.createElement('div');
+        questionDiv.id = questionId;
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `${questionNumber}. ${faq.question}`; // Use questionNumber for display
+        container.appendChild(questionDiv);
+
+        // Check if the question has an answer before appending button and answer div
+        if (faq.answer.trim() !== "") {
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'button';
+            const button = document.createElement('button');
+            button.innerText = 'Show/Hide Answer';
+            button.setAttribute('onclick', `toggleText('${answerId}')`);
+            buttonDiv.appendChild(button);
+            container.appendChild(buttonDiv);
+
+            const answerDiv = document.createElement('div');
+            answerDiv.id = answerId;
+            answerDiv.className = 'answer';
+            answerDiv.style.display = "none"; // Initially hide the answer
+            answerDiv.innerHTML = `<p>${faq.answer}</p>`;
+            container.appendChild(answerDiv);
+        }
+
+        // Increment question number for the next question
+        questionNumber++;
+    });
+}
+
+
+        window.onload = generateFAQs;
+
+        function toggleText(definitionId) {
+          var textElement = document.getElementById(definitionId);
+          if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                 textElement.style.display = "none";
+            }
+          textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+    <div class="question">
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <footer>
+        <br>
+        <a href="javascript:void(0);" onclick="scrollToTop()" class="scrollTopBtn">Go to Top</a>
+        <br><br>All nonoriginal content is used with the permission of the owner or offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+    </footer>
+
 </body>
-</html> -->
+</html>

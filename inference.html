@@ -1,67 +1,247 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Inference to the Best Explanation</title>
-    <style>
-        body {
-            font-family: 'Palatino', serif;
-            color: #010006;
-            background-color: #DFEAE4; 
-            margin: 0px;
-            padding-bottom: 30px;
-        }
-        header, nav, footer {
-            background-color: #3f5744; 
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease; 
-            display: inline-block;
-        }
-        nav a:hover {
-            transform: scale(1.2); 
-        }
-        .question {
-            margin: auto;
-            padding-top: 5%;
-            padding-left: 20%;
-            padding-right: 20%;
-            line-height: 1.5;
-        }
-        .answer {
-            display: none;
-            margin: auto;
-            padding-top: 1%;
-            padding-left: 23%;
-            padding-right: 25%;
-            color: rgb(26, 7, 149);
-            line-height: 1.5;
-        }
-        .argument {
-            margin: auto;
-            padding-left: 5%;
-            line-height: 1.5;
-        }
-        .button {
-            margin: auto;
-            padding-left: 23%;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
     <header>
         <h1>Inference to the Best Explanation</h1>
     </header>
-    <nav>
+    
+    <nav class="normalnav">
         <a href="index.html">Home</a>
         <a href="inductive.html">Inductive Arguments</a>
     </nav>
 
+    <img src="conspiracy_dots.jpeg" alt="xkcd comics" class="center" style="width: 30%; height: 30%;">
+    
+    <br><br>
+
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1NBfZcNU4O0?si=_oKxJjz-XpF2uuJX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="question" style="text-align: center;" >
+        <b>Problem Sets: </b>
+     </div>
+ 
+    <div class="problem-sets-navigation">
+        <a href='#set1'>Evaluating Inferences to the Best Explanation</a><br>
+        <a href='#set2'>Inferences to the Best Explanation in Standard Form</a> <br>
+        <a href='#set3'>Extra Evaluation Practice</a> <br>
+        <a href='#set4'>Inference to the Best Explanation Case Study: Evolutionary Psychology</a> <br>
+        <a href='#set5'>Inference to the Best Explanation Case Study: Conspiracy Theories </a>
+
+     </div>
+
+    <div class="question">
+       
+    </div>
+
+    <div id="faq-container"></div>
+
+    <script>
+        const faqs = [
+        {
+            question: "Although we usually have class at this time in this room, I don’t see anybody in the classroom, because a wicked witch made them all invisible.",
+            answer: "This explanation is not conservative, presuming you don’t believe in wicked witches. Even if you do, the explanation is not deep, because it only raises the question of why a witch would want to make them invisible. It could also be accused of not being falsifiable if it’s assumed that they could not be seen, heard, or felt." 
+        },
+        {
+            question: "Although we usually have class at this time in this room, I don’t see anybody in the classroom, because they all decided to skip class today.",
+            answer: "This explanation lacks depth, because it raises new questions, such as why everyone skipped class today. It also fails to explain the whole situation: Why, for instance, is the professor not in class? Why weren’t you told?" 
+        },
+        {
+            question: "My house fell down, because of a powerful earthquake centered on my property that did not affect anything or anybody else.",
+            answer: "This explanation postulates a novel kind of earthquake that would violate many of our well-established beliefs about plate tectonics and seismology, so it lacks conservativeness. Furthermore, this explanation is not powerful because it only applies to one specific case." 
+        },
+        {
+            question: "That light far up in the night sky is moving quickly, because it is an alien space ship.",
+            answer: "This explanation is not simple if the postulation of aliens is more complicated than other available explanations, such as an airplane. It is also not deep if we need an explanation of why the aliens are here." 
+        },
+        {
+            question: "That light far up in the night sky looks like it is moving quickly, because there’s something wrong with my eyes right now.",
+            answer: "This is not a very deep explanation, because it doesn’t not explain why your eye affliction produces only this one distortion." 
+        },
+        {
+            question: "Bobo cannot figure out why the rat poison he is using is not killing the rats in his apartment. He hypothesizes that the rats must be a new breed of rats that are resistant to any kind of poison and that they evolved in the environment of his apartment.",
+            answer: "Violates conservativeness. We have no good reason for positing some whole new breed of rats—especially if the claim is that they evolved in Bobo's apartment only. This would violate what we know about how evolution works (i.e., we probably need a much larger population for this to happen than the population of rats that are contained in only Bobo's apartment). Furthermore, the explanation lacks power since a better explanation that applied to a wider range of circumstances is simply that the rats were not taking the bait." 
+        },
+        {
+            question: "Bobo’s friend Bozo died twenty years ago when Bozo was just 18. But just yesterday Bobo saw someone who looked and spoke exactly like Bozo. Bobo hypothesizes that Bozo must have had a son that he did not know about and that this person must have been Bozo’s son.",
+            answer: "Violates modesty. A more modest explanation is that this is someone who looks like Bozo, whether or not it is Bozo’s son. The explanation might also lack depth since we would want to know why Bobo had never seen or heard of Bozo’s son for 20 years." 
+        },
+        {
+            question: "The Great Pyramids of Giza are one of the most impressive marvels on Earth. An unknown, highly advanced ancient civilization, possibly with lost technologies or even “extraterrestrial help,” must have built the pyramids. ",
+            answer: "Violates Conservativeness: To accept this explanation, we would have to give up a lot of other facts we know there is good reason to believe are true. For example, we would have to give up the following beliefs: <blockquote>-the ancient Egyptians built the Great Pyramids of Giza <br>-there is no publicly verifiable evidence that aliens ever interacted with humans <br>-there is no publicly verifiable evidence for the existence of some ancient, yet technologically advanced, civilization  <br>-contemporary archeological science is reliable </blockquote>"
+        },
+        {
+            question: "The particular position of the celestial bodies at the time of your birth suggests that “you will face challenges on Valentine’s Day next year.” ",
+            answer: "Violates Depth: This explanation raises lots of questions, like what does the position of the celestial bodies have to do with my love life? <br><br>Violates Falsifiability: One of the reasons why this explanation is unfalsifiable is because it is so vague. What counts as a challenge? Almost anything might! For example, a “challenge” might simply be loneliness or it might be a having a hard time picking a restaurant for a dinner date." 
+        },
+        {
+            question: "Complex animals exhibit fundamentally different characteristics than non-living organisms and simple living organisms, like bacteria. This is because they have thousands of tiny little men living in their brains which tell them what to do. ",
+            answer: "Violates Simplicity (Ockham’s Razor): This posits the existence of novel, highly unusual entities to explain what’s going on when it doesn’t need to. Analogously, this is like saying that it rained yesterday because there are millions of tiny little people who live in the sky, watched a sad movie, and started to cry at the same time. Before we settle on this wild explanation, we should rule out all the other explanations that do not posit the existence of novel, highly unusual entities.   " 
+        },
+        {
+            question: "The inference above is silly, but it is similar in structure to the following inference which some people do not think is silly: Complex animals exhibit fundamentally different characteristics than non-living organisms and simple living organisms, like bacteria. This is because they have souls. Do you think this is a bad (i.e. not cogent) inference like the one above? Why or why not? <br><br>Note: The following is not an acceptable answer to this question: People disagree about whether or not souls exist and what it would take to prove that they exist, so there is no conclusive answer as to whether or not this is a good inference. People disagree about all sorts of things, including basic empirical facts, but that is not evidence in and of itself that (1) the disagreement is warranted and (2) that there is no matter of fact that could resolve the disagreement. ",
+            answer: "" 
+        },
+        {
+            question: "Bobo finds that his garden plants are wilting quickly even though he is watering them every day. He concludes that he is just a terrible gardener. ",
+            answer: "Violate Modesty: Bobo’s plants are wilting, but that by itself does not mean that he is a terrible gardener overall. Perhaps he is just making one very specific mistake, like watering the plants too much, but he’s a decent gardener otherwise. In other words, this explanation claims more than is needed to explain an observation. It is too general.  " 
+        },
+        {
+            question: "Science uses inductive reasoning, which means that it can’t prove 100% that the emission of greenhouse gases causes global warming. So global warming must just be a statistical fluke.  ",
+            answer: "Violates Completeness. Yes, scientific conclusions are typically based on inductive reasoning so they are not 100% provable (there’s always the possibility of a conflicting empirical observation in the future). But this explanation does nothing to address what science gives good reason to believe is very probably true, namely that the emission of greenhouse gasses does contribute to global warming. This explanation is not complete because it focuses on a very small possibility whilst ignoring what evidence supports is true with high probability. <br><br> <a href='https://nikolinacet.github.io/phil1410sp2024/index.html'>Don’t mistake possibility for plausibility, dummy!</a>." 
+        },
+        {
+            question: "When I look at the horizon, it is flat, not curved. So the earth must be flat and I’ve only been told otherwise because the entire notion of a round Earth is a vast psychological experiment to test the limits of human credulity and obedience. ",
+            answer: "Violates conservativeness. If one believes the Earth is flat, they will be forced to abandon much of contemporary science and to accept a conspiracy that has an infinitesimally small chance of being true. " 
+        },
+        //Inferences to the Best Explanation in Standard Form
+        {
+            question: "“At the end of the summer term, the teachers at a New England school were informed that certain children had been identified as ‘spurters’ who could be expected to do well over the coming months. These youngsters had, in fact, been selected at random from among their classmates. . . . When they were retested several months later, however, this time with a genuine intelligence test, those falsely identified ‘spurters’ did, indeed, show a significant improvement over their fellow students. This result can be explained by the fact that because the teachers expected them to do well, their perceptions of each student’s ability rose and those children’s own self-image was enhanced.”<br>—David Lewis and James Greene, <i>Thinking Better</i>",
+            answer: "P1. Observations: Children chosen at random and identified as “spurters” to their teachers showed significant improvement over their fellow students on an intelligence test. <br><br>P2. Explanation: These students did better than their peers because of their teachers’ perceptions of them and a subsequent improvement in their own self-image and academic performance. (Hypothesis A)<br><br>P3. Comparison: The explanation in P2 is more likely than the possibility that the randomly selected students just all happened to be more intelligent to begin with. <br><br>∴ The selected students did better because their teacher thought better of them. (Hypothesis A is true.) " 
+        },
+        {
+            question: "Freud argued that repression and resistance are two important mechanisms of our minds. Repression is the mechanism by which we push out of awareness and into our unconscious memories of deeply traumatic childhood experiences. Resistance is the mechanism by which we refuse to allow these repressed memories to be brought back to the surface. When people insist that they have no repressed memories, then, Freud considers this to be evidence for the presence of resistance, which is itself evidence for the existence of repression.",
+            answer: "P1. Observation: Some people insist they have no repressed memories. <br><br>P2. Explanation: Insisting one has no repressed memories is evidence for resistance and repression, two mental mechanisms by which we push out of conscious awareness memories of traumatic childhood experiences. (Hypothesis A)<br><br>P3. Comparison: When people insist they have no repressed memories, it couldn’t be because they really have no repressed memories. <br><br>∴ When one insists they have no repressed memories, that is evidence of repressed memories. (Hypothesis A is true.)" 
+        },
+        {
+            question: "Some believers in the paranormal hold that skeptical attitudes can inhibit paranormal results. A professor at Bath University in England combines this rationalization with the idea that psychic powers work backward and forward in time; he suggests, in apparent seriousness, that the failure of attempted experiments to prove psychic forces is actually evidence in favor of parapsychology since skeptics reading about successful experiments afterward actually project their skepticism back in time to inhibit the experiment!",
+            answer: "P1. Observation: Attempted experiments to prove psychic forces, i.e. parapsychology, have failed. <br><br>P2. Explanation: The experiments seem to fail because psychic powers work backward and forward in time, so when skeptics read about the results of successful experiments, they project their skepticism back in time and inhibit the experiment. The apparent failure of experiments is in reality evidence of their success! (Hypothesis A)<br><br>P3. Comparison: It’s not the case that these experiments fail for the reason that there is no such thing as psychic forces. <br><br>∴ The failure of experiments that aim to support the existence of psychic forces is evidence that psychic forces exist. (Hypothesis A is true.) " 
+        },
+        {
+            question: "She is a great actress. You'll see—the audience will applaud at the end.",
+            answer: "P1. Observation: The audience will clap at the end of the performance. <br><br>P2. Explanation: The audience will clap because they want to celebrate an actress in the performance. (Hypothesis A) <br><br>P3. Comparison: The audience is not clapping just to be polite or just because it is a social custom. <br><br>∴ The audience will clap for the reason that the actress is great. (Hypothesis A is true.)" 
+        },
+        {
+            question: "New evidence shows that optimists live longer. Healthy elderly people who rated their health as “poor” were two to six times more likely to die within the next four years than those who said their health was “excellent.” <br><br><i>—Bottom Line</i>, citing the work of Professor Ellen Idler of Rutgers University",
+            answer: "P1. Observation: Those who rated their health as “poor” were two to six times more likely to die within the next four years than those who said their health was “excellent.”<br><br>P2. Explanation: The people who lived longer did so because they were optimists. (Hypothesis A)<br><br>P3. Comparison: The people who lived longer and rated their health as “excellent” did not live longer than people who rated their health as “poor” because they were less likely to be struggling with bad health. <br><br>∴ Optimists live longer. (Hypothesis A is true.)" 
+        },
+        {
+            question: "In Billy Graham’s <i>Peace with God</i>, Graham refers to the failure of an international peace conference and asks, “Could men of education, intelligence, and honest intent gather around a world conference table and fail so completely to understand each other’s needs and goals if their thinking was not being deliberately clouded and corrupted?” Such failures, he continues, show that there is a devil, who is “a creature of vastly superior intelligence, a mighty and gifted spirit of infinite resourcefulness.”",
+            answer: "P1. Observation: At an international peace conference, educated, intelligent, and honest participants failed to understand each other’s needs and goals. <br><br>P2. Explanation: The conference failed because a powerful and intelligent devil intervened.<br><br>P3. Comparison: The conference did not fail because the problem at hand was very difficult to solve, because the conference was poorly organized, or because the conference goals were not clearly outlined beforehand.<br><br>∴ Intelligent, educated, and honest people failed to solve a problem at a conference because the devil intervened. " 
+        },
+        {
+            question: "A medical student has been reading intensively about various diseases of the nervous system. One morning she wakes up after a late night reading and finds her vision is somewhat blurred; she immediately diagnoses optic neuritis.",
+            answer: "" 
+        },
+        {
+            question: "When firefighters arrived to battle a blaze reported at a Van Nuys bar early Wednesday, they found a man pouring gasoline from a plastic jug outside the building. In a window on one side was a burning Molotov cocktail. Firefighters doused the flaming Molotov cocktail and then detained the man . . . until police arrived and took him into custody. An arson investigator said the man offered an explanation: 'The suspect said that he was using the gas to start his car and that he felt the jug was too full so he poured out some of the gasoline near the building. He claims he has no knowledge of the Molotov cocktail.' <br><i>—Los Angeles Times</i>",
+            answer: "" 
+        },
+        {
+            question: "Death and disaster provide a convincing argument that, contrary to the persistent notion, women are not the weaker sex. Archeologist Donald Grayson of the University of Washington has found some evidence in the Donner Party catastrophe. It's a favorite of macabre schoolchildren. Delayed on the way west in 1846, 87 pioneers were stranded in late October by heavy snows in the Sierra. Nearly half the party died before an April rescue, the survivors cannibalizing the dead. Thirty of the 40 who died were men and, says Grayson, most of the male deaths occurred before that of a single woman. Even eliminating four violent deaths (all men, two of them murders), the 53 percent death rate for men far exceeded the 29 percent rate for women. Men were exposed more frequently to the elements, since they did the hunting and tree cutting. But Grayson believes it's unlikely such factors fully explain the statistics. For instance, of 15 Donner Party members who attempted to snowshoe out in late December, all five women survived while eight of the ten men died. And chivalry didn't make the difference, the researchers say, since women got no more food than men. &quotIt comes down to physiology,&quot says Grayson. &quotMen are evolutionarily built for aggression. Women are built for giving birth, and the long haul that involves.&quot <br>—<i>In Health</i>",
+            answer: "" 
+        },
+        {
+            question: "Review the article below and provide a standard form reconstruction of an inference to the best explanation based on the argument the article provides. <br><br>Is the article’s argument cogent? Explain why or why not. In addressing this question, you should be assessing how well the proposed explanation adheres to the seven explanatory virtues compared to other possible explanations, i.e. comparisons (P3).<br><br><a href='https://www.scientificamerican.com/article/the-evolutionary-reasons-we-are-drawn-to-horror-movies-and-haunted-houses1/'>The Evolutionary Reasons We Are Drawn to Horror Movies and Haunted Houses</a>. <br><br><embed src='horror.webp' width='100%'' height='100%px'>",
+            answer: "P1. Observation: Humans and other animals are morbidly curious. We love risky play. Sometimes the danger in risky play is experienced vicariously, like in violent video games, scary stories, and movies about monsters, catastrophic events like volcano eruptions, pandemics, and dangerous storms. Sometimes the danger in risky play is pretend, like in staged haunted houses. And sometimes the danger in risky play is real, but low-level, as in the story of the captive monkeys who kept opening the lid to a box of snakes.<br><br>P2. Explanation: Humans and other animals are morbidly curious because morbid curiosity is evolutionarily advantageous. It allows us to gain information about dangerous situations, gives us practice in dealing with scary experiences, helps to manage anxiety, and even fosters cooperation. (Hypothesis A) <br><br>P3. Comparison: No other hypothesis better explains the observations on P1, including the following:  <blockquote>•	True crime podcasts that detail violent crimes are really popular. This is not because of an evolutionary reason that has to do with exposing ourselves to a low level of danger and vicariously learning something. It’s quite the opposite. People like stories about other people getting hurt because it makes them feel safe—“Whew! Glad that’s not me!” <br><br>•	In some cases, morbid curiosity is better explained by something other than evolutionary psychology because some cases of risky human play do not seem evolutionarily adaptive, i.e. good for survival and reproduction. For example, some people have extreme sexual fetishes which cause them physical harm. <br><br>•	Generalizing from the example above, there are a host of risky behaviors driven by morbid curiosity that are better explained, or at least primarily explained, by cultural, societal, or economic factors rather than evolutionary ones. For example: People like to go to “haunted” houses on Halloween because it is a cultural tradition, just like eating turkey is a cultural tradition for Americans on Thanksgiving. Violent video games, like all video games, are not as popular as they are because they exploit an evolutionarily adaptive affinity for risky play, but rather because they are made to exploit cognitive mechanisms that make them addictive. (This is a version of a common objection levied against many claims in evolutionary psychology.)</blockquote>∴ Morbid human curiosity is a function of evolution, not merely a cultural phenomenon. (Hypothesis A is true.) <br><br>What do you think of the alternative explanations proposed above? Do any of them better align with the seven explanatory virtues than the explanation offered in the article? " 
+        },
+        {
+            question: "Conspiracy theories often start with an observation about some bad or tragic event or situation and then move from that to a wild explanation of that event—the conspiracy. <br><br>Find a conspiracy theory like this on the internet, i.e., one based on a specific observation and which uses that observation as a starting point for an inference to the conspiracy. Put your conspiracy theory in standard form. <br><br>Just because a claim is supported by a conspiracy theory does not mean it is automatically unjustified. After all, conspiracy just means “secret,” not “inherently false.” Nevertheless, the vast majority of conspiracy theories are unjustified. Is yours? In other words, does your conspiracy theory adhere to the seven explanatory virtues? Why or why not? <br><br>Example 1: <br><br> <embed src='Zelensky_conspiracy.png' width='75%'' height='75%px'> <br><br><blockquote>P1. Observation: Ukraine is not holding regularly scheduled elections. <br>P2. Explanation: The U.S. is at least partly responsible for the election delay in Ukraine because it has an interest in keeping Zelensky in power that is related to its interests in the war in Ukraine, which do not have to do with defending democracy.<br>P3. Comparison: The delay in scheduled elections cannot fully be explained by the conflict in Ukraine. <br>∴ The election delay in Ukraine is partly explained by U.S. meddling.</blockquote> <br><Br>Example 2:<br><br> <embed src='fasting_conspiracy.jpg' width='50%'' height='50%px'><br><br><blockquote>P1. Observation: A study claims that fasting could increase heart disease risk by 90%.<br>P2. Explanation: The study is supported by those who have interests in keeping us consuming, like the fast food industry (and also possibly to suppress religious belief…?) <br>P3. Comparison: The study is conducted by independent researchers who do not have an interest in the fast food industry. <br>∴ Groups who have an economic interest in keeping us consuming fabricated the claims of this study. </blockquote>",
+            answer: "" 
+        },
+        {
+            question: "The following study offers a mathematical model of the relationship between the number of people hypothesized to be involved in a conspiracy and the likelihood of keeping that conspiracy secret. <br><br> Skim the Introduction, the first few paragraphs of the Discussion, and look at the figures in the Results. (This is a quick heuristic for getting a sense of what many academic articles in math and science are about.) What do the authors of the paper say is the relationship between the number of people involved in a conspiracy and the likelihood of keeping the conspiracy a secret? In giving your answer, cite at least one specific set of numbers. <br><br> <embed src='On the Viability of Conspiratorial Beliefs.pdf' width='1000px'' height='700px'><br><br>As we might predict using common sense, the model predicts that the greater the number of conspirators involved in a conspiracy, the faster it will fail. i.e. the faster the secret the conspirators are hiding will get out. <br><br>Notably, the model makes a charitable assumption: its predictions concern only the likelihood that a conspiracy will fail due to intrinsic failure—someone involved in the conspiracy intentionally or accidentally spills the beans. But, of course, secrets can also be revealed extrinsically when an outsider discovers them or accidentally stumbles upon them.<br><br>Some interesting numbers from the model’s predictions: <blockquote>•	To sustain a conspiracy (keep the secret quiet) for 5 years, the model predicts that less than 2531 people may be involved. To sustain a conspiracy for 10 years, less than 1257 people may be involved. For 15 years and longer, less than 1000 people may be involved. <br><br>•	The above numbers are at odds with how many people would need to be involved to sustain major conspiracies. For example, if the moon landing was staged, it would take over 400,000 people to keep the secret. This number is derived from the number of people employed by NASA in 1965. To keep a secret about the true purpose of vaccines, it would take 22,000 people staying quiet, the number of employees at the CDC and WHO combined. Given the large number of people involved, the model predicts that for each of these large conspiracies, the probability that they would succeed for even more than 5 years (much less decades!) is exceedingly low.  </blockquote><br>Where do these model numbers come from? To answer that, we can look at the “Parameter Estimation” section of the paper which explains that the model is based, in part, on historical examples of the conditions under which confirmed conspiracies were revealed. In case you missed it, those confirmed conspiracies were: <blockquote>•	The National Security Agency (NSA) PRISM affair—The staggering extent of spying by the NSA and its allies on civilian internet users was exposed by contractor Edward Snowden in 2013. The extent of the eavesdropping was unprecedented, including the tapping of fiber-optic cables, phone calls from allied heads of state and a huge amount of meta-data.<br><br>•	The Tuskegee syphilis experiment—In 1932 the US Public Health Service began an observational study on African-American men who had contracted syphilis in Alabama. The study became unethical in the mid 1940s, when penicillin was shown to effectively cure the ailment and yet was not given to the infected men. Ethical questions about the research were raised in the mid 1960s, and finally exposed by researcher Dr. Peter Buxtun in 1972.<br><br>•	The Federal Bureau of Investigation (FBI) forensic scandal—Dr. Frederic Whitehurst wrote hundreds of letters to his superiors detailing the pseudoscientific nature of many of the FBI forensics tests. The dubious nature of these protocols resulted in a large number of innocent men being detained for decades, several of whom were executed for these crimes or died in prison, before Whitehurst exposed the debacle in 1998. A subsequent report by the FBI and Department of Justice found that at least 26 of the 28 dedicated hair analysts gave misleading testimony, prompting an ongoing massive re-evaluation of unsafe convictions. </blockquote><br><br>What do you think of this model? Are there any weaknesses? ",
+            answer: "" 
+            },
+       
+
+        ];
+        
+         // Define instruction sets and their insertion indexes
+         const instructions = [
+            {index: 0, id: 'set1', content: `<strong>Evaluating Inferences to the Best Explanation</strong><br><br> A cogent inference abides by the seven explanatory virtues:<blockquote><strong>Explanatory Completeness:</strong> The explanation needs to explain all of the relevant observations. <br><br><strong>Depth:</strong> Explanations should not raise more questions than they answer. <br><br><strong>Power:</strong> Explanations should apply in a range of similar contexts, not just the current situation in which the explanation is being offered.<br><br><strong>Falsifiability:</strong> It must be possible for there to be evidence that would show that the explanation is incorrect.  <br><br><strong>Modesty:</strong> Explanations should not claim any more than is needed to explain the observed facts. Any details in the explanation must relate to explaining one of the observed facts.<br><br><strong>Simplicity:</strong> Explanations that posit fewer entities or processes are preferable to explanations that posit more entities or processes. (Ockham’s Razor) <br><br><strong>Conservativeness:</strong> Explanations that force us to give up fewer well-established beliefs are better than explanations that force us to give up more well-established beliefs. </blockquote><br>Do the following inferences abide by the explanatory virtues? Hint: They’re all pretty bad. If not, indicate which one or two virtues of explanation the inference violates and explain why. <br><br>For example, if you say that the explanation isn’t falsifiable, then explain why it isn’t falsifiable. Or if the explanation lacks simplicity, provide another explanation that can equally explain all the observed facts but that posits fewer entities or processes.<br><br>I provide example responses. Responses pointing to the violation of other explanatory virtues could be acceptable as well. See me during office hours if you have questions. `},
+            {index: 14, id: 'set2', content: `<strong>Inferences to the Best Explanation in Standard Form</strong><br><br>The standard form of inference to the best explanation is the following: <blockquote>1. Observations A, B, C, etc.<br>2. Explanation: Hypothesis A explains Observations A, B, C, etc. <br>3. Comparison: No other hypothesis better explains Observations A, B, C, etc.  <br>∴ Hypothesis A is true. </blockquote><br>Put each of the following inferences into standard form, and then evaluate them using the standards outlined by the seven explanatory virtues. For P3 (comparison), provide at least one possible alternative hypothesis that would explain the observations in P1. <br><br>In the sample responses below, I omit an evaluation of these inferences, but you should not skip practicing this step. `},
+            {index: 20, id: 'set3', content: `<strong>Extra Evaluation Practice</strong><br><br>You are on your own here! Put these inferences to the best explanation in standard form and evaluate them using the seven explanatory virtues. <br><br>For P3 (comparison), provide at least one possible alternative hypothesis that would explain the observations in P1. `},
+            {index: 23, id: 'set4', content: `<strong>Inference to the Best Explanation Case Study: Evolutionary Psychology</strong><br><br> `},
+            {index: 24, id: 'set5', content: `<strong>Inference to the Best Explanation Case Study: Conspiracy Theories</strong><br><br> `},
+        ];
+ 
+        function generateFAQs() {
+        const container = document.getElementById('faq-container'); 
+        let currentSetIndex = -1; // Initialize to -1 to indicate no current set
+        let questionNumber = 1; // Initialize question number
+
+    faqs.forEach((faq, index) => {
+        const instruction = instructions.find(instr => instr.index === index);
+        if (instruction) {
+            // New instruction set found, reset question number and update current set index
+            questionNumber = 1;
+            currentSetIndex = index; // Update current set index to the new set's start index
+            const instructionDiv = document.createElement('div');
+            instructionDiv.className = 'question';
+            instructionDiv.id = instruction.id; // This ID corresponds to the navigation link
+            instructionDiv.innerHTML = instruction.content;
+            container.appendChild(instructionDiv);
+        }
+
+        // Generate IDs using the index to ensure they are unique
+        const questionId = `question${index + 1}`;
+        const answerId = `answer${index + 1}`;
+
+        // Create and append question with updated numbering
+        const questionDiv = document.createElement('div');
+        questionDiv.id = questionId;
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `${questionNumber}. ${faq.question}`; // Use questionNumber for display
+        container.appendChild(questionDiv);
+
+        // Check if the question has an answer before appending button and answer div
+        if (faq.answer.trim() !== "") {
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'button';
+            const button = document.createElement('button');
+            button.innerText = 'Show/Hide Answer';
+            button.setAttribute('onclick', `toggleText('${answerId}')`);
+            buttonDiv.appendChild(button);
+            container.appendChild(buttonDiv);
+
+            const answerDiv = document.createElement('div');
+            answerDiv.id = answerId;
+            answerDiv.className = 'answer';
+            answerDiv.style.display = "none"; // Initially hide the answer
+            answerDiv.innerHTML = `<p>${faq.answer}</p>`;
+            container.appendChild(answerDiv);
+        }
+
+        // Increment question number for the next question
+        questionNumber++;
+    });
+}
+
+
+        window.onload = generateFAQs;
+
+        function toggleText(definitionId) {
+          var textElement = document.getElementById(definitionId);
+          if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                 textElement.style.display = "none";
+            }
+          textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+    <div class="question">
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <footer>
+        <br>
+        <a href="javascript:void(0);" onclick="scrollToTop()" class="scrollTopBtn">Go to Top</a>
+        <br><br>All nonoriginal content is used with the permission of the owner or offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+    </footer>
+
 </body>
-</html> -->
+</html>
