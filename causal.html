@@ -1,67 +1,292 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Causal Reasoning</title>
-    <style>
-        body {
-            font-family: 'Palatino', serif;
-            color: #010006;
-            background-color: #DFEAE4; 
-            margin: 0px;
-            padding-bottom: 30px;
-        }
-        header, nav, footer {
-            background-color: #3f5744; 
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease; 
-            display: inline-block;
-        }
-        nav a:hover {
-            transform: scale(1.2); 
-        }
-        .question {
-            margin: auto;
-            padding-top: 5%;
-            padding-left: 20%;
-            padding-right: 20%;
-            line-height: 1.5;
-        }
-        .answer {
-            display: none;
-            margin: auto;
-            padding-top: 1%;
-            padding-left: 23%;
-            padding-right: 25%;
-            color: rgb(26, 7, 149);
-            line-height: 1.5;
-        }
-        .argument {
-            margin: auto;
-            padding-left: 5%;
-            line-height: 1.5;
-        }
-        .button {
-            margin: auto;
-            padding-left: 23%;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
     <header>
         <h1>Causal Reasoning</h1>
     </header>
-    <nav>
+    
+    <nav class="normalnav">
         <a href="index.html">Home</a>
         <a href="inductive.html">Inductive Arguments</a>
     </nav>
 
+    <div class="question" style="text-align: center;" >
+        <b>Problem Sets: </b>
+     </div>
+ 
+    <div class="problem-sets-navigation">
+        <a href='#set1'>Necessary and Sufficient Conditions 1</a><br>
+        <a href='#set2'>Necessary and Sufficient Conditions 2</a> <br>
+        <a href='#set3'>Necessary & Sufficient Condition Tests 1</a> <br>
+        <a href='#set4'>Necessary & Sufficient Condition Tests 2</a> <br>
+        <a href='#set5'>Correlations</a> 
+
+     </div>
+
+    <div class="question">
+       
+    </div>
+
+    <div id="faq-container"></div>
+
+    <script>
+        const faqs = [
+        //set 1
+        {
+            question: "Being an integer is a sufficient condition for being an even number. ",
+            answer: "False" 
+        },
+        {
+            question: "Being an integer is a necessary condition for being an even number. ",
+            answer: "True" 
+        },
+        {
+            question: "Being an integer is a sufficient condition for being either an even number or an odd number. ",
+            answer: "True " 
+        },
+        {
+            question: "Being an integer is a necessary condition for being either an even number or an odd number. ",
+            answer: "True " 
+        },
+        {
+            question: "Not being an integer is a sufficient condition for not being an odd number. ",
+            answer: "True" 
+        },
+        {
+            question: "Not being an integer is a sufficient condition for not being an even number. ",
+            answer: "True" 
+        },
+        {
+            question: "Being both an integer and divisible by 2 without remainder is a sufficient condition for being an even number. ",
+            answer: "True" 
+        },
+        {
+            question: "Being both an integer and divisible by 2 without remainder is a necessary condition for being an even number. ",
+            answer: "True" 
+        },
+        {
+            question: "Driving seventy-five miles per hour for fun is a sufficient condition for violating a legal speed limit of sixty-five miles per hour. ",
+            answer: "True" 
+        },
+        {
+            question: "Driving seventy-five miles per hour for fun is a necessary condition for violating a legal speed limit of sixty-five miles per hour. ",
+            answer: "False" 
+        },
+        //set 2
+        {
+            question: "Consuming a lot of sugar will lead to an increase in blood sugar levels.",
+            answer: "sufficient" 
+        },
+        {
+            question: "Regular watering is required for a plant's survival.",
+            answer: "necessary " 
+        },
+        {
+            question: "Turning the key in the ignition will start a car's engine.",
+            answer: "sufficient" 
+        },
+        {
+            question: "Without sunlight, a solar panel cannot generate electricity.",
+            answer: "necessary " 
+        },
+        {
+            question: "Adequate sleep is crucial for maintaining concentration during an exam.",
+            answer: "necessary " 
+        },
+        {
+            question: "Keanu Reeves making a surprise appearance in our class would certainly delight everyone!",
+            answer: "sufficient " 
+        },
+        //set 3
+        {
+            question: "<br><embed src='causal_1.html' width='100%'' height='100%'>",
+            answer: "Eliminated by SCT: B, D<br>Could be sufficient: A, C<br><br>Eliminated by NCT: B, D<br>Could be necessary: A, C" 
+        },
+        {
+            question: "<br><embed src='causal_2.html' width='100%'' height='100%'>",
+            answer: "Eliminated by SCT: B, D<br>Could be sufficient: A, C<br><br>Eliminated by NCT: B, D<br>Could be necessary: A, C" 
+        },
+        {
+            question: "<br><embed src='causal_3.html' width='100%'' height='100%'>",
+            answer: "Eliminated by SCT: none<br>Could be sufficient: A, B, C, D<br><br>Eliminated by NCT: A, B<br>Could be necessary: C, D" 
+        },
+        {
+            question: "<br><embed src='causal_4.html' width='100%'' height='100%'>",
+            answer: "Eliminated by SCT: A, B, C, D<br>Could be sufficient: none<br><br>Eliminated by NCT: A, B, D<br>Could be necessary: C" 
+        },
+        {
+            question: "<br><embed src='causal_5.html' width='100%'' height='100%'>",
+            answer: "Eliminated by SCT: A, B<br>Could be sufficient: C, D<br><br>Eliminated by NCT: A, B <br>Could be necessary: C, D" 
+        },
+        {
+            question: "<br><embed src='causal_6.html' width='100%'' height='100%'>",
+            answer: "Eliminated by SCT: A, B, C, D <br>Could be sufficient: none<br><br>Eliminated by NCT: B, C<br>Could be necessary: A, D" 
+        },
+        {
+            question: "<br><embed src='causal_7.html' width='100%'' height='100%'>",
+            answer: "Eliminated by SCT: A, C, D<br>Could be sufficient: B<br><br>Eliminated by NCT: C<br>Could be necessary: A, B, D" 
+        },
+        {
+            question: "<br><embed src='causal_8.html' width='100%'' height='100%'>",
+            answer: "Eliminated by SCT: A, B, D<br>Could be sufficient: C<br><br>Eliminated by NCT: none<br>Could be necessary: A, B, C, D" 
+        },
+        {
+            question: "<br><embed src='causal_9.html' width='100%'' height='100%'>",
+            answer: "Eliminated by SCT: A, D<br>Could be sufficient: B, C<br><br>Eliminated by NCT: A, B <br>Could be necessary: C, D" 
+        },
+        //set 4
+        {
+            question: "After a banquet, several diners get sick and die. You suspect that something they ate or drank caused their deaths. The following table records their meals and fates. The target phenomenon is death. The candidates for the necessary and sufficient conditions of death are the different options for the soup, entrée, wine, and dessert courses. <br><br> <br><embed src='/Users/nikolinacetic/nikolina-projects/phil1410sp2024/A-L_diners.png' width='75%'' height='75%'><br><br>For each candidate cause (e.g. leek soup, beef, red wine), which cases (people), if any, eliminate it as a sufficient condition of death, and which cases, if any, eliminate it as a necessary condition of death? <br><br>Consider the candidate causes that are not ruled out by the NCT or SCT. Should they be ruled in as necessary or sufficient conditions of death? Why or why not?",
+            answer: "<br><embed src='A-L_diners_answer.html' width='100%'' height='1200pts'>" 
+        },
+        {
+            question: "In a high-stakes cybersecurity simulation, four teams are tasked with protecting their networks against a sophisticated virtual threat. By the end of the simulation, some teams managed to thwart the attack completely and some did not. To uncover the reasons behind their successes or failures, the actions and tools used by each team are meticulously examined. The target phenomenon is the successful defense against the cyberattack, and the candidates for necessary and sufficient causes are a firewall upgrade (FU), the use of intrusion detection software (IDS), employee cyber training (ECT), and the implementation of strong password policies (SP).<blockquote><br>•	Team Alpha upgraded their firewall, used intrusion detection software, conducted employee cyber training, and enforced strong password policies. Result: Attack thwarted.<br>•	Team Bravo did not upgrade their firewall, did not use intrusion detection software, but conducted employee cyber training and enforced strong password policies. Result: Attack partially successful.<br>•	Team Charlie upgraded their firewall, did not use intrusion detection software, did not conduct employee cyber training, but enforced strong password policies. Result: Attack partially successful.<br>•	Team Delta upgraded their firewall, used intrusion detection software, did not conduct employee cyber training, and did not enforce strong password policies. Result: Attack thwarted.</blockquote><br>You may want to make a chart to answer these questions. <br><br>(a) Which efforts (firewall upgrade, the use of intrusion detection software, employee cyber training, or the implementation of strong password policies) are possible sufficient causes of a successful defense, if any? <br><br>(b) Which efforts are possible necessary causes of a successful defense, if any? <br><br>(c) Is this an example of rigorous testing for sufficient and necessary causes? Why or why not? ",
+            answer: "(a) Possible necessary causes: the use of intrusion detection software (IDS)<br><br>(b) Possible sufficient causes: firewall upgrade (FU) and the use of intrusion detection software (IDS)<br><br> (c) This is a rigorous test for the sufficiency of the four candidate causes because for each cause there are some cases in which it is present, and there are some cases in which the target phenomenon is absent. <br><br>This is also a rigorous test for the necessity of each candidate cause because for each cause there are some cases in which it is absent, and there are some cases in which the target phenomenon is present. " 
+        },
+        {
+            question: "Some people claim that paying smokers to quit (for each successful month) is the most effective way to get smokers to quit. Explain how you would conduct a rigorous experiment (i.e. rigorous tests for necessary and sufficient causes) to test this hypothesis. ",
+            answer: "To test whether paying people is necessary to get them to quit smoking, you should have a control group of some observers who are not paid, and see what happens to them. If they can quit smoking on their own, the payment strategy is not necessary. And you should also make the group of participants large enough to ensure that you observe some people who are actually able to give up smoking. If no one in your study successfully gives up smoking, whether in the group that receives payments or the control group, then you will not be able to make a judgment on whether the payment strategy ought to be ruled out. This is because if no one in the study quits smoking, then you can’t say anything about what is necessary in order to help people quit smoking! <br><br>To test whether paying people is sufficient to get them to quit smoking, you should make sure to observe whether people are successful when they receive payments, of course! (Duh, that’s what you’re testing!) And you should also make the group of participants large enough to ensure that you observe some people who are not successful, whether in the payment or control group. If you do not, then even though you cannot rule the payment strategy out as sufficient, you cannot be confident in ruling it in either because your scope of observation is too narrow.  " 
+        },
+        {
+            question: "I want to test whether my all-natural Elvish bark tea cures the common cold. Using the SCT, explain how I would have to set my experiment up to rigorously test the truth of the following claim: “My all-natural Elvish bark tea is all you need to cure the common cold.” ",
+            answer: "I need to make some observations in which the candidate cause (the bark tea) is present. That means I need to do some tests in which I actually study what happens when people drink the bark tea. (Of course!) <br><br>I also need some observations in which the target phenomenon (a cold is cured) is absent. That means I need to try to make some observations about the conditions under which someone’s cold was not cured. <br><br>If I don’t observe any cases in which someone’s cold is not cured, then my efforts in testing for the sufficiency of my tea are useless because I wouldn’t be able to confidently rule out that something else is curing colds, not my tea. To check that my tea itself is enough to cure colds, I need to look at some cases in which colds are not cured and make sure my tea wasn’t ingested. " 
+        },
+        {
+            question: "A group of friends go out to dinner. Bobo had the fish, tacos, sangria, and beef fajitas. Pam had fish, sangria, and beef fajitas. Bozo had the tacos and sangria, and Keanu had the sangria and beef fajitas. They all get sick. They probably got sick because of the sangria, because that’s what they all had in common, right? <br><br>Would you bet $1000 on the prediction that the sangria was what got everyone sick? Why or why not? In other words, do the “testing conditions” constitute a rigorous test for either sufficiency or necessity? <br><br>You are on your own here! No example response.",
+            answer: "" 
+        },
+        {
+            question: "I want to test the relationship between parental involvement and a child’s success at school. Using the NCT, explain how I would have to set up my experiment to rigorously test the truth of the following claim: “In order to do well in school, a child needs to have a parent check their homework every night.” <br><br>You are on your own here! No example response.",
+            answer: "" 
+        },
+        //set 5
+        {
+            question: "“Washington (UPI)—Rural Americans with locked doors, watchdogs or guns may face as much risk of burglary as neighbors who leave doors unlocked, a federally financed study says. The study, financed in part by a three-year $170,000 grant from the Law Enforcement Assistance Administration, was based on a survey of nearly 900 families in rural Ohio. Sixty percent of the rural residents surveyed regularly locked doors [A], but were burglarized more often than residents who left doors unlocked [B].” <blockquote>“Locked Doors No Bar to Crime, Study Says,” Santa Barbara, California, <i>Newspress</i>, Wednesday, February 16, 1977</blockquote>",
+            answer: "The article excerpt suggests a mysterious idea that goes against common sense: locking your door does not help prevent your house from being burglarized. <br><br>But there is a plausible explanation: B is the cause of A. The observed residents in this study locked their doors more often than others exactly for the reason that they live in an area that has, for some other reason, high rates of burglary. If this is true, then the article’s headline is mistaken—locked doors may indeed be a bar to crime. This fact just doesn’t appear to hold among the observed residents because they live in high-crime areas to begin with." 
+        },
+        {
+            question: "U.S. spending on science, space, and technology [A] positively correlates with suicides by hanging, strangulation, and suffocation [B]. <br><br><embed src='science_suicides.png' width='75%'' height='75%'>",
+            answer: "The correlation is accidental or some third thing, like population increase, is the cause of A and B. " 
+        },
+        {
+            question: "See other spurious correlations here! <br><br><iframe src='https://www.tylervigen.com/spurious-correlations' width='800' height='700'></iframe>",
+            answer: "" 
+        },
+        {
+            question: "The number gray hairs on an individual’s head [A] is positively correlated with the number of children or grandchildren they have [B].",
+            answer: "Maybe the stress of having grandchildren causes grey hair. More straightforwardly, though, there is a third explanation that accounts for both A and B—the passage of time. The older someone is, the more likely she is to both have grandchildren and grey hair.   " 
+        },
+        {
+            question: "The height of the tree in our front yard [A] positively correlates with the height of the shrub in our backyard [B].<br><br>You are on your own here! No example response. ",
+            answer: "" 
+        },
+        {
+            question: "There is a positive correlation between the speed of a car [A] and the speed of its shadow [B]. <br><br>You are on your own here! No example response. ",
+            answer: "" 
+        },
+        {
+            question: "There is a negative correlation between the number of suicide bombings in the U.S. [A] and the number of hairs on a particular U.S. president’s head [B].<br><br>You are on your own here! No example response. ",
+            answer: "" 
+        },
+ 
+       
+
+        ];
+        
+         // Define instruction sets and their insertion indexes
+         const instructions = [
+            {index: 0, id: 'set1', content: `<strong>Necessary and Sufficient Conditions 1 </strong><br><br>Which of the following claims are true? `},
+            {index: 10, id: 'set2', content: `<strong>Necessary and Sufficient Conditions 2</strong> <br><br>Which of the following claims express a necessary causal relation and which express a sufficient causal relation? <br><br><strong>Example 1:</strong> My all-natural Elvish bark tea is all you need to cure the common cold. <br><br>This is a claim about a sufficient causal relation because it says that drinking the bark tea is enough (“all you need”) to cure the common cold. It doesn’t rule out that other remedies may work as well without the bark tea, so it’s not a claim about necessity. <br><br><strong>Example 2:</strong> In order to do well in school, a child needs to have a parent check their homework every night. <br><br>This is a claim about a necessary causal relation because it expresses that parental involvement is one of the things a child must have to do well in school. `},
+            {index: 16, id: 'set3', content: `<strong>Necessary & Sufficient Condition Tests 1</strong><br><br>For each of the following tables, determine whether any candidate causes are eliminated by the sufficient condition test or the necessary condition test.<br><br><strong>Sufficient Condition Test: </strong>Any candidate cause that is present when a target phenomenon, G, is absent is eliminated as a possible sufficient condition of G. <br><br><strong>Necessary Condition Test:</strong> Any candidate that is absent when G is present is eliminated as a possible necessary condition of G. `},
+            {index: 25, id: 'set4', content: `<strong>Necessary & Sufficient Condition Tests 2</strong>`},
+            {index: 31, id: 'set5', content: `<strong>Correlations</strong><br><br>For each of the following correlations, decide whether: <br><blockquote>•	A is the cause of B. <br>•	B is the cause of A. <br>•	Some third thing is the common cause of A and B. <br>•	The correlation is simply accidental.</blockquote> `},
+        ];
+ 
+        function generateFAQs() {
+        const container = document.getElementById('faq-container'); 
+        let currentSetIndex = -1; // Initialize to -1 to indicate no current set
+        let questionNumber = 1; // Initialize question number
+
+    faqs.forEach((faq, index) => {
+        const instruction = instructions.find(instr => instr.index === index);
+        if (instruction) {
+            // New instruction set found, reset question number and update current set index
+            questionNumber = 1;
+            currentSetIndex = index; // Update current set index to the new set's start index
+            const instructionDiv = document.createElement('div');
+            instructionDiv.className = 'question';
+            instructionDiv.id = instruction.id; // This ID corresponds to the navigation link
+            instructionDiv.innerHTML = instruction.content;
+            container.appendChild(instructionDiv);
+        }
+
+        // Generate IDs using the index to ensure they are unique
+        const questionId = `question${index + 1}`;
+        const answerId = `answer${index + 1}`;
+
+        // Create and append question with updated numbering
+        const questionDiv = document.createElement('div');
+        questionDiv.id = questionId;
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `${questionNumber}. ${faq.question}`; // Use questionNumber for display
+        container.appendChild(questionDiv);
+
+        // Check if the question has an answer before appending button and answer div
+        if (faq.answer.trim() !== "") {
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'button';
+            const button = document.createElement('button');
+            button.innerText = 'Show/Hide Answer';
+            button.setAttribute('onclick', `toggleText('${answerId}')`);
+            buttonDiv.appendChild(button);
+            container.appendChild(buttonDiv);
+
+            const answerDiv = document.createElement('div');
+            answerDiv.id = answerId;
+            answerDiv.className = 'answer';
+            answerDiv.style.display = "none"; // Initially hide the answer
+            answerDiv.innerHTML = `<p>${faq.answer}</p>`;
+            container.appendChild(answerDiv);
+        }
+
+        // Increment question number for the next question
+        questionNumber++;
+    });
+}
+
+
+        window.onload = generateFAQs;
+
+        function toggleText(definitionId) {
+          var textElement = document.getElementById(definitionId);
+          if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                 textElement.style.display = "none";
+            }
+          textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+    <div class="question">
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <footer>
+        <br>
+        <a href="javascript:void(0);" onclick="scrollToTop()" class="scrollTopBtn">Go to Top</a>
+        <br><br>All nonoriginal content is used with the permission of the owner or offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+    </footer>
+
 </body>
-</html> -->
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fallacies</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Fallacies</h1>
+    </header>
+    
+    <nav class="normalnav">
+        <a href="index.html">Home</a>
+    </nav>
+
+    <img src="white_butts.jpeg" class="center" style="width: 40%; height: 40%">
+    <img src="use_head.jpeg" class="center" style="width: 15%; height: 15%">
+
+    <div class="question" style="text-align: center;" >
+        <b>Problem Sets: </b>
+     </div>
+ 
+    <div class="problem-sets-navigation">
+        <a href='#set1'>Identifying Fallacies</a><br>
+        <a href='#set2'>Fallacy or Not?</a> <br>
+        
+
+     </div>
+
+    <div class="question">
+       
+    </div>
+
+    <div id="faq-container"></div>
+
+    <script>
+        const faqs = [
+        //set 1
+        {
+            question: "Every event has a cause. If every part of the universe is dependent or caused to exist, then the entire universe is dependent or needs a cause to exist.",
+            answer: "Fallacy of Composition  " 
+        },
+        {
+            question: "<br><br><embed src='Jenny_McCarthy .jpg' width='50%'' height='50%'</embed> <br>Anti-vaccine actress Jenny McCarthy ",
+            answer: "Tu Quoque" 
+        },
+        {
+            question: "Hydrogen is not wet. Oxygen is not wet. Therefore, water is not wet.",
+            answer: "Fallacy of Composition  " 
+        },
+        {
+            question: "I thought you cared about other people, but I didn’t see you at the protest yesterday…",
+            answer: "False Dichotomy " 
+        },
+        {
+            question: "Most Texans are Republicans. Bobo is a Texan, so Bobo must be a Republican.",
+            answer: "Fallacy of Division " 
+        },
+        {
+            question: "A student of mine told me that I am her favorite professor, and I know that she is telling the truth because no student would lie to her favorite professor.",
+            answer: "Begging the Question " 
+        },
+        {
+            question: "Why are so many people attracted to the Pontiac Grand Prix? It could be that so many people are attracted to the Grand Prix!",
+            answer: "Begging the Question " 
+        },
+        {
+            question: "If nature doesn’t make it, we shouldn’t have it.",
+            answer: "Naturalistic Fallacy" 
+        },
+        {
+            question: "If don’t drive a Ford, you might as well not drive at all.",
+            answer: "False Dichotomy " 
+        },
+        {
+            question: "Scientist to colleague: “I firmly believe it’s a good idea to pursue my hypothesis further. I really have to—I’ve already put so much money and time into it, that if I throw in the towel now it will be a huge embarrassment.”",
+            answer: "Appeal to Consequence " 
+        },
+        {
+            question: "It was an excellent investigative team. So, every member of the team must have been an excellent researcher.",
+            answer: "Fallacy of Division  " 
+        },
+        {
+            question: "When Bozo expresses some reservations about Bobo’s political views, Bobo responded, “You’re either with us or you’re against us!”",
+            answer: "False Dichotomy " 
+        },
+        {
+            question: "Gun-control laws are wrong, because they violate the citizen’s right to bear arms.",
+            answer: "Begging the Question " 
+        },
+        {
+            question: "You should watch [some news channel]. Everyone does.",
+            answer: "Ad Populum" 
+        },
+        {
+            question: "I want to have myself a merry little Christmas, but I refuse to do as the song suggests and make the yuletide gay. I don’t think sexual preference should have anything to do with enjoying the holiday.",
+            answer: "Equivocation " 
+        },
+        {
+            question: "We have to take a stand against sex education in junior high schools. If we allow sex education in the eighth grade, then the seventh graders will want it, and then the sixth graders, and pretty soon we will be teaching sex education to our little kindergartners.",
+            answer: "Causal Slippery Slope " 
+        },
+        {
+            question: "Anyone who tries to violate a law, even if the attempt fails, should be punished. People who try to fly are trying to violate the law of gravity. So they should be punished.",
+            answer: "Equivocation " 
+        },
+        {
+            question: "I don’t think it’s a good idea to lower the drinking age. Next thing we know kids will get to drive at age ten, and vote at fifteen. Let kids be kids and adults be adults.",
+            answer: "Causal Slippery Slope " 
+        },
+        {
+            question: "If assault weapons are banned, Congress will ban handguns next, and then rifles. Eventually, hunters will not be able to hunt, and law-abiding citizens will have no way to defend themselves against criminals.",
+            answer: "Causal Slippery Slope " 
+        },
+        {
+            question: "Sure, philosophy helps you argue better, but do we really need to encourage people to argue? There’s enough hostility in this world.",
+            answer: "Equivocation " 
+        },
+        {
+            question: "If Texas adopts a personal income tax, I’m moving away. An income tax at the state level is just a first step to communism.",
+            answer: "Conceptual Slippery Slope " 
+        },
+        {
+            question: "The end of life is death. Happiness is the end of life. So, death is happiness.",
+            answer: "Equivocation " 
+        },
+        {
+            question: "David Horowitz as quoted in the <i>Daily Pennsylvanian</i>: “Anyone who says that about me [that he’s a racist bigot] is a Nazi.”",
+            answer: "Ad Hominem " 
+        },
+        {
+            question: "If you try to smoke one cigarette a day, you will end up smoking two and then three and four and five, and so on, until you smoke two packs every day. So don’t try even one.",
+            answer: "Causal Slippery Slope " 
+        },
+        {
+            question: "[<i>The New York Times</i>] chronicled the enormous benefits French citizens receive. Paid child care, free higher education, free health care, a mandatory five weeks of paid vacation, monthly government payments for each child … There comes a point when ideology has to be put aside and what's good for the country must be embraced. France is a selfish nation that is going down the drain economically because the folks there want stuff and economics be damned. <br><br>-Bill O'Reilly, “The French Way,” November 18, 2013",
+            answer: "Ad Hominem " 
+        },
+        {
+            question: "<br><br><embed src='Al_gore.png' width='70%'' height='70%'</embed> <br><br>It's important to know who Al Gore is to identify this fallacy.",
+            answer: "Tu Quoque" 
+        },
+        {
+            question: "Six is an odd number of legs for a horse. Odd numbers can’t be divided by two (without remainder). So, six can’t be divided by two.",
+            answer: "Equivocation " 
+        },
+        {
+            question: "Individual neurons or chemical signals are not the source of consciousness. Your brain is made of neurons and chemical signals. Therefore, your brain is not the source of consciousness.",
+            answer: "Fallacy of Composition  " 
+        },
+        {
+            question: "The simple fact is that war is good for mankind, since the tendency to conflict is a human instinct.",
+            answer: "Naturalistic Fallacy" 
+        },
+        {
+            question: "In the discussion after a Forum lecture in Boston, an address on some aspect of the Woman question, a man in the gallery, who evidently took exception to a dull rose fillet I wore in my hair, demanded to know how women could expect to equal men ‘so long as they took so much time fixing up their hair and putting ribbons in it’? There was some commotion, and cries of ‘Put him out!’ but I grinned up at him cheerfully and replied, ‘I do not think it has been yet established whether it takes a woman longer to do her hair than it does a man to shave.’ This was not an answer at all, but it seemed to please everyone but the inquirer. <br><Br>-Charlotte Perkins Gilman, <i>The Living of Charlotte Perkins Gilman: An Autobiography,</i> 1935",
+            answer: "Tu Quoque <br><br> Gilman's response is fallacious, but that's what makes it funny. It's not a serious response to the man's apparently serious concern. Do you think the man's question warrants a serious response?" 
+        },
+        {
+            question: "Bobo heard the Catholic church was involved in a sex scandal. So he decided Father Ambrose (Bobo’s priest) must be a pervert!",
+            answer: "Fallacy of Division " 
+        },
+        {
+            question: "Wow, you really think being a vegetarian is morally superior? Did you know Hitler was a vegetarian? That should tell you something…",
+            answer: "Genetic Fallacy " 
+        },
+        {
+            question: "“I think that the reasonable men of the world have long since agreed that intemperance is one of the greatest, if not the very greatest, of all evils among mankind. That is not a matter of dispute.” <br><br>-Abraham Lincoln, from <i>Complete Works of Abraham Lincoln</i>",
+            answer: "Ad Populum" 
+        },
+        {
+            question: "There's no reason to take seriously Nietzsche's ideas about the Superman. Weak and sickly all his short life, of course he found this concept captivating. In psychology, we call this compensation.",
+            answer: "Ad Hominem or Genetic Fallacy" 
+        },
+        {
+            question: "The human sex organs evolved for male-female intercourse. That is a scientific fact you can’t deny. It follows that male-male or female-female intercourse is morally wrong.",
+            answer: "Naturalistic Fallacy" 
+        },
+        {
+            question: "Voltaire's criticism of Rousseau's <i>Emile,</i> or <i>Treatise on Education:</i><br><br> “Excessive pride and envy have destroyed Jean-Jacques, my illustrious philosopher. That monster dares speak of education! He abandoned his children and the tramp with whom he made them.”",
+            answer: "Ad Hominem or Genetic Fallacy" 
+        },
+        {
+            question: "Speaker: Because of the killing and suffering of Indians that followed Columbus’s discovery of America, the City of Berkeley should declare that Columbus Day will no longer be observed in our city. <br><br>Opponent: This is ridiculous, fellow members of the city council. It’s not true that everybody who ever came to America from another country somehow oppressed the Indians. I say we should continue to observe Columbus Day, and vote down this resolution that will make the City of Berkeley the laughing stock of the nation.",
+            answer: "Strawman " 
+        },
+        {
+            question: "First, we loosen up the laws against abortion. Next, mark my words, we’ll take seriously the option of infanticide in certain severe cases. And this will lead us to look with favor on euthanasia for those we deem social deviants.",
+            answer: "Causal Slippery Slope " 
+        },
+        {
+            question: "Oh, Prof. Bobo, why are you so upset about my cheating on the exam? I saw an article saying 70% of college students admit to cheating. I think it's to be expected that people will do whatever it takes to get what they want. So, people should do what they have to do.",
+            answer: "Naturalistic Fallacy or Ad Populum" 
+        },
+        {
+            question: "All criminal actions ought to be punished. Prosecutions for theft are criminal actions. Therefore, prosecutions for theft ought to be punished.",
+            answer: "Equivocation " 
+        },
+        {
+            question: "“Alfred Russell Wallace reportedly conceived the principle of natural selection while in a delirium; to dismiss the theory of evolution of that basis would be to commit the _______ fallacy. Postmodernists who reject scientific claims to knowledge on the grounds that those claims emerged from the hegemonic discourse of a powerful elite are likewise guilty of the _______ fallacy.” <br><br>-James William Lett, <i>Science, Reason, and Anthropology: The Principles of Rational Inquiry,</i> 1997",
+            answer: "Genetic Fallacy " 
+        },
+        {
+            question: "No, I will not reply. I see no need to defend my views against the objections of ignoramuses.",
+            answer: "Ad Hominem " 
+        },
+        {
+            question: "Bobo: I don’t like violent movies. Movies shouldn’t glorify violence. <br><br>Pam: Oh so now we have to limit creativity and free speech to accommodate your feelings that we celebrate violence too much? Great.",
+            answer: "Strawman " 
+        },
+
+        {
+            question: "<br><br><embed src='Kennedy_Trump.jpg' width='50%'' height='50%'</embed> <br><br>Kennedys and Trumps",
+            answer: "Tu Quoque" 
+        },
+        {
+            question: "Governments should never bargain with any terrorist. Once they do, they will have to bargain with every other terrorist who comes along.",
+            answer: "Causal Slippery Slope " 
+        },
+        {
+            question: "Noisy children are a real headache. An aspirin makes a headache go away. Therefore, an aspirin will make noisy children go away!",
+            answer: "Equivocation " 
+        },
+        {
+            question: "Every member of the investigative team was an excellent researcher. So, it must have been an excellent investigative team.",
+            answer: "Fallacy of Composition" 
+        },
+        {
+            question: "The majority of Americans think we should have military operations in Afghanistan; therefore, it’s the right thing to do.",
+            answer: "Ad Populum or Naturalistic Fallacy" 
+        },
+        {
+            question: "People who don’t support the proposed state minimum wage increase hate the poor.",
+            answer: "Strawman " 
+        },
+        {
+            question: "I continue to believe that the President has not engaged in illegal or unsavory behavior. It’s just too hard to live with the idea that the leader of the free world is no better than the rest of us.",
+            answer: "Appeal to Consequence " 
+        },
+        {
+            question: "Sir Walter Scott, the novelist, opposed the legislative measure of electing representatives to Parliament by stating: “[I]t was part of wisdom not to put such things into their heads. The measure, if it succeeded, would lead to new demands and open a door to innovations of which none could calculate the extent or foresee the consequences.”",
+            answer: "Appeal to Consequence " 
+        },
+        {
+            question: "Premarital sex is wrong, because premarital sex is fornication, and fornication is a sin.",
+            answer: "Begging the Question " 
+        },
+        {
+            question: "That can’t be Senator Bobo there in the videotape going into her apartment. If it were, he’d be a liar about not knowing her. He’s not the kind of man who would lie. He’s a member of my congregation. I just can’t accept that’s him in the video.",
+            answer: "Appeal to Consequence " 
+        },
+        {
+            question: "The brilliant William Jenkins, the recent Nobel Prize winner in physics, states uncategorically that the flu virus will be controlled in essentially all of its forms by the year 2,050. The opinion of such a great man cannot be disregarded.",
+            answer: "Appeal to Unqualified Authority" 
+        },
+        {
+            question: "Which fallacy does this sarcastic meme refer to? <br><br><embed src='descriptive_normative.jpg' width='50%'' height='50%'</embed> ",
+            answer: "Naturalistic Fallacy" 
+        },
+        {
+            question: "Norman Vincent Peale, a broadcast preacher and author of <i>The Power of Positive Thinking</i> […] said [Adlai] Stevenson was unfit to be president because he was divorced. Stevenson said: “I find the Apostle Paul appealing and the Apostle Peale appalling.” <br><br>-George Will, “The Apostle Mike Huckabee,” May 12, 2015",
+            answer: "Ad Hominem or Genetic Fallacy" 
+        },
+        {
+            question: "You either support Hillary Clinton for president, or you don’t believe in women’s rights.",
+            answer: "False Dichotomy " 
+        },
+        {
+            question: "The crowds at my rallies are far bigger than they have ever been before, including the 2016 election. Never an empty seat in these large venues, many thousands of people watching screens outside. <br><br>-Donald Trump, Oct. 12, 2018",
+            answer: "Ad Populum" 
+        },
+        {
+            question: "Secretary of State John Kerry says that there is less violence than usual in the world right now. Meanwhile the Director of National Intelligence, James Clapper, says the opposite, that terrorism is more violent and dangerous than ever. Since Clapper is Director of National Intelligence, maybe Kerry should have the title Director of National Stupidity. <br><br>–Thomas Sowell, “Random Thoughts on the Passing Scene” March 5, 2015",
+            answer: "Ad Hominem " 
+        },
+        {
+            question: "To his dying day, Governor Marvin Mandel will never understand what was wrong in accepting more than $350,000 worth of gifts from wealthy friends who happened to engage in business ventures that benefited from his gubernatorial influence. The governor has lots company … And to a man they have cried in bewilderment that ‘everybody does it,’ that politics survives on back scratching. <br><br>-Martha Angle and Robert Walters, “In Washington: The Public Isn't Buying,” <i>Bowling Green Daily News</i>, September 6, 1977",
+            answer: "Ad Populum" 
+        },
+        {
+            question: "Humans thrive on plants and vegetables. It’s a misconception that we need meat in order to survive. Consider Jains and Hindus, many of whom do not eat meat. So you see, eating meat is wrong.",
+            answer: "Naturalistic Fallacy" 
+        },
+        {
+            question: "If Bobo stands up from his seat at the game, he can see better. If everyone stood up, they could all see better too.",
+            answer: "Fallacy of Composition  " 
+        },
+        {
+            question: "We should not allow doctors to end the life of terminally ill patients because if we do, it’s not far off from letting doctors euthanize healthy people or people that they believe to be genetically inferior. That's what the Nazis did after all!",
+            answer: "Conceptual Slippery Slope " 
+        },
+        {
+            question: "Almost everyone eats meat. We can’t all be morally wrong.",
+            answer: "Naturalistic Fallacy or Ad Populum" 
+        },
+        {
+            question: "Advocates for lifting age limits on Plan B [a.k.a., the morning-after pill], including Planned Parenthood president Cecile Richards, insist the pill is universally safe and, therefore, all age barriers should be dropped. From a strictly utilitarian viewpoint, this might be well-advised, but is science the only determining factor when it comes to the well-being of our children? Even President Obama, who once boasted his policies would be based on science and not emotion, has parental qualms about children buying serious drugs to treat a condition that has deeply psychological underpinnings. <br><br>-Kathleen Parker, “Prude or Prudent?” May 5, 2013",
+            answer: "Appeal to Unqualified Authority" 
+        },
+        {
+            question: "The Electoral College is specified in the Constitution, so we shouldn’t do away with it.",
+            answer: "Naturalistic Fallacy" 
+        },
+        {
+            question: "Free trade is good for the country because it brings the country all of the advantages of an unimpeded flow of goods.",
+            answer: "Begging the Question " 
+        },
+        {
+            question: "Why do you argue about whether capital punishment is moral? It's legal isn't it?",
+            answer: "Naturalistic Fallacy" 
+        },
+        {
+            question: "The headlines at the top of this page are funny because they rely on __________.",
+            answer: "Equivocation"
+        },
+
+
+        //set 2
+        {
+            question: "Is this an instance of equivocation? <br><br>Some think that the injustice of all affirmative action programs is obvious or easily demonstrated. [One argument] goes this way: “Affirmative action, by definition, gives preferential treatment to minorities and women. This is discrimination in their favor and against non-minority males. All discrimination by public institutions is unjust, no matter whether it is the old kind or the newer ‘reverse discrimination.’ So all affirmative action programs in public institutions are unjust.”",
+            answer: "" 
+        },
+        {
+            question: "Is this an instance of the slippery slope fallacy? <br><br>Since no moment in the continuum of development between an egg and a baby is especially significant, it is not fair to grant the right to life to a baby unless one grants the same right to every fertilized egg.",
+            answer: " " 
+        },
+        {
+            question: "Is this an instance of the genetic fallacy? <br><br>“In America, the go-to guy on ADHD is Dr. Russell Barkley … Barkley is on record saying that although behavior therapy (behavior modification) can be a useful supplementary treatment, no approach to ADHD has ever or is probably ever going to completely replace pharmaceutical therapy. In this regard, it is significant to note that Barkley has had ties to … the developer of the popular ADHD drug Strattera.”<br><br>-John Rosemond, “ADHD: You Are What You Eat,” September 5, 2015",
+            answer: "" 
+        },
+        {
+            question: "Is this an instance of the appeal to consequence fallacy?<br><br>The smart money, Pascal says, is on God. Believe that God exists, since that belief is a good bet. If it turns out that you get it right, you win eternal happiness; if not, your existence will be short anyway, and a devout and short existence is no worse than a depraved but short one. But if you don’t believe that God exists and you get it wrong, you suffer eternal punishment.",
+            answer: "" 
+        },
+        {
+            question: "Is this an instance of the appeal to unqualified authority fallacy?<br><br>Our founding fathers believed in the right to bear arms—even built it into the Bill of Rights. Gun control would go against them—you wouldn’t want to do that, would you?",
+            answer: "" 
+        },
+        {
+            question: "Is this an instance of the ad populum falacy? <br><br>“The Trump administration is being sued over its plans to include a question about citizenship in the 2020 Census, which California Attorney General Xavier Becerra (D) says ‘is not just a bad idea — it is illegal.’ No, it's not. There is nothing wrong with asking about citizenship. Canada asks a citizenship question on its census. So do Australia and many other U.S. allies.” <br><br>-Cal Thomas, “Extortionist in Chief,” February 23, 2013",
+            answer: "" 
+        },
+        {
+            question: "Is this an instance of the slippery slope fallacy? <br><br>People are found not guilty by reason of insanity when they cannot avoid breaking the law. But people who are brought up in certain deprived social circumstances are not much more able than the insane to avoid breaking the law. So it would be unjust to find them guilty.",
+            answer: "" 
+        },
+        
+
+        ];
+        
+         // Define instruction sets and their insertion indexes
+         const instructions = [
+            {index: 0, id: 'set1', content: `<strong>Identifying Fallacies</strong> `},
+            {index: 69, id: 'set2', content: `<strong>Fallacy or Not?</strong> <br><br>Sometimes arguments have the same structure as a fallacy but are not actually fallacious. <br><br>For example, in fallacious instances of ad populum, an unjustified appeal to popular opinion is made, as in: <blockquote>“Everyone is selfish; everyone is doing what he believes will make himself happier. The recognition of that can take most of the sting out of accusations that you're being "selfish." Why should you feel guilty for seeking your own happiness when that's what everyone else is doing, too?”<br><br>-Harry Browne, "The Unselfishness Trap", from How I Found Freedom in an Unfree World (1973)</blockquote>Just because everyone else is a selfish jerk doesn’t make it okay!<br><br>But not every appeal to popular opinion is unjustified, as in:<blockquote>Petticoats are no longer in style. They haven’t been worn by the majority of women for over 100 years.</blockquote>This is not an instance of fallacious ad populum, even though it is an appeal to popularity, because what counts as “in style” is defined by what is popular. The appeal to popularity in this case is justified.<br><br>Each of the arguments below is similar in structure to one of the common fallacy forms, but the jury is out about whether it is really fallacious. Considering each one in turn, do you think these arguments are fallacious?   `},
+        ];
+ 
+        function generateFAQs() {
+        const container = document.getElementById('faq-container'); 
+        let currentSetIndex = -1; // Initialize to -1 to indicate no current set
+        let questionNumber = 1; // Initialize question number
+
+    faqs.forEach((faq, index) => {
+        const instruction = instructions.find(instr => instr.index === index);
+        if (instruction) {
+            // New instruction set found, reset question number and update current set index
+            questionNumber = 1;
+            currentSetIndex = index; // Update current set index to the new set's start index
+            const instructionDiv = document.createElement('div');
+            instructionDiv.className = 'question';
+            instructionDiv.id = instruction.id; // This ID corresponds to the navigation link
+            instructionDiv.innerHTML = instruction.content;
+            container.appendChild(instructionDiv);
+        }
+
+        // Generate IDs using the index to ensure they are unique
+        const questionId = `question${index + 1}`;
+        const answerId = `answer${index + 1}`;
+
+        // Create and append question with updated numbering
+        const questionDiv = document.createElement('div');
+        questionDiv.id = questionId;
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `${questionNumber}. ${faq.question}`; // Use questionNumber for display
+        container.appendChild(questionDiv);
+
+        // Check if the question has an answer before appending button and answer div
+        if (faq.answer.trim() !== "") {
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'button';
+            const button = document.createElement('button');
+            button.innerText = 'Show/Hide Answer';
+            button.setAttribute('onclick', `toggleText('${answerId}')`);
+            buttonDiv.appendChild(button);
+            container.appendChild(buttonDiv);
+
+            const answerDiv = document.createElement('div');
+            answerDiv.id = answerId;
+            answerDiv.className = 'answer';
+            answerDiv.style.display = "none"; // Initially hide the answer
+            answerDiv.innerHTML = `<p>${faq.answer}</p>`;
+            container.appendChild(answerDiv);
+        }
+
+        // Increment question number for the next question
+        questionNumber++;
+    });
+}
+
+
+        window.onload = generateFAQs;
+
+        function toggleText(definitionId) {
+          var textElement = document.getElementById(definitionId);
+          if (textElement.style.display !== "none" && textElement.style.display !== "block") {
+                 textElement.style.display = "none";
+            }
+          textElement.style.display = textElement.style.display === "none" ? "block" : "none";
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
+    <div class="question">
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <footer>
+        <br>
+        <a href="javascript:void(0);" onclick="scrollToTop()" class="scrollTopBtn">Go to Top</a>
+        <br><br>All nonoriginal content is used with the permission of the owner or offered under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licensing.</a> 
+    </footer>
+
+</body>
+</html>
